@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David_AMS — Morning Report · Wed 27 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #080b0f;
+  --bg2:     #0d1117;
+  --bg3:     #111820;
+  --card:    #131b25;
+  --border:  rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.12);
+  --amber:   #f0a500;
+  --amber2:  #fbbf24;
+  --green:   #22c55e;
+  --red:     #ef4444;
+  --blue:    #38bdf8;
+  --purple:  #a78bfa;
+  --text:    #e2e8f0;
+  --muted:   #64748b;
+  --dim:     #334155;
+  --mono:    'Geist Mono', monospace;
+  --sans:    'Syne', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Animated grid background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(240,165,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240,165,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient glow */
+body::after {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 60vh;
+  background: radial-gradient(ellipse, rgba(240,165,0,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ── HEADER ── */
+header {
+  padding: 48px 0 32px;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--sans);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.brand span { color: var(--amber); }
+
+.header-meta {
+  text-align: right;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: var(--green);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s infinite;
+}
+
+.date-time {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.date-time strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pill {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid;
+  font-family: var(--mono);
+}
+
+.pill-bull  { background: rgba(34,197,94,0.08);  border-color: rgba(34,197,94,0.25);  color: var(--green); }
+.pill-bear  { background: rgba(239,68,68,0.08);   border-color: rgba(239,68,68,0.25);  color: var(--red); }
+.pill-warn  { background: rgba(240,165,0,0.08);   border-color: rgba(240,165,0,0.25);  color: var(--amber); }
+.pill-info  { background: rgba(56,189,248,0.08);  border-color: rgba(56,189,248,0.25); color: var(--blue); }
+
+/* ── SECTION HEADER ── */
+.sec-hdr {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 40px 0 16px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.sec-hdr::before {
+  content: '';
+  width: 3px;
+  height: 14px;
+  background: var(--amber);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sec-title {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+/* ── INSTRUMENT GRID ── */
+.inst-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  animation: fadeUp 0.7s ease both;
+}
+
+@media(max-width:900px) { .inst-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:600px) { .inst-grid { grid-template-columns: 1fr; } }
+
+.inst-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: default;
+}
+
+.inst-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+}
+
+.inst-card.bull { border-top: 2px solid var(--green); }
+.inst-card.warn { border-top: 2px solid var(--amber); }
+.inst-card.bear { border-top: 2px solid var(--red); }
+
+.inst-head {
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.inst-sym {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.inst-desc {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.inst-price {
+  text-align: right;
+}
+
+.inst-last {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.bull .inst-last { color: var(--green); }
+.warn .inst-last { color: var(--amber); }
+.bear .inst-last { color: var(--red); }
+
+.inst-badge {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.badge-bull { background: rgba(34,197,94,0.12);  color: var(--green); }
+.badge-warn { background: rgba(240,165,0,0.12);  color: var(--amber); }
+.badge-bear { background: rgba(239,68,68,0.12);  color: var(--red); }
+.badge-info { background: rgba(56,189,248,0.12); color: var(--blue); }
+
+/* Position bar */
+.pos-wrap { padding: 8px 16px; border-bottom: 1px solid var(--border); }
+.pos-label { font-size: 9px; color: var(--muted); margin-bottom: 4px; display: flex; justify-content: space-between; }
+.pos-track { height: 3px; background: var(--dim); border-radius: 2px; position: relative; }
+.pos-fill  { height: 3px; border-radius: 2px; position: absolute; top: 0; left: 0; }
+.pos-marker { position: absolute; top: -5px; width: 2px; height: 13px; background: white; border-radius: 1px; }
+
+/* Levels */
+.inst-levels { padding: 8px 0; }
+
+.lvl-group-hdr {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding: 4px 16px 2px;
+  background: var(--bg3);
+}
+
+.lvl-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+
+.lvl-row:last-child { border-bottom: none; }
+.lvl-name { color: var(--muted); }
+.lvl-val  { font-weight: 500; }
+.c-green  { color: var(--green); }
+.c-red    { color: var(--red); }
+.c-amber  { color: var(--amber); }
+.c-blue   { color: var(--blue); }
+.c-text   { color: var(--text); }
+.c-muted  { color: var(--muted); }
+
+.lvl-tag {
+  font-size: 8px;
+  padding: 1px 5px;
+  border-radius: 2px;
+  background: rgba(56,189,248,0.1);
+  color: var(--blue);
+  margin-left: 4px;
+}
+
+.bias-row-bottom {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--bg3);
+}
+
+.bf {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.bf-y { background: rgba(34,197,94,0.12); color: var(--green); }
+.bf-n { background: rgba(239,68,68,0.12); color: var(--red); }
+.bf-w { background: rgba(240,165,0,0.12); color: var(--amber); }
+.bf-na{ background: rgba(100,116,139,0.12); color: var(--muted); }
+
+/* ── BIAS TABLE ── */
+.bias-table-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeUp 0.8s ease both;
+}
+
+.btable { width: 100%; border-collapse: collapse; }
+.btable th {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 8px 14px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+}
+
+.btable td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.btable tr:last-child td { border-bottom: none; }
+.btable tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* ── 4H TABLE ── */
+.fh-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeUp 0.8s ease both;
+}
+
+.fh-table { width: 100%; border-collapse: collapse; }
+.fh-table th {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 8px 14px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+}
+
+.fh-table td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  vertical-align: top;
+}
+
+.fh-table tr:last-child td { border-bottom: none; }
+.fh-table tr.active { background: rgba(56,189,248,0.04); border-left: 2px solid var(--blue); }
+.fh-table tr.active td:first-child { color: var(--blue); font-weight: 600; }
+
+/* ── SESSION TABS ── */
+.tabs-wrap { animation: fadeUp 0.8s ease both; }
+
+.tab-nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+  margin-bottom: -1px;
+}
+
+.tab-btn.active { color: var(--amber); border-bottom-color: var(--amber); }
+.tab-btn:hover  { color: var(--text); }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.sess-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+@media(max-width:700px) { .sess-grid { grid-template-columns: 1fr; } }
+
+.sess-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+
+.sess-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.sess-name { font-family: var(--sans); font-size: 12px; font-weight: 700; color: var(--text); }
+.sess-time { font-size: 9px; color: var(--muted); margin-bottom: 8px; }
+
+.dot-row { display: flex; gap: 8px; margin-bottom: 5px; align-items: flex-start; }
+.dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+.d-bull { background: var(--green); }
+.d-bear { background: var(--red); }
+.d-warn { background: var(--amber); }
+.d-info { background: var(--blue); }
+.dot-txt { font-size: 10.5px; color: var(--muted); line-height: 1.5; }
+.dot-txt b { color: var(--text); font-weight: 500; }
+
+/* ── SETUPS ── */
+.setups-wrap { animation: fadeUp 0.9s ease both; }
+
+.setup-row {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  align-items: flex-start;
+  transition: border-color 0.2s;
+}
+
+.setup-row:hover { border-color: var(--border2); }
+
+.setup-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.si-bull { background: rgba(34,197,94,0.15);  color: var(--green); }
+.si-bear { background: rgba(239,68,68,0.15);  color: var(--red); }
+.si-warn { background: rgba(240,165,0,0.15);  color: var(--amber); }
+.si-info { background: rgba(56,189,248,0.15); color: var(--blue); }
+
+.setup-body { flex: 1; }
+.setup-title { font-size: 12px; font-weight: 500; margin-bottom: 3px; }
+.setup-detail { font-size: 10.5px; color: var(--muted); line-height: 1.6; }
+
+/* ── NEWS ── */
+.news-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeUp 0.9s ease both;
+}
+
+.news-row {
+  display: grid;
+  grid-template-columns: 90px 60px 1fr;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+
+.news-row:last-child { border-bottom: none; }
+.news-row.hdr { background: var(--bg3); font-size: 9px; font-weight: 600; letter-spacing:.08em; text-transform:uppercase; color: var(--muted); }
+.news-time { font-weight: 500; font-size: 11px; }
+.news-ev { font-weight: 500; font-size: 11px; }
+.news-note { font-size: 10px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+.news-day-hdr { grid-column: 1/-1; font-size: 9px; font-weight: 600; color: var(--amber); letter-spacing:.06em; text-transform:uppercase; padding: 8px 16px; background: rgba(240,165,0,0.05); border-bottom: 1px solid var(--border); }
+
+.warn-banner {
+  background: rgba(239,68,68,0.06);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 6px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--red);
+  animation: fadeUp 1s ease both;
+}
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.footer-brand { font-family: var(--sans); font-weight: 700; color: var(--amber); font-size: 13px; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+@keyframes pulse {
+  0%,100% { opacity:1; }
+  50% { opacity:0.4; }
+}
+
+/* Stagger cards */
+.inst-card:nth-child(1) { animation: fadeUp 0.5s ease both; }
+.inst-card:nth-child(2) { animation: fadeUp 0.55s ease both; }
+.inst-card:nth-child(3) { animation: fadeUp 0.6s ease both; }
+.inst-card:nth-child(4) { animation: fadeUp 0.65s ease both; }
+.inst-card:nth-child(5) { animation: fadeUp 0.7s ease both; }
+.inst-card:nth-child(6) { animation: fadeUp 0.75s ease both; }
+
+/* Collapsible */
+details { }
+details summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+details summary::-webkit-details-marker { display:none; }
+details summary::after { content:'▸'; font-size:10px; color:var(--muted); transition:transform 0.2s; }
+details[open] summary::after { transform: rotate(90deg); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-top">
+    <div>
+      <div class="brand">David<span>_AMS</span></div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;font-family:var(--mono)">Morning Bias Report · ICT Framework · DW Foundation</div>
+    </div>
+    <div class="header-meta">
+      <div class="live-badge"><span class="live-dot"></span>Live · Bridge v1.2</div>
+      <div class="date-time">
+        <strong>Wednesday 27 May 2026</strong><br>
+        05:07 NY · 11:07 AMS<br>
+        4H #3 active · 02:00–06:00 NY
+      </div>
+    </div>
+  </div>
+  <div class="pills">
+    <span class="pill pill-bull">ES 7,556.75 — Above PD_EQ · Above MN_Open</span>
+    <span class="pill pill-warn">NQ +59 above PDH — Extended</span>
+    <span class="pill pill-warn">GC 4,488 — Below MN_Open · Bearish</span>
+    <span class="pill pill-bear">CL 90.32 — Below PD_EQ · Iran deal</span>
+    <span class="pill pill-info">Today 10:00 NY — 3 releases</span>
+    <span class="pill pill-bear">Tomorrow 08:30 NY — GDP + PCE + Claims</span>
+  </div>
+</header>
+
+<!-- ── INSTRUMENTS ── -->
+<div class="sec-hdr"><span class="sec-title">Key levels — all 6 instruments</span></div>
+<div class="inst-grid">
+
+  <!-- ES -->
+  <div class="inst-card bull">
+    <div class="inst-head">
+      <div><div class="inst-sym">ESM26</div><div class="inst-desc">E-mini S&P 500</div></div>
+      <div class="inst-price">
+        <div class="inst-last">7,556.75</div>
+        <div class="inst-badge badge-bull">Bullish</div>
+      </div>
+    </div>
+    <div class="pos-wrap">
+      <div class="pos-label"><span>PDL 7,517</span><span>7,556.75</span><span>PDH 7,569</span></div>
+      <div class="pos-track">
+        <div class="pos-fill" style="width:75%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:75%"></div>
+      </div>
+    </div>
+    <div class="inst-levels">
+      <div class="lvl-group-hdr">Prev Day</div>
+      <div class="lvl-row"><span class="lvl-name">PDH <span class="lvl-tag">DW hi</span></span><span class="lvl-val c-green">7,569.75</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_UW</span><span class="lvl-val c-green">7,551.25</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_EQ <span class="lvl-tag">DW</span></span><span class="lvl-val c-amber">7,543.38</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_Close</span><span class="lvl-val c-text">7,532.75</span></div>
+      <div class="lvl-row"><span class="lvl-name">PDL <span class="lvl-tag">DW lo</span></span><span class="lvl-val c-red">7,517.00</span></div>
+      <div class="lvl-group-hdr">Opens</div>
+      <div class="lvl-row"><span class="lvl-name">MN_Open</span><span class="lvl-val c-amber">7,539.00</span></div>
+      <div class="lvl-row"><span class="lvl-name">D_Open</span><span class="lvl-val c-text">7,533.00</span></div>
+      <div class="lvl-row"><span class="lvl-name">RTH_Open <span class="lvl-tag">09:30</span></span><span class="lvl-val c-text">7,534.00</span></div>
+      <div class="lvl-group-hdr">Overnight</div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">7,559.75</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">7,529.25</span></div>
+      <div class="lvl-group-hdr">TV 4H · PW</div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">7,547.00</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">7,541.25</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">7,535.50</span></div>
+      <div class="lvl-row"><span class="lvl-name">PW_High / EQ / Low</span><span class="lvl-val c-muted">7,524 / 7,439 / 7,354</span></div>
+    </div>
+    <div class="bias-row-bottom">
+      <span class="bf bf-y">PD_EQ ✓</span>
+      <span class="bf bf-y">MN_Open ✓</span>
+      <span class="bf bf-na">HTF breach 🔴</span>
+    </div>
+  </div>
+
+  <!-- NQ -->
+  <div class="inst-card warn">
+    <div class="inst-head">
+      <div><div class="inst-sym">NQM26</div><div class="inst-desc">E-mini NASDAQ 100</div></div>
+      <div class="inst-price">
+        <div class="inst-last">30,178.50</div>
+        <div class="inst-badge badge-warn">⚠ +59 PDH</div>
+      </div>
+    </div>
+    <div class="pos-wrap">
+      <div class="pos-label"><span>PDL 29,676</span><span>30,178</span><span>PDH 30,118 ←</span></div>
+      <div class="pos-track">
+        <div class="pos-fill" style="width:100%;background:var(--green);opacity:0.4"></div>
+        <div class="pos-marker" style="left:99%"></div>
+      </div>
+    </div>
+    <div class="inst-levels">
+      <div class="lvl-group-hdr">Prev Day</div>
+      <div class="lvl-row"><span class="lvl-name">PDH</span><span class="lvl-val c-green">30,118.75</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_UW</span><span class="lvl-val c-green">30,081.50</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_EQ</span><span class="lvl-val c-amber">29,897.50</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_Close</span><span class="lvl-val c-text">30,044.25</span></div>
+      <div class="lvl-row"><span class="lvl-name">PDL</span><span class="lvl-val c-red">29,676.25</span></div>
+      <div class="lvl-group-hdr">Opens</div>
+      <div class="lvl-row"><span class="lvl-name">MN_Open</span><span class="lvl-val c-amber">30,097.00</span></div>
+      <div class="lvl-row"><span class="lvl-name">D_Open</span><span class="lvl-val c-text">30,050.00</span></div>
+      <div class="lvl-row"><span class="lvl-name">RTH_Open <span class="lvl-tag">09:30</span></span><span class="lvl-val c-text">29,902.00</span></div>
+      <div class="lvl-group-hdr">Overnight</div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">30,217.75</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">30,028.50</span></div>
+      <div class="lvl-group-hdr">TV 4H · PW</div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">30,159.00</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">30,113.38</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">30,067.75</span></div>
+      <div class="lvl-row"><span class="lvl-name">PW_High / EQ / Low</span><span class="lvl-val c-muted">29,749 / 29,206 / 28,663</span></div>
+    </div>
+    <div class="bias-row-bottom">
+      <span class="bf bf-y">PD_EQ ✓</span>
+      <span class="bf bf-y">MN_Open ✓</span>
+      <span class="bf bf-w">⚠ Above PDH</span>
+    </div>
+  </div>
+
+  <!-- YM -->
+  <div class="inst-card warn">
+    <div class="inst-head">
+      <div><div class="inst-sym">YMM26</div><div class="inst-desc">E-mini Dow Jones</div></div>
+      <div class="inst-price">
+        <div class="inst-last">50,761</div>
+        <div class="inst-badge badge-warn">Lagging</div>
+      </div>
+    </div>
+    <div class="pos-wrap">
+      <div class="pos-label"><span>PDL 50,425</span><span>50,761</span><span>PDH 51,209</span></div>
+      <div class="pos-track">
+        <div class="pos-fill" style="width:43%;background:var(--amber);opacity:0.5"></div>
+        <div class="pos-marker" style="left:43%"></div>
+      </div>
+    </div>
+    <div class="inst-levels">
+      <div class="lvl-group-hdr">Prev Day</div>
+      <div class="lvl-row"><span class="lvl-name">PDH</span><span class="lvl-val c-green">51,209</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_EQ</span><span class="lvl-val c-amber">50,817</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_Close</span><span class="lvl-val c-text">50,520</span></div>
+      <div class="lvl-row"><span class="lvl-name">PDL</span><span class="lvl-val c-red">50,425</span></div>
+      <div class="lvl-group-hdr">Opens</div>
+      <div class="lvl-row"><span class="lvl-name">MN_Open</span><span class="lvl-val c-amber">50,588</span></div>
+      <div class="lvl-row"><span class="lvl-name">RTH_Open</span><span class="lvl-val c-text">50,784</span></div>
+      <div class="lvl-group-hdr">Overnight</div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">50,765</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">50,500</span></div>
+      <div class="lvl-group-hdr">TV 4H · PW</div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High / EQ / Low</span><span class="lvl-val c-text">50,648 / 50,608 / 50,568</span></div>
+      <div class="lvl-row"><span class="lvl-name">PW_High / Low</span><span class="lvl-val c-muted">50,920 / 49,152</span></div>
+    </div>
+    <div class="bias-row-bottom">
+      <span class="bf bf-n">PD_EQ ✗</span>
+      <span class="bf bf-y">MN_Open ✓</span>
+      <span class="bf bf-w">SMT vs NQ</span>
+    </div>
+  </div>
+
+  <!-- GC -->
+  <div class="inst-card warn">
+    <div class="inst-head">
+      <div><div class="inst-sym">GC · Gold</div><div class="inst-desc">COMEX · RTH 08:20 NY</div></div>
+      <div class="inst-price">
+        <div class="inst-last" style="color:var(--amber)">4,488.00</div>
+        <div class="inst-badge badge-warn">Bearish</div>
+      </div>
+    </div>
+    <div class="pos-wrap">
+      <div class="pos-label"><span>PDL 4,480</span><span>4,488</span><span>PDH 4,583</span></div>
+      <div class="pos-track">
+        <div class="pos-fill" style="width:8%;background:var(--red);opacity:0.5"></div>
+        <div class="pos-marker" style="left:8%"></div>
+      </div>
+    </div>
+    <div class="inst-levels">
+      <div class="lvl-group-hdr">Prev Day</div>
+      <div class="lvl-row"><span class="lvl-name">PDH / BSL</span><span class="lvl-val c-green">4,583.30</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_EQ</span><span class="lvl-val c-amber">4,531.70</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_LW</span><span class="lvl-val c-amber">4,493.70</span></div>
+      <div class="lvl-row"><span class="lvl-name">PDL / SSL</span><span class="lvl-val c-red">4,480.00</span></div>
+      <div class="lvl-group-hdr">Opens</div>
+      <div class="lvl-row"><span class="lvl-name">MN_Open</span><span class="lvl-val c-amber">4,496.00</span></div>
+      <div class="lvl-row"><span class="lvl-name">D_Open / RTH</span><span class="lvl-val c-text">4,507.40 / 4,512.20</span></div>
+      <div class="lvl-group-hdr">Overnight</div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">4,528.10</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">4,473.40</span></div>
+      <div class="lvl-group-hdr">TV 4H · PW</div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High / EQ / Low</span><span class="lvl-val c-text">4,516.20 / 4,503.40 / 4,490.50</span></div>
+      <div class="lvl-row"><span class="lvl-name">PW_High / Low</span><span class="lvl-val c-muted">4,593.20 / 4,455.00</span></div>
+    </div>
+    <div class="bias-row-bottom">
+      <span class="bf bf-n">PD_EQ ✗</span>
+      <span class="bf bf-n">MN_Open ✗</span>
+      <span class="bf bf-w">SSL sweep</span>
+    </div>
+  </div>
+
+  <!-- CL -->
+  <div class="inst-card bear">
+    <div class="inst-head">
+      <div><div class="inst-sym">CL · WTI</div><div class="inst-desc">NYMEX · RTH 09:00 NY</div></div>
+      <div class="inst-price">
+        <div class="inst-last">90.32</div>
+        <div class="inst-badge badge-bear">Iran deal</div>
+      </div>
+    </div>
+    <div class="pos-wrap">
+      <div class="pos-label"><span>PDL 89.41</span><span>90.32</span><span>PDH 94.70</span></div>
+      <div class="pos-track">
+        <div class="pos-fill" style="width:17%;background:var(--red);opacity:0.5"></div>
+        <div class="pos-marker" style="left:17%"></div>
+      </div>
+    </div>
+    <div class="inst-levels">
+      <div class="lvl-group-hdr">Prev Day</div>
+      <div class="lvl-row"><span class="lvl-name">PDH / BSL</span><span class="lvl-val c-green">94.70</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_EQ</span><span class="lvl-val c-amber">92.06</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_Close</span><span class="lvl-val c-text">93.57</span></div>
+      <div class="lvl-row"><span class="lvl-name">PDL / SSL</span><span class="lvl-val c-red">89.41</span></div>
+      <div class="lvl-group-hdr">Opens</div>
+      <div class="lvl-row"><span class="lvl-name">MN_Open</span><span class="lvl-val c-amber">92.11</span></div>
+      <div class="lvl-row"><span class="lvl-name">D_Open / RTH</span><span class="lvl-val c-text">93.39 / 92.81</span></div>
+      <div class="lvl-group-hdr">Overnight</div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">93.69</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">89.69</span></div>
+      <div class="lvl-group-hdr">TV 4H · PW</div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High / EQ / Low</span><span class="lvl-val c-text">92.84 / 92.29 / 91.73</span></div>
+      <div class="lvl-row"><span class="lvl-name">PW_High / Low</span><span class="lvl-val c-muted">105.21 / 94.73</span></div>
+    </div>
+    <div class="bias-row-bottom">
+      <span class="bf bf-n">PD_EQ ✗</span>
+      <span class="bf bf-n">MN_Open ✗</span>
+      <span class="bf bf-na">PDL watch</span>
+    </div>
+  </div>
+
+  <!-- 6E -->
+  <div class="inst-card bull">
+    <div class="inst-head">
+      <div><div class="inst-sym">6E · Euro FX</div><div class="inst-desc">CME · RTH 08:00 NY</div></div>
+      <div class="inst-price">
+        <div class="inst-last">1.16540</div>
+        <div class="inst-badge badge-bull">USD weak</div>
+      </div>
+    </div>
+    <div class="pos-wrap">
+      <div class="pos-label"><span>PDL 1.16270</span><span>1.16540</span><span>PDH 1.16645</span></div>
+      <div class="pos-track">
+        <div class="pos-fill" style="width:72%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:72%"></div>
+      </div>
+    </div>
+    <div class="inst-levels">
+      <div class="lvl-group-hdr">Prev Day</div>
+      <div class="lvl-row"><span class="lvl-name">PDH / BSL</span><span class="lvl-val c-green">1.16645</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_UW</span><span class="lvl-val c-green">1.16535</span></div>
+      <div class="lvl-row"><span class="lvl-name">PD_EQ</span><span class="lvl-val c-amber">1.16458</span></div>
+      <div class="lvl-row"><span class="lvl-name">PDL / SSL</span><span class="lvl-val c-red">1.16270</span></div>
+      <div class="lvl-group-hdr">Opens</div>
+      <div class="lvl-row"><span class="lvl-name">MN_Open</span><span class="lvl-val c-amber">1.16490</span></div>
+      <div class="lvl-row"><span class="lvl-name">D_Open / RTH</span><span class="lvl-val c-text">1.16410 / 1.16460</span></div>
+      <div class="lvl-group-hdr">Overnight</div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">1.16600</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">1.16400</span></div>
+      <div class="lvl-group-hdr">TV 4H · PW</div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High / EQ / Low</span><span class="lvl-val c-text">1.16550 / 1.16498 / 1.16445</span></div>
+      <div class="lvl-row"><span class="lvl-name">PW_High / Low</span><span class="lvl-val c-muted">1.16770 / 1.15885</span></div>
+    </div>
+    <div class="bias-row-bottom">
+      <span class="bf bf-y">PD_EQ ✓</span>
+      <span class="bf bf-y">MN_Open ✓</span>
+      <span class="bf bf-info">USD weak ✓</span>
+    </div>
+  </div>
+
+</div><!-- /inst-grid -->
+
+<!-- ── BIAS SUMMARY ── -->
+<div class="sec-hdr"><span class="sec-title">Bias summary — 05:07 NY snapshot</span></div>
+<div class="bias-table-wrap">
+  <table class="btable">
+    <thead><tr><th>Instrument</th><th>Last</th><th>vs PD_EQ</th><th>vs MN_Open</th><th>Extended</th><th>Key read</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--green);font-weight:600">ESM26</td><td>7,556.75</td><td><span class="bf bf-y">✓ Above</span></td><td><span class="bf bf-y">✓ Above</span></td><td>—</td><td style="color:var(--muted);font-size:10px">Bullish · HTF breach active · PDH 13 pts away</td></tr>
+      <tr><td style="color:var(--amber);font-weight:600">NQM26</td><td>30,178.50</td><td><span class="bf bf-y">✓ Above</span></td><td><span class="bf bf-y">✓ Above</span></td><td><span class="bf bf-w">⚠ +59 PDH</span></td><td style="color:var(--muted);font-size:10px">Extended — no 4H low sweep in Asia</td></tr>
+      <tr><td style="color:var(--amber);font-weight:600">YMM26</td><td>50,761</td><td><span class="bf bf-n">✗ Below</span></td><td><span class="bf bf-y">✓ Above</span></td><td>—</td><td style="color:var(--muted);font-size:10px">Lagging NQ — SMT divergence active</td></tr>
+      <tr><td style="color:var(--amber);font-weight:600">GC</td><td>4,488.00</td><td><span class="bf bf-n">✗ Below</span></td><td><span class="bf bf-n">✗ Below</span></td><td>—</td><td style="color:var(--muted);font-size:10px">Below P4H_Low · SSL sweep · RTH 08:20 NY</td></div></td></tr>
+      <tr><td style="color:var(--red);font-weight:600">CL</td><td>90.32</td><td><span class="bf bf-n">✗ Below</span></td><td><span class="bf bf-n">✗ Below</span></td><td>—</td><td style="color:var(--muted);font-size:10px">Iran deal selling · PDL 89.41 = macro tell</td></tr>
+      <tr><td style="color:var(--green);font-weight:600">6E</td><td>1.16540</td><td><span class="bf bf-y">✓ Above</span></td><td><span class="bf bf-y">✓ Above</span></td><td>—</td><td style="color:var(--muted);font-size:10px">USD weak · confirms ES bull bias</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── 4H BREAKDOWN ── -->
+<div class="sec-hdr"><span class="sec-title">TV 4H candle breakdown — anchor 18:00 NY · all times NY</span></div>
+<div class="fh-wrap">
+  <table class="fh-table">
+    <thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>ES status / setup</th></tr></thead>
+    <tbody>
+      <tr><td>#1</td><td>18:00–22:00</td><td style="color:var(--muted)">00:00–04:00</td><td>Globex open</td><td style="color:var(--muted);font-size:10px">Done. Asia box 7,529–7,548 formed. MN_Open (7,539) = 4H mid. No sweep.</td></tr>
+      <tr><td>#2</td><td>22:00–02:00</td><td style="color:var(--muted)">04:00–08:00</td><td>Asia mid</td><td style="color:var(--muted);font-size:10px">Done. Swept 4H #1 high → extended to 7,559.75. Closed above PD_UW. <span style="color:var(--green)">Bullish break confirmed.</span></td></tr>
+      <tr class="active"><td>#3 ◀</td><td>02:00–06:00</td><td style="color:var(--muted)">08:00–12:00</td><td><span style="color:var(--blue)">London · NOW</span></td><td style="font-size:10px"><span style="color:var(--green)">Long:</span> PDH 7,569.75 sweep + hold → continuation. <span style="color:var(--red)">Short:</span> PDH swept + NQ rejects ON_High → OTE to PD_UW 7,551. 4H low: 7,535.50.</td></tr>
+      <tr><td>#4</td><td>06:00–10:00</td><td style="color:var(--muted)">12:00–16:00</td><td>RTH 09:30 NY</td><td style="color:var(--muted);font-size:10px">Pending. Key: above PD_UW (7,551) at open = bull all day. 10:00 NY: 3 releases → wait 5–10 min.</td></tr>
+      <tr><td>#5</td><td>10:00–14:00</td><td style="color:var(--muted)">16:00–20:00</td><td>NY AM / PM</td><td style="color:var(--muted);font-size:10px">Pending. Pre-GDP positioning. DW close above PD_UW 7,551 = bull confirmed. Reduce size.</td></tr>
+      <tr><td>#6</td><td>14:00–18:00</td><td style="color:var(--muted)">20:00–00:00</td><td>Close / Globex</td><td style="color:var(--muted);font-size:10px">Pending. RTH closes 16:00 NY. Watch overnight range setup for Thu.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── SESSION TABS ── -->
+<div class="sec-hdr"><span class="sec-title">Session breakdown — ES · NQ · GC</span></div>
+<div class="tabs-wrap">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('es')">ES — S&P 500</button>
+    <button class="tab-btn" onclick="showTab('nq')">NQ — NASDAQ</button>
+    <button class="tab-btn" onclick="showTab('gc')">GC — Gold</button>
+  </div>
+
+  <div id="tab-es" class="tab-content active">
+    <div class="sess-grid">
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">Asia (4H #1 + #2)</span><span class="inst-badge badge-bull">Bullish close</span></div>
+        <div class="sess-time">18:00–02:00 NY · Done</div>
+        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">4H #1 box 7,529–7,548. 4H #2 swept above to 7,559.75. Closed above PD_UW (7,551.25), PD_EQ (7,543.38) and MN_Open (7,539). <b>All bias flags green.</b></div></div>
+        <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">CL selling on Iran deal = macro tailwind. 6E above MN_Open = USD weak confirmation. Intermarket aligned bullish.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-info">Active now</span></div>
+        <div class="sess-time">02:00–06:00 NY · 4H #3</div>
+        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt"><b>Primary:</b> PDH (7,569.75) swept + holds = long continuation. Confluence: NQ > P4H_EQ 30,113 + 6E above MN.</div></div>
+        <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt"><b>Conditional short:</b> PDH swept + NQ rejects ON_High (30,217.75) + YM below PD_EQ (50,817) = SMT → OTE short to PD_UW 7,551 → P4H_EQ 7,541.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">NY AM / RTH (4H #4)</span><span class="inst-badge badge-warn">Pending</span></div>
+        <div class="sess-time">06:00–10:00 NY</div>
+        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">RTH 09:30 NY: above PD_UW (7,551.25) = bull all session. Below = OTE long at PD_EQ 7,543.38.</div></div>
+        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">10:00 NY: 3 simultaneous releases → 5–10 min pause. If London rejects from PDH, NY AM = OTE long session.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">NY PM (4H #5)</span><span class="inst-badge badge-warn">Reduce size</span></div>
+        <div class="sess-time">10:00–14:00 NY</div>
+        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pre-GDP positioning. DW close: above PD_UW 7,551.25 = bull confirmed. Below PD_EQ 7,543 = first bearish signal. Reduce all size after 16:00 NY.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-nq" class="tab-content">
+    <div class="sess-grid">
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">Asia (4H #1 + #2)</span><span class="inst-badge badge-warn">Extended</span></div>
+        <div class="sess-time">18:00–02:00 NY · Done</div>
+        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Opened above PDH (30,118.75) — <b>no 4H low sweep during Asia.</b> One-directional run to 30,217.75. Elevated reversal risk.</div></div>
+        <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">OTE long zone for any pullback: P4H_Low 30,067.75 → MN_Open 30,097.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-info">Active · Pulling back</span></div>
+        <div class="sess-time">02:00–06:00 NY · Now</div>
+        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt"><b>Long:</b> pullback to P4H_Low (30,067.75) / MN_Open (30,097) → OTE long → target ON_High 30,217.75. Stop below P4H_Low.</div></div>
+        <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt"><b>Rejection:</b> ON_High (30,217.75) swept + rejected → P4H_EQ 30,113 → PDH 30,118 reclaim.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">NY AM / RTH (4H #4)</span><span class="inst-badge badge-warn">PDH reclaim test</span></div>
+        <div class="sess-time">06:00–10:00 NY</div>
+        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">Hold above PDH (30,118.75) on 5-min close = confirmed breakout. Fail = OTE long at P4H_EQ 30,113 / MN_Open 30,097.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">NY PM (4H #5)</span><span class="inst-badge badge-warn">Reduce size</span></div>
+        <div class="sess-time">10:00–14:00 NY</div>
+        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Watch weekly close above PDH (30,118.75). Hot PCE tomorrow = NQ gaps down hard. Reduce size PM.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-gc" class="tab-content">
+    <div class="sess-grid">
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">Asia (4H #1 + #2)</span><span class="inst-badge badge-bear">SSL sweep</span></div>
+        <div class="sess-time">18:00–02:00 NY · Done</div>
+        <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">ON_Low (4,473.40) broke below PDL (4,480) — <b>SSL sweep 6.60 pts.</b> Both 4H candles closed below PDL. Price now at 4,488.</div></div>
+        <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">6E bullish = USD weak = macro GC tailwind. OTE long zone: ON_Low 4,473.40 → PDL 4,480.00.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">Pre-RTH (4H #3)</span><span class="inst-badge badge-info">Active · Watch</span></div>
+        <div class="sess-time">02:00–06:00 NY · RTH 08:20 NY</div>
+        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt"><b>Long:</b> reclaim P4H_Low (4,490.50) then MN_Open (4,496) at RTH open = bull confirmation. Targets: PD_LW 4,493.70 → P4H_EQ 4,503.40 → D_Open 4,507.40.</div></div>
+        <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt"><b>Bear:</b> fails MN_Open → retest ON_Low 4,473.40 → PW_Low 4,455.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">NY AM RTH (4H #4)</span><span class="inst-badge badge-warn">MN_Open test</span></div>
+        <div class="sess-time">06:00–10:00 NY · RTH opens 08:20</div>
+        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">RTH open above MN_Open (4,496) + hold = OTE long active. 10:00 NY: watch 6E reaction first — fastest USD tell for GC.</div></div>
+      </div>
+      <div class="sess-card">
+        <div class="sess-head"><span class="sess-name">NY PM (4H #5)</span><span class="inst-badge badge-warn">Reduce size</span></div>
+        <div class="sess-time">10:00–13:30 NY settlement</div>
+        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">COMEX settlement 13:30 NY. Tomorrow PCE = primary GC driver. Hot PCE = GC drops. Do not hold into settlement with GDP risk tomorrow.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PRIORITY SETUPS ── -->
+<div class="sec-hdr"><span class="sec-title">Priority sweep setups — 4H mid/low focus</span></div>
+<div class="setups-wrap">
+  <div class="setup-row">
+    <div class="setup-icon si-bull">▲</div>
+    <div class="setup-body">
+      <div class="setup-title c-green">ES — PDH sweep → continuation long <span class="inst-badge badge-bull" style="margin-left:6px">Primary ES</span></div>
+      <div class="setup-detail">Price 7,556.75 — PDH 7,569.75 = 13 pts. 4H #3 London active. Both bias flags green. PDH swept + holds on 1-min close = long continuation. Confluence: NQ > P4H_EQ 30,113 + 6E above MN_Open + CL breaks PDL 89.41 on Iran deal. Stop: below PD_UW 7,551.25.</div>
+    </div>
+  </div>
+  <div class="setup-row">
+    <div class="setup-icon si-bear">▼</div>
+    <div class="setup-body">
+      <div class="setup-title c-red">ES — PDH rejection → OTE short to P4H_EQ <span class="inst-badge badge-warn" style="margin-left:6px">Conditional</span></div>
+      <div class="setup-detail">PDH (7,569.75) swept + NQ rejects ON_High (30,217.75) simultaneously + YM still below PD_EQ (50,817) = SMT divergence confirmed → OTE short 62–79%. Targets: PD_UW 7,551.25 → P4H_EQ 7,541.25. Stop: above PDH + 2 ticks.</div>
+    </div>
+  </div>
+  <div class="setup-row">
+    <div class="setup-icon si-bull">▲</div>
+    <div class="setup-body">
+      <div class="setup-title c-green">NQ — 4H low sweep → OTE long at P4H_EQ / MN_Open <span class="inst-badge badge-bull" style="margin-left:6px">Primary NQ</span></div>
+      <div class="setup-detail">No Asia 4H low sweep — overextended. Pullback to P4H_Low (30,067.75) or MN_Open (30,097) during 4H #3 = OTE long. Entry zone: 30,067–30,097. Target: ON_High 30,217.75. Confluence: ES holding above PD_UW 7,551.25. Stop: below P4H_Low 30,067.75.</div>
+    </div>
+  </div>
+  <div class="setup-row">
+    <div class="setup-icon si-bull">▲</div>
+    <div class="setup-body">
+      <div class="setup-title c-green">GC — PDL zone → OTE long <span class="inst-badge badge-bull" style="margin-left:6px">Primary GC</span></div>
+      <div class="setup-detail">Price 4,488 below P4H_Low (4,490.50) and MN_Open (4,496). OTE long zone: ON_Low 4,473.40 → PDL 4,480. RTH open 08:20 NY = confirmation bar — reclaim P4H_Low + MN_Open = active. Targets: PD_LW 4,493.70 → P4H_EQ 4,503.40 → D_Open 4,507.40. Stop: below ON_Low 4,473.40. Confluence: 6E above MN_Open = USD weak = GC tailwind.</div>
+    </div>
+  </div>
+  <div class="setup-row">
+    <div class="setup-icon si-warn">!</div>
+    <div class="setup-body">
+      <div class="setup-title c-amber">CL — PDL macro tell · Iran deal real-time signal <span class="inst-badge badge-info" style="margin-left:6px">Monitor</span></div>
+      <div class="setup-detail">CL 90.32 — PDL 89.41 = 0.91 pts. ON_Low 89.69 already swept. CL breaks PDL = Iran deal advancing = ES continues higher + GC supported. CL bounces from PDL area = deal stalling = risk off all instruments. Watch CL at 09:00 NY RTH open as the session macro tell.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NEWS ── -->
+<div class="sec-hdr"><span class="sec-title">News calendar — all times NY</span></div>
+<div class="news-wrap">
+  <div class="news-row" style="display:block;padding:8px 16px;background:rgba(240,165,0,0.05);border-bottom:1px solid var(--border);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)">Today — Wednesday 27 May</div>
+  <div class="news-row">
+    <div><div class="news-time">10:00 NY</div><div style="font-size:9px;color:var(--muted)">16:00 AMS</div></div>
+    <div><span class="inst-badge badge-warn">Med</span></div>
+    <div><div class="news-ev">New Residential Sales + Richmond Fed + Corp Bond Distress</div><div class="news-note">3 simultaneous. Soft = USD weak = ES up, GC supported. Watch 6E first. Wait 5–10 min post-print before entering.</div></div>
+  </div>
+  <div class="news-row">
+    <div><div class="news-time">All day</div></div>
+    <div><span class="inst-badge badge-bear">HIGH</span></div>
+    <div><div class="news-ev">Iran deal headlines</div><div class="news-note">CL is the real-time tell. CL breaks PDL 89.41 = deal advancing = ES bull + GC supported. CL bounces = deal stalling = risk off.</div></div>
+  </div>
+  <div class="news-row" style="display:block;padding:8px 16px;background:rgba(240,165,0,0.05);border-bottom:1px solid var(--border);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)">Tomorrow — Thursday 28 May · Reduce size PM today</div>
+  <div class="news-row">
+    <div><div class="news-time">08:30 NY</div><div style="font-size:9px;color:var(--muted)">14:30 AMS</div></div>
+    <div><span class="inst-badge badge-bear">HIGH</span></div>
+    <div><div class="news-ev">GDP Q1 2nd + PCE Deflator + Claims + Durable Goods</div><div class="news-note">Biggest event of the week — 4 simultaneous. PCE primary. Hot = ES/NQ gap down, GC drops. Cool = risk rally, GC recovers. Pre-positioning starts today PM. Reduce ALL size after 16:00 NY.</div></div>
+  </div>
+</div>
+<div class="warn-banner">
+  <span style="font-size:16px">⚠</span>
+  <span><strong>Tomorrow 08:30 NY / 14:30 AMS:</strong> GDP + PCE + Claims + Durable Goods simultaneously. Reduce ALL instrument size on PM trades today after 16:00 NY.</span>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <div class="footer-brand">David_AMS</div>
+    <div style="font-size:10px;color:var(--muted);margin-top:2px">amsreport v3 · DW_AMS_Bridge v1.2 · TV 4H anchor 18:00 NY · All times NY</div>
+  </div>
+  <div style="text-align:right;font-size:10px;color:var(--muted)">
+    Not financial advice · David_AMS private group<br>
+    Wed 27 May 2026 · 05:07 NY
+  </div>
+</footer>
+
+</div><!-- /wrap -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`#tab-${id}`).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
