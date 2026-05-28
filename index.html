@@ -207,7 +207,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </div>
     <div>
       <div class="live-badge"><span class="live-dot"></span>Next day prep · Bridge v1.2</div>
-      <div class="date-time"><strong>Thu, May 28, 2026</strong><br>Thursday, May 28, 2026 at 16:54<br>4H #6 active · NY PM / Close · Late session. Build context for tomorrow. Asian session setup begins at 20:00 NY.</div>
+      <div class="date-time"><strong>Thu, May 28, 2026</strong><br>Thursday, May 28, 2026 at 17:13<br>4H #6 active · NY PM / Close · Late session. Build context for tomorrow. Asian session setup begins at 20:00 NY.</div>
     </div>
     <div style="display:flex;gap:8px;align-items:center;flex-shrink:0">
       <select id="tz-selector" style="background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--muted);cursor:pointer;font-family:var(--mono);font-size:10px;padding:5px 8px"></select>
@@ -220,44 +220,70 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 
 <div class="sec-hdr"><span class="sec-title">⚡ Power of Three &amp; HTF Order Flow — AMD phases · candle bias · PO3 profile per instrument</span></div>
 <div class="po3-section">
-  <div class="po3-banners"></div>
+  <div class="po3-banners">
+    <div class="po3-banner" style="border-left-color:#8b5cf6">
+      <span class="po3-banner-label">Monthly PO3</span>
+      <span class="po3-banner-phase" style="color:#8b5cf6">COMPLETION</span>
+      <span class="po3-banner-desc">Week 4 — monthly completion / mean reversion</span>
+      <span class="po3-banner-sub">Day 28</span>
+    </div>
+    <div class="po3-banner" style="border-left-color:#22c55e">
+      <span class="po3-banner-label">Weekly PO3</span>
+      <span class="po3-banner-phase" style="color:#22c55e">DISTRIBUTION · THURSDAY</span>
+      <span class="po3-banner-desc">Thu — expansion continues, target opposite side</span>
+    </div></div>
   <div class="po3-grid"><div class="po3-card">
       <div class="po3-card-hdr">
         <span class="po3-sym">ES</span>
         <span class="po3-desc">E-mini S&P 500</span>
-        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+        <span class="po3-bias" style="background:#22c55e">BULLISH</span>
       </div>
       <div class="po3-body">
 
         <div class="po3-col">
           <div class="po3-col-title">HTF Order Flow</div>
-          
-          
-          
-          <div class="htf-flags"></div>
-          <div class="htf-score">Score: — of ±5</div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PM</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:6562</span>
+        <span class="htf-px">C:7243.75</span>
+      </div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PW</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:7410</span>
+        <span class="htf-px">C:7491</span>
+      </div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PD</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:7533</span>
+        <span class="htf-px">C:7540</span>
+      </div>
+          <div class="htf-flags"><span class="htf-ftd-bull">↩ FTD bull (PDL swept+recovered)</span></div>
+          <div class="htf-score">Score: +4 of ±5</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Weekly PO3</div>
-          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
-          <div class="po3-phase-desc">—</div>
-          
-          
-          
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#22c55e">BULLISH</span>
+          <div class="po3-phase-desc">Thu — expansion continues, target opposite side</div>
+          <div class="po3-lvl">Week open: <b class="c-amber">7519</b></div>
+          <div class="po3-vs">+68.75 above week open</div>
+          <div class="po3-lvl">HOW: <b class="c-green">7590.75</b></div>
+          <div class="po3-lvl">LOW: <b class="c-red">7505.75</b></div>
+          <div class="po3-conf">Confidence: HIGH</div>
+          <div class="po3-pw-rel">ABOVE PW_HIGH — bullish displacement</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Intraday AMD</div>
-          <span class="po3-phase-badge" style="background:#64748b">—</span>
-          <div class="po3-phase-desc">—</div>
-          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#ef4444">DISTRIBUTION</span>
+          <div class="po3-phase-desc">NY session 09:30+ NY — true directional move, follow HTF bias</div>
+          <div class="judas-sweep judas-bear">▲ SWEPT HIGH (bearish signal)</div>
+          <div class="po3-lvl">ACC High: <b class="c-green">7551.75</b></div>
+          <div class="po3-lvl">ACC Low: <b class="c-red">7505.75</b></div>
+          <div class="po3-lvl">ACC EQ: <b class="c-amber">7528.75</b></div>
         </div>
 
       </div>
@@ -266,39 +292,54 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="po3-card-hdr">
         <span class="po3-sym">NQ</span>
         <span class="po3-desc">E-mini NASDAQ 100</span>
-        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+        <span class="po3-bias" style="background:#22c55e">BULLISH</span>
       </div>
       <div class="po3-body">
 
         <div class="po3-col">
           <div class="po3-col-title">HTF Order Flow</div>
-          
-          
-          
-          <div class="htf-flags"></div>
-          <div class="htf-score">Score: — of ±5</div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PM</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:23889</span>
+        <span class="htf-px">C:27596</span>
+      </div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PW</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:29135</span>
+        <span class="htf-px">C:29558.75</span>
+      </div>
+          <div class="htf-row bear">
+        <span class="htf-lbl">PD</span>
+        <span class="htf-cnd">🔴 BEAR</span>
+        <span class="htf-px">O:30050</span>
+        <span class="htf-px">C:30047.25</span>
+      </div>
+          <div class="htf-flags"><span class="htf-ftd-bull">↩ FTD bull (PDL swept+recovered)</span></div>
+          <div class="htf-score">Score: +2 of ±5</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Weekly PO3</div>
-          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
-          <div class="po3-phase-desc">—</div>
-          
-          
-          
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#22c55e">BULLISH</span>
+          <div class="po3-phase-desc">Thu — expansion continues, target opposite side</div>
+          <div class="po3-lvl">Week open: <b class="c-amber">29676.25</b></div>
+          <div class="po3-vs">+636.75 above week open</div>
+          <div class="po3-lvl">HOW: <b class="c-green">30379</b></div>
+          <div class="po3-lvl">LOW: <b class="c-red">29676.25</b></div>
+          <div class="po3-conf">Confidence: HIGH</div>
+          <div class="po3-pw-rel">ABOVE PW_HIGH — bullish displacement</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Intraday AMD</div>
-          <span class="po3-phase-badge" style="background:#64748b">—</span>
-          <div class="po3-phase-desc">—</div>
-          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#ef4444">DISTRIBUTION</span>
+          <div class="po3-phase-desc">NY session 09:30+ NY — true directional move, follow HTF bias</div>
+          <div class="judas-sweep judas-bear">▲ SWEPT HIGH (bearish signal)</div>
+          <div class="po3-lvl">ACC High: <b class="c-green">30090</b></div>
+          <div class="po3-lvl">ACC Low: <b class="c-red">29763</b></div>
+          <div class="po3-lvl">ACC EQ: <b class="c-amber">29926.5</b></div>
         </div>
 
       </div>
@@ -307,39 +348,54 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="po3-card-hdr">
         <span class="po3-sym">YM</span>
         <span class="po3-desc">E-mini Dow Jones</span>
-        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+        <span class="po3-bias" style="background:#22c55e">BULLISH</span>
       </div>
       <div class="po3-body">
 
         <div class="po3-col">
           <div class="po3-col-title">HTF Order Flow</div>
-          
-          
-          
-          <div class="htf-flags"></div>
-          <div class="htf-score">Score: — of ±5</div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PM</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:46492</span>
+        <span class="htf-px">C:49835</span>
+      </div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PW</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:49464</span>
+        <span class="htf-px">C:50662</span>
+      </div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PD</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:50508</span>
+        <span class="htf-px">C:50728</span>
+      </div>
+          <div class="htf-flags"><span class="htf-ftd-bull">↩ FTD bull (PDL swept+recovered)</span></div>
+          <div class="htf-score">Score: +4 of ±5</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Weekly PO3</div>
-          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
-          <div class="po3-phase-desc">—</div>
-          
-          
-          
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#ef4444">BEARISH</span>
+          <div class="po3-phase-desc">Thu — expansion continues, target opposite side</div>
+          <div class="po3-lvl">Week open: <b class="c-amber">50776</b></div>
+          <div class="po3-vs">-18 below week open</div>
+          <div class="po3-lvl">HOW: <b class="c-green">51209</b></div>
+          <div class="po3-lvl">LOW: <b class="c-red">50386</b></div>
+          <div class="po3-conf">Confidence: HIGH</div>
+          <div class="po3-pw-rel">In PW range — upper half (mild bull)</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Intraday AMD</div>
-          <span class="po3-phase-badge" style="background:#64748b">—</span>
-          <div class="po3-phase-desc">—</div>
-          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#ef4444">DISTRIBUTION</span>
+          <div class="po3-phase-desc">NY session 09:30+ NY — true directional move, follow HTF bias</div>
+          <div class="judas-sweep judas-neutral">↕ BOTH SIDES (indecisive)</div>
+          <div class="po3-lvl">ACC High: <b class="c-green">50800</b></div>
+          <div class="po3-lvl">ACC Low: <b class="c-red">50594</b></div>
+          <div class="po3-lvl">ACC EQ: <b class="c-amber">50697</b></div>
         </div>
 
       </div>
@@ -348,35 +404,50 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="po3-card-hdr">
         <span class="po3-sym">GC</span>
         <span class="po3-desc">COMEX Gold</span>
-        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+        <span class="po3-bias" style="background:#ef4444">BEARISH</span>
       </div>
       <div class="po3-body">
 
         <div class="po3-col">
           <div class="po3-col-title">HTF Order Flow</div>
-          
-          
-          
-          <div class="htf-flags"></div>
-          <div class="htf-score">Score: — of ±5</div>
+          <div class="htf-row bear">
+        <span class="htf-lbl">PM</span>
+        <span class="htf-cnd">🔴 BEAR</span>
+        <span class="htf-px">O:4686.4</span>
+        <span class="htf-px">C:4614.7</span>
+      </div>
+          <div class="htf-row bear">
+        <span class="htf-lbl">PW</span>
+        <span class="htf-cnd">🔴 BEAR</span>
+        <span class="htf-px">O:4563</span>
+        <span class="htf-px">C:4521</span>
+      </div>
+          <div class="htf-row bear">
+        <span class="htf-lbl">PD</span>
+        <span class="htf-cnd">🔴 BEAR</span>
+        <span class="htf-px">O:4572.8</span>
+        <span class="htf-px">C:4500.4</span>
+      </div>
+          <div class="htf-flags"><span class="htf-disp-dn">▼ PD displaced below prior L</span></div>
+          <div class="htf-score">Score: -4 of ±5</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Weekly PO3</div>
-          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
-          <div class="po3-phase-desc">—</div>
-          
-          
-          
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#ef4444">BEARISH</span>
+          <div class="po3-phase-desc">Thu — expansion continues, target opposite side</div>
+          <div class="po3-lvl">Week open: <b class="c-amber">4572.8</b></div>
+          <div class="po3-vs">-125.8 below week open</div>
+          <div class="po3-lvl">HOW: <b class="c-green">4572.8</b></div>
+          <div class="po3-lvl">LOW: <b class="c-red">4439.7</b></div>
+          <div class="po3-conf">Confidence: HIGH</div>
+          <div class="po3-pw-rel">In PW range — lower half (mild bear)</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Intraday AMD</div>
-          <span class="po3-phase-badge" style="background:#64748b">—</span>
-          <div class="po3-phase-desc">—</div>
+          <span class="po3-phase-badge" style="background:#ef4444">DISTRIBUTION</span>
+          <div class="po3-phase-desc">NY session 09:30+ NY — true directional move, follow HTF bias</div>
           <div class="judas-sweep judas-none">— NO SWEEP YET</div>
           
           
@@ -395,33 +466,48 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 
         <div class="po3-col">
           <div class="po3-col-title">HTF Order Flow</div>
-          
-          
-          
-          <div class="htf-flags"></div>
-          <div class="htf-score">Score: — of ±5</div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PM</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:87.06</span>
+        <span class="htf-px">C:99.14</span>
+      </div>
+          <div class="htf-row bear">
+        <span class="htf-lbl">PW</span>
+        <span class="htf-cnd">🔴 BEAR</span>
+        <span class="htf-px">O:101.74</span>
+        <span class="htf-px">C:96.6</span>
+      </div>
+          <div class="htf-row bear">
+        <span class="htf-lbl">PD</span>
+        <span class="htf-cnd">🔴 BEAR</span>
+        <span class="htf-px">O:93.39</span>
+        <span class="htf-px">C:88.68</span>
+      </div>
+          <div class="htf-flags"><span class="htf-disp-dn">▼ PD displaced below prior L</span><span class="htf-ftd-bull">↩ FTD bull (PDL swept+recovered)</span></div>
+          <div class="htf-score">Score: -1 of ±5</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Weekly PO3</div>
-          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
-          <div class="po3-phase-desc">—</div>
-          
-          
-          
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#ef4444">BEARISH</span>
+          <div class="po3-phase-desc">Thu — expansion continues, target opposite side</div>
+          <div class="po3-lvl">Week open: <b class="c-amber">93.88</b></div>
+          <div class="po3-vs">-5.35 below week open</div>
+          <div class="po3-lvl">HOW: <b class="c-green">94.7</b></div>
+          <div class="po3-lvl">LOW: <b class="c-red">87.11</b></div>
+          <div class="po3-conf">Confidence: HIGH</div>
+          <div class="po3-pw-rel">BELOW PW_LOW — bearish displacement</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Intraday AMD</div>
-          <span class="po3-phase-badge" style="background:#64748b">—</span>
-          <div class="po3-phase-desc">—</div>
-          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#ef4444">DISTRIBUTION</span>
+          <div class="po3-phase-desc">NY session 09:30+ NY — true directional move, follow HTF bias</div>
+          <div class="judas-sweep judas-bull">▼ SWEPT LOW (bullish signal)</div>
+          <div class="po3-lvl">ACC High: <b class="c-green">92.52</b></div>
+          <div class="po3-lvl">ACC Low: <b class="c-red">89.61</b></div>
+          <div class="po3-lvl">ACC EQ: <b class="c-amber">91.06</b></div>
         </div>
 
       </div>
@@ -436,33 +522,48 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 
         <div class="po3-col">
           <div class="po3-col-title">HTF Order Flow</div>
-          
-          
-          
-          <div class="htf-flags"></div>
-          <div class="htf-score">Score: — of ±5</div>
+          <div class="htf-row bull">
+        <span class="htf-lbl">PM</span>
+        <span class="htf-cnd">🟢 BULL</span>
+        <span class="htf-px">O:1.1591</span>
+        <span class="htf-px">C:1.176</span>
+      </div>
+          <div class="htf-row bear">
+        <span class="htf-lbl">PW</span>
+        <span class="htf-cnd">🔴 BEAR</span>
+        <span class="htf-px">O:1.1637</span>
+        <span class="htf-px">C:1.1624</span>
+      </div>
+          <div class="htf-row bear">
+        <span class="htf-lbl">PD</span>
+        <span class="htf-cnd">🔴 BEAR</span>
+        <span class="htf-px">O:1.1641</span>
+        <span class="htf-px">C:1.16395</span>
+      </div>
+          <div class="htf-flags"><span class="htf-ftd-bull">↩ FTD bull (PDL swept+recovered)</span><span class="htf-ftd-bear">↩ FTD bear (PDH swept+rejected)</span></div>
+          <div class="htf-score">Score: -1 of ±5</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Weekly PO3</div>
-          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
-          <div class="po3-phase-desc">—</div>
-          
-          
-          
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#22c55e">BULLISH</span>
+          <div class="po3-phase-desc">Thu — expansion continues, target opposite side</div>
+          <div class="po3-lvl">Week open: <b class="c-amber">1.1641</b></div>
+          <div class="po3-vs">+0.00175 above week open</div>
+          <div class="po3-lvl">HOW: <b class="c-green">1.1672</b></div>
+          <div class="po3-lvl">LOW: <b class="c-red">1.15945</b></div>
+          <div class="po3-conf">Confidence: HIGH</div>
+          <div class="po3-pw-rel">In PW range — upper half (mild bull)</div>
         </div>
 
         <div class="po3-col">
           <div class="po3-col-title">Intraday AMD</div>
-          <span class="po3-phase-badge" style="background:#64748b">—</span>
-          <div class="po3-phase-desc">—</div>
-          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
-          
-          
-          
+          <span class="po3-phase-badge" style="background:#ef4444">DISTRIBUTION</span>
+          <div class="po3-phase-desc">NY session 09:30+ NY — true directional move, follow HTF bias</div>
+          <div class="judas-sweep judas-bear">▲ SWEPT HIGH (bearish signal)</div>
+          <div class="po3-lvl">ACC High: <b class="c-green">1.16375</b></div>
+          <div class="po3-lvl">ACC Low: <b class="c-red">1.15945</b></div>
+          <div class="po3-lvl">ACC EQ: <b class="c-amber">1.1616</b></div>
         </div>
 
       </div>
@@ -475,12 +576,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">ES</div><div class="inst-desc">E-mini S&P 500</div></div>
       <div class="inst-price">
-        <div class="inst-last">7588.5</div>
+        <div class="inst-last">7587.75</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 7515</span><span>7588.5</span><span>PDH 7570.75</span></div>
+      <div class="pos-label"><span>PDL 7515</span><span>7587.75</span><span>PDH 7570.75</span></div>
       <div class="pos-track">
         <div class="pos-fill" style="width:100%;background:var(--green);opacity:0.5"></div>
         <div class="pos-marker" style="left:100%"></div>
@@ -527,15 +628,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">NQ</div><div class="inst-desc">E-mini NASDAQ 100</div></div>
       <div class="inst-price">
-        <div class="inst-last">30324</div>
+        <div class="inst-last">30313</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 29877.5</span><span>30324</span><span>PDH 30379</span></div>
+      <div class="pos-label"><span>PDL 29877.5</span><span>30313</span><span>PDH 30379</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:89%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:89%"></div>
+        <div class="pos-fill" style="width:87%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:87%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -579,15 +680,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">YM</div><div class="inst-desc">E-mini Dow Jones</div></div>
       <div class="inst-price">
-        <div class="inst-last">50765</div>
+        <div class="inst-last">50758</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 50500</span><span>50765</span><span>PDH 50896</span></div>
+      <div class="pos-label"><span>PDL 50500</span><span>50758</span><span>PDH 50896</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:67%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:67%"></div>
+        <div class="pos-fill" style="width:65%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:65%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -683,15 +784,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">CL</div><div class="inst-desc">NYMEX Crude Oil</div></div>
       <div class="inst-price">
-        <div class="inst-last">88.66</div>
+        <div class="inst-last">88.53</div>
         <div class="inst-badge badge-bear">Bearish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 87.77</span><span>88.66</span><span>PDH 93.69</span></div>
+      <div class="pos-label"><span>PDL 87.77</span><span>88.53</span><span>PDH 93.69</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:15%;background:var(--red);opacity:0.5"></div>
-        <div class="pos-marker" style="left:15%"></div>
+        <div class="pos-fill" style="width:13%;background:var(--red);opacity:0.5"></div>
+        <div class="pos-marker" style="left:13%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -735,15 +836,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">6E</div><div class="inst-desc">Euro FX Futures</div></div>
       <div class="inst-price">
-        <div class="inst-last">1.1658</div>
+        <div class="inst-last">1.16585</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 1.16325</span><span>1.1658</span><span>PDH 1.1672</span></div>
+      <div class="pos-label"><span>PDL 1.16325</span><span>1.16585</span><span>PDH 1.1672</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:65%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:65%"></div>
+        <div class="pos-fill" style="width:66%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:66%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -789,7 +890,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <thead><tr><th>Inst</th><th>Last</th><th>PD_EQ</th><th>MN_Open</th><th>FX4 Zone</th><th>Asia Setup</th><th>DOL</th><th>Suggested target</th></tr></thead>
     <tbody><tr>
       <td style="color:var(--green);font-weight:600">ES</td>
-      <td style="font-variant-numeric:tabular-nums">7588.5</td>
+      <td style="font-variant-numeric:tabular-nums">7587.75</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
@@ -799,7 +900,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--green);font-weight:600">NQ</td>
-      <td style="font-variant-numeric:tabular-nums">30324</td>
+      <td style="font-variant-numeric:tabular-nums">30313</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
@@ -809,7 +910,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--green);font-weight:600">YM</td>
-      <td style="font-variant-numeric:tabular-nums">50765</td>
+      <td style="font-variant-numeric:tabular-nums">50758</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
@@ -829,7 +930,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--red);font-weight:600">CL</td>
-      <td style="font-variant-numeric:tabular-nums">88.66</td>
+      <td style="font-variant-numeric:tabular-nums">88.53</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-y" style="font-size:9px">Dbl Discount</span></td>
@@ -839,7 +940,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--green);font-weight:600">6E</td>
-      <td style="font-variant-numeric:tabular-nums">1.1658</td>
+      <td style="font-variant-numeric:tabular-nums">1.16585</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
@@ -1598,11 +1699,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">7588.5</td>
+      <td style="font-variant-numeric:tabular-nums">7587.75</td>
       <td style="font-variant-numeric:tabular-nums">7533</td>
-      <td style="font-variant-numeric:tabular-nums">7560.75</td>
+      <td style="font-variant-numeric:tabular-nums">7560.38</td>
       <td><span class="bf bf-n">▼ Bear gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">55.5000</td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">54.7500</td>
       <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
@@ -1683,11 +1784,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">30324</td>
+      <td style="font-variant-numeric:tabular-nums">30313</td>
       <td style="font-variant-numeric:tabular-nums">30050</td>
-      <td style="font-variant-numeric:tabular-nums">30187</td>
+      <td style="font-variant-numeric:tabular-nums">30181.5</td>
       <td><span class="bf bf-n">▼ Bear gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">274.0000</td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">263.0000</td>
       <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
@@ -1768,11 +1869,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">50765</td>
+      <td style="font-variant-numeric:tabular-nums">50758</td>
       <td style="font-variant-numeric:tabular-nums">50508</td>
-      <td style="font-variant-numeric:tabular-nums">50637</td>
+      <td style="font-variant-numeric:tabular-nums">50633</td>
       <td><span class="bf bf-n">▼ Bear gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">257.0000</td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">250.0000</td>
       <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
@@ -1938,11 +2039,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">88.66</td>
+      <td style="font-variant-numeric:tabular-nums">88.53</td>
       <td style="font-variant-numeric:tabular-nums">93.39</td>
-      <td style="font-variant-numeric:tabular-nums">91.03</td>
+      <td style="font-variant-numeric:tabular-nums">90.96</td>
       <td><span class="bf bf-y">▲ Bull gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">4.7300</td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">4.8600</td>
       <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
@@ -2023,11 +2124,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">1.1658</td>
+      <td style="font-variant-numeric:tabular-nums">1.16585</td>
       <td style="font-variant-numeric:tabular-nums">1.1641</td>
-      <td style="font-variant-numeric:tabular-nums">1.16495</td>
+      <td style="font-variant-numeric:tabular-nums">1.16498</td>
       <td><span class="bf bf-n">▼ Bear gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0017</td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0018</td>
       <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
@@ -2961,7 +3062,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
             <span data-ts="1779998400" data-type="label">Box 16</span>
             <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
           </span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">88.63 ↓</span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">88.53 ↓</span>
         </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
       <span data-ts="1779998400" data-type="label">Box 16</span> ·
       <span data-ts="1779998400" data-type="dt">May 28, 16:00</span>
@@ -2984,8 +3085,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">Close</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">89.47</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">89.64 ●</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.13</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">88.63 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.09</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">88.53 ●</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
@@ -3135,7 +3236,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
             <span data-ts="1779998400" data-type="label">Box 16</span>
             <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
           </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.1658 ↑</span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.1659 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779984000" data-type="label">Box 12</span>
@@ -3193,8 +3294,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
           <span data-ts="1779998400" data-type="dt">May 28, 16:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">Close</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16565</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">1.1658 ●</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16558</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">1.1659 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16562</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">1.16535 ●</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
@@ -3342,12 +3443,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 
 <div class="sec-hdr"><span class="sec-title">Asian session setup — 20:00–02:00 NY · fractal reversal model · all instruments</span></div>
 <div class="asia-wrap">
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-warn" style="font-size:9px">⚠ Watch — ASIA_High not yet swept</span></div><div class="asia-note">Price 7588.5 above PDH (7570.75) and at/above ASIA_High (7551.75). ASIA_High sweep not yet confirmed — wait for price to trade above 7551.75 then reject back below it before considering short entry. Stop would be ON_High 7590.75.  <b>Check chart for FVG/imbalance above ASIA_High. Watch for 15/30-min sweeps and Dave Wick formations.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 30324 inside PD range (29877.5–30379). No Asian session reversal setup active — monitor ASIA_High (30090) and ASIA_Low (29795.75) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 50765 inside PD range (50500–50896). No Asian session reversal setup active — monitor ASIA_High (50791) and ASIA_Low (50618) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-warn" style="font-size:9px">⚠ Watch — ASIA_High not yet swept</span></div><div class="asia-note">Price 7587.75 above PDH (7570.75) and at/above ASIA_High (7551.75). ASIA_High sweep not yet confirmed — wait for price to trade above 7551.75 then reject back below it before considering short entry. Stop would be ON_High 7590.75.  <b>Check chart for FVG/imbalance above ASIA_High. Watch for 15/30-min sweeps and Dave Wick formations.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 30313 inside PD range (29877.5–30379). No Asian session reversal setup active — monitor ASIA_High (30090) and ASIA_Low (29795.75) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 50758 inside PD range (50500–50896). No Asian session reversal setup active — monitor ASIA_High (50791) and ASIA_Low (50618) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
 <div class="asia-card"><div class="asia-head"><span class="asia-sym">GC · COMEX Gold<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 4447 inside PD range (4500.4–4572.8). No Asian session reversal setup active — monitor ASIA_High (—) and ASIA_Low (—) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 88.66 inside PD range (87.77–93.69). No Asian session reversal setup active — monitor ASIA_High (92.23) and ASIA_Low (89.93) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">6E · Euro FX Futures<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 1.1658 inside PD range (1.16325–1.1672). No Asian session reversal setup active — monitor ASIA_High (1.1632) and ASIA_Low (1.15955) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 88.53 inside PD range (87.77–93.69). No Asian session reversal setup active — monitor ASIA_High (92.23) and ASIA_Low (89.93) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">6E · Euro FX Futures<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 1.16585 inside PD range (1.16325–1.1672). No Asian session reversal setup active — monitor ASIA_High (1.1632) and ASIA_Low (1.15955) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
 </div>
 
 <div class="sec-hdr"><span class="sec-title">Session breakdown — ES · NQ · GC · focus: London + NY AM</span></div>
@@ -3440,7 +3541,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-bear">▼</div>
   <div class="setup-body">
     <div class="setup-title c-red">ES — ON_High sweep → OTE short (extended above PDH) <span class="inst-badge badge-warn" style="margin-left:6px">NY AM Setup</span></div>
-    <div class="setup-detail">Price 7588.5 extended above PDH (7570.75). Watch sweep of ON_High (7590.75) → rejection = OTE short 62–79%. Targets: P4H_EQ 7558.5 → MN_Open 7512.75 → PDH 7570.75 reclaim. Stop: above ON_High 7590.75 + 2 ticks.</div>
+    <div class="setup-detail">Price 7587.75 extended above PDH (7570.75). Watch sweep of ON_High (7590.75) → rejection = OTE short 62–79%. Targets: P4H_EQ 7558.5 → MN_Open 7512.75 → PDH 7570.75 reclaim. Stop: above ON_High 7590.75 + 2 ticks.</div>
   </div>
 </div>
 
@@ -3488,7 +3589,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">YM — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">YM at 50765 — above PD_EQ = aligned with bull. Watch YM PD_EQ (50698) for intermarket alignment.</div>
+    <div class="setup-detail">YM at 50758 — above PD_EQ = aligned with bull. Watch YM PD_EQ (50698) for intermarket alignment.</div>
   </div>
 </div>
 
@@ -3496,7 +3597,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">CL — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">CL at 88.66 — Between PDL and PD_EQ = ranging. Watch CL at RTH open (09:00 NY) as macro tell.</div>
+    <div class="setup-detail">CL at 88.53 — Between PDL and PD_EQ = ranging. Watch CL at RTH open (09:00 NY) as macro tell.</div>
   </div>
 </div>
 
@@ -3504,7 +3605,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">6E — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">6E at 1.1658 — above PD_EQ + MN_Open = USD weak = tailwind for ES and GC. 6E leads USD repricing before ES and GC respond.</div>
+    <div class="setup-detail">6E at 1.16585 — above PD_EQ + MN_Open = USD weak = tailwind for ES and GC. 6E leads USD repricing before ES and GC respond.</div>
   </div>
 </div>
 
@@ -3593,12 +3694,12 @@ function showTab(id,btn){
 
 // Build pills from data
 const pills = [];
-pills.push('<span class="pill pill-bull">ES 7588.5 ⚠ above PDH</span>');
-pills.push('<span class="pill pill-bull">NQ 30324</span>');
-pills.push('<span class="pill pill-bull">YM 50765</span>');
+pills.push('<span class="pill pill-bull">ES 7587.75 ⚠ above PDH</span>');
+pills.push('<span class="pill pill-bull">NQ 30313</span>');
+pills.push('<span class="pill pill-bull">YM 50758</span>');
 pills.push('<span class="pill pill-bear">GC 4447 ⚠ below PDL</span>');
-pills.push('<span class="pill pill-bear">CL 88.66</span>');
-pills.push('<span class="pill pill-bull">6E 1.1658</span>');
+pills.push('<span class="pill pill-bear">CL 88.53</span>');
+pills.push('<span class="pill pill-bull">6E 1.16585</span>');
 document.getElementById('pills-container').innerHTML = pills.join('');
 
 // ── Timezone display system ────────────────────────────────────────────────────
