@@ -124,6 +124,22 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 .inst-card:nth-child(4){animation:fadeUp .65s ease both}
 .inst-card:nth-child(5){animation:fadeUp .7s ease both}
 .inst-card:nth-child(6){animation:fadeUp .75s ease both}
+.fx4-wrap{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.fx4-inst{border-bottom:1px solid var(--border);padding:12px 14px}
+.fx4-inst:last-child{border-bottom:none}
+.fx4-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.fx4-sym{font-family:var(--sans);font-size:13px;font-weight:700}
+.fx4-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:8px}
+.fx4-box{background:var(--bg3);border-radius:4px;padding:7px 9px}
+.fx4-lbl{font-size:9px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:3px}
+.fx4-val{font-size:11px;font-weight:600;font-variant-numeric:tabular-nums;margin-bottom:2px}
+.fx4-sub{font-size:9.5px;color:var(--muted);line-height:1.4;margin-top:1px}
+.fx4-note{font-size:10.5px;color:var(--muted);line-height:1.6;padding:4px 0 2px}
+.fx4-note b{color:var(--text);font-weight:500}
+.gap-wrap{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.gap-tbl td{padding:5px 8px;border-bottom:1px solid var(--border);vertical-align:middle;font-size:11px}
+.gap-tbl tr:last-child td{border-bottom:none}
+.gap-tbl tr.gap-inside td{background:rgba(251,191,36,0.06)}
 </style>
 </head>
 <body>
@@ -136,8 +152,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div style="font-size:12px;color:var(--muted);margin-top:4px">Morning Bias Report · ICT Framework · DW Foundation</div>
     </div>
     <div>
-      <div class="live-badge"><span class="live-dot"></span>Live · Bridge v1.2</div>
-      <div class="date-time"><strong>Thu, May 28, 2026</strong><br>Thursday, May 28, 2026 at 00:56<br>TV 4H anchor 18:00 NY · All times NY</div>
+      <div class="live-badge"><span class="live-dot"></span>London prep · Bridge v1.2</div>
+      <div class="date-time"><strong>Thu, May 28, 2026</strong><br>Thursday, May 28, 2026 at 01:08<br>4H #2 active · Asia Mid · Asia range near complete. Identify sweep targets for London open.</div>
     </div>
   </div>
   <div class="pills" id="pills-container"></div>
@@ -149,12 +165,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">ES</div><div class="inst-desc">E-mini S&P 500</div></div>
       <div class="inst-price">
-        <div class="inst-last">7511</div>
+        <div class="inst-last">7510</div>
         <div class="inst-badge badge-bear">Bearish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 7515</span><span>7511</span><span>PDH 7570.75</span></div>
+      <div class="pos-label"><span>PDL 7515</span><span>7510</span><span>PDH 7570.75</span></div>
       <div class="pos-track">
         <div class="pos-fill" style="width:0%;background:var(--red);opacity:0.5"></div>
         <div class="pos-marker" style="left:0%"></div>
@@ -197,12 +213,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">NQ</div><div class="inst-desc">E-mini NASDAQ 100</div></div>
       <div class="inst-price">
-        <div class="inst-last">29798.5</div>
+        <div class="inst-last">29787</div>
         <div class="inst-badge badge-bear">Bearish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 29877.5</span><span>29798.5</span><span>PDH 30379</span></div>
+      <div class="pos-label"><span>PDL 29877.5</span><span>29787</span><span>PDH 30379</span></div>
       <div class="pos-track">
         <div class="pos-fill" style="width:0%;background:var(--red);opacity:0.5"></div>
         <div class="pos-marker" style="left:0%"></div>
@@ -245,12 +261,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">YM</div><div class="inst-desc">E-mini Dow Jones</div></div>
       <div class="inst-price">
-        <div class="inst-last">50627</div>
+        <div class="inst-last">50625</div>
         <div class="inst-badge badge-warn">Watch</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 50500</span><span>50627</span><span>PDH 50896</span></div>
+      <div class="pos-label"><span>PDL 50500</span><span>50625</span><span>PDH 50896</span></div>
       <div class="pos-track">
         <div class="pos-fill" style="width:32%;background:var(--amber);opacity:0.5"></div>
         <div class="pos-marker" style="left:32%"></div>
@@ -293,12 +309,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">GC</div><div class="inst-desc">COMEX Gold</div></div>
       <div class="inst-price">
-        <div class="inst-last">4401.4</div>
+        <div class="inst-last">4401.8</div>
         <div class="inst-badge badge-bear">Bearish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 4432.1</span><span>4401.4</span><span>PDH 4561.7</span></div>
+      <div class="pos-label"><span>PDL 4432.1</span><span>4401.8</span><span>PDH 4561.7</span></div>
       <div class="pos-track">
         <div class="pos-fill" style="width:0%;background:var(--red);opacity:0.5"></div>
         <div class="pos-marker" style="left:0%"></div>
@@ -341,15 +357,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">CL</div><div class="inst-desc">NYMEX Crude Oil</div></div>
       <div class="inst-price">
-        <div class="inst-last">92.16</div>
+        <div class="inst-last">92.06</div>
         <div class="inst-badge badge-warn">Watch</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 87.77</span><span>92.16</span><span>PDH 93.69</span></div>
+      <div class="pos-label"><span>PDL 87.77</span><span>92.06</span><span>PDH 93.69</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:74%;background:var(--amber);opacity:0.5"></div>
-        <div class="pos-marker" style="left:74%"></div>
+        <div class="pos-fill" style="width:72%;background:var(--amber);opacity:0.5"></div>
+        <div class="pos-marker" style="left:72%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -389,12 +405,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">6E</div><div class="inst-desc">Euro FX Futures</div></div>
       <div class="inst-price">
-        <div class="inst-last">1.16</div>
+        <div class="inst-last">1.16005</div>
         <div class="inst-badge badge-warn">Watch</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 1.16325</span><span>1.16</span><span>PDH 1.1672</span></div>
+      <div class="pos-label"><span>PDL 1.16325</span><span>1.16005</span><span>PDH 1.1672</span></div>
       <div class="pos-track">
         <div class="pos-fill" style="width:0%;background:var(--amber);opacity:0.5"></div>
         <div class="pos-marker" style="left:0%"></div>
@@ -439,42 +455,42 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <thead><tr><th>Instrument</th><th>Last</th><th>vs PD_EQ</th><th>vs MN_Open</th><th>Extended</th></tr></thead>
     <tbody><tr>
       <td style="color:var(--red);font-weight:600">ES</td>
-      <td>7511</td>
+      <td>7510</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">⚠ Below PDL</span></td>
     </tr>
 <tr>
       <td style="color:var(--red);font-weight:600">NQ</td>
-      <td>29798.5</td>
+      <td>29787</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">⚠ Below PDL</span></td>
     </tr>
 <tr>
       <td style="color:var(--amber);font-weight:600">YM</td>
-      <td>50627</td>
+      <td>50625</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td>—</td>
     </tr>
 <tr>
       <td style="color:var(--red);font-weight:600">GC</td>
-      <td>4401.4</td>
+      <td>4401.8</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">⚠ Below PDL</span></td>
     </tr>
 <tr>
       <td style="color:var(--amber);font-weight:600">CL</td>
-      <td>92.16</td>
+      <td>92.06</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td>—</td>
     </tr>
 <tr>
       <td style="color:var(--amber);font-weight:600">6E</td>
-      <td>1.16</td>
+      <td>1.16005</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n">⚠ Below PDL</span></td>
@@ -568,7 +584,731 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 </div>
 
-<div class="sec-hdr"><span class="sec-title">Session breakdown — ES · NQ · GC</span></div>
+<div class="sec-hdr"><span class="sec-title">FX4 model bias — ACC range · Asian range · double zone · London KZ · all instruments</span></div>
+<div class="fx4-wrap">
+
+  <div class="fx4-inst">
+    <div class="fx4-head">
+      <span class="fx4-sym">ES · E-mini S&P 500</span>
+      <span class="inst-badge badge-bull" style="font-size:9px">Double Discount — strongest long signal</span>
+    </div>
+    <div class="fx4-grid">
+      <div class="fx4-box">
+        <div class="fx4-lbl">ACC Range (FX4) 18:00–02:00</div>
+        <div class="fx4-val">7505.75 – 7557.75</div>
+        <div class="fx4-sub">EQ: 7531.75 · Range: 52.00 pts</div>
+        <div class="fx4-sub"><span style="color:var(--amber)">In ACC discount (below EQ 7531.75)</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Asian Range (ICT) 20:00–00:00</div>
+        <div class="fx4-val">7511.5 – 7551.75</div>
+        <div class="fx4-sub">EQ: 7531.63 · Range: 40.25 pts</div>
+        <div class="fx4-sub"><span style="color:var(--red)">Below ASIA_EQ</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Order Flow</div>
+        <div class="fx4-val" style="color:var(--green)">Bullish (PD close > open)</div>
+        <div class="fx4-sub" style="color:var(--red)">ACC building bearish</div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Double Zone Status</div>
+        <div class="fx4-val" style="color:var(--green)">Double Discount</div>
+        <div class="fx4-sub">PD_EQ: ✗ below (7542.88)</div>
+        <div class="fx4-sub">ACC_EQ: ✗ below (7531.75)</div>
+      </div>
+    </div>
+    <div class="fx4-note"><b>FX4 London KZ:</b> Double discount — below PD_EQ and below ACC_EQ. OTE long after stop hunt of ACC_Low (7505.75). Target: ACC_EQ 7531.75 → PD_EQ 7542.88.<br><b>Re-acceptance risk:</b> price below PDL (7515). PD range remains a magnet — any recovery above PDL targets PD_EQ 7542.88 then PD_Close 7554.25. Next DOL below: NWOG1_Close 7484.25 → NWOG1_EQ 7447.13 → NWOG1_Open 7410. Check chart for FVG/imbalance below PDL as reversal zone.</div>
+  </div>
+
+  <div class="fx4-inst">
+    <div class="fx4-head">
+      <span class="fx4-sym">NQ · E-mini NASDAQ 100</span>
+      <span class="inst-badge badge-bull" style="font-size:9px">Double Discount — strongest long signal</span>
+    </div>
+    <div class="fx4-grid">
+      <div class="fx4-box">
+        <div class="fx4-lbl">ACC Range (FX4) 18:00–02:00</div>
+        <div class="fx4-val">29763 – 30136.25</div>
+        <div class="fx4-sub">EQ: 29949.63 · Range: 373.25 pts</div>
+        <div class="fx4-sub"><span style="color:var(--amber)">In ACC discount (below EQ 29949.63)</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Asian Range (ICT) 20:00–00:00</div>
+        <div class="fx4-val">29795.75 – 30090</div>
+        <div class="fx4-sub">EQ: 29942.88 · Range: 294.25 pts</div>
+        <div class="fx4-sub"><span style="color:var(--red)">Below ASIA_EQ</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Order Flow</div>
+        <div class="fx4-val" style="color:var(--green)">Bullish (PD close > open)</div>
+        <div class="fx4-sub" style="color:var(--red)">ACC building bearish</div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Double Zone Status</div>
+        <div class="fx4-val" style="color:var(--green)">Double Discount</div>
+        <div class="fx4-sub">PD_EQ: ✗ below (30128.25)</div>
+        <div class="fx4-sub">ACC_EQ: ✗ below (29949.63)</div>
+      </div>
+    </div>
+    <div class="fx4-note"><b>FX4 London KZ:</b> Double discount — below PD_EQ and below ACC_EQ. OTE long after stop hunt of ACC_Low (29763). Target: ACC_EQ 29949.63 → PD_EQ 30128.25.<br><b>Re-acceptance risk:</b> price below PDL (29877.5). PD range remains a magnet — any recovery above PDL targets PD_EQ 30128.25 then PD_Close 30125.25. Next DOL below: NWOG1_Close 29520.75 → NWOG1_EQ 29327.88 → NWOG1_Open 29135. Check chart for FVG/imbalance below PDL as reversal zone.</div>
+  </div>
+
+  <div class="fx4-inst">
+    <div class="fx4-head">
+      <span class="fx4-sym">YM · E-mini Dow Jones</span>
+      <span class="inst-badge badge-bull" style="font-size:9px">Double Discount — strongest long signal</span>
+    </div>
+    <div class="fx4-grid">
+      <div class="fx4-box">
+        <div class="fx4-lbl">ACC Range (FX4) 18:00–02:00</div>
+        <div class="fx4-val">50594 – 50819</div>
+        <div class="fx4-sub">EQ: 50707 · Range: 225.00 pts</div>
+        <div class="fx4-sub"><span style="color:var(--amber)">In ACC discount (below EQ 50707)</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Asian Range (ICT) 20:00–00:00</div>
+        <div class="fx4-val">50618 – 50791</div>
+        <div class="fx4-sub">EQ: 50705 · Range: 173.00 pts</div>
+        <div class="fx4-sub"><span style="color:var(--red)">Below ASIA_EQ</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Order Flow</div>
+        <div class="fx4-val" style="color:var(--green)">Bullish (PD close > open)</div>
+        <div class="fx4-sub" style="color:var(--red)">ACC building bearish</div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Double Zone Status</div>
+        <div class="fx4-val" style="color:var(--green)">Double Discount</div>
+        <div class="fx4-sub">PD_EQ: ✗ below (50698)</div>
+        <div class="fx4-sub">ACC_EQ: ✗ below (50707)</div>
+      </div>
+    </div>
+    <div class="fx4-note"><b>FX4 London KZ:</b> Double discount — below PD_EQ and below ACC_EQ. OTE long after stop hunt of ACC_Low (50594). Target: ACC_EQ 50707 → PD_EQ 50698.</div>
+  </div>
+
+  <div class="fx4-inst">
+    <div class="fx4-head">
+      <span class="fx4-sym">GC · COMEX Gold</span>
+      <span class="inst-badge badge-bull" style="font-size:9px">Double Discount — strongest long signal</span>
+    </div>
+    <div class="fx4-grid">
+      <div class="fx4-box">
+        <div class="fx4-lbl">ACC Range (FX4) 18:00–02:00</div>
+        <div class="fx4-val">4395.6 – 4502</div>
+        <div class="fx4-sub">EQ: 4448.8 · Range: 106.40 pts</div>
+        <div class="fx4-sub"><span style="color:var(--amber)">In ACC discount (below EQ 4448.8)</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Asian Range (ICT) 20:00–00:00</div>
+        <div class="fx4-val">4398 – 4489.5</div>
+        <div class="fx4-sub">EQ: 4443.8 · Range: 91.50 pts</div>
+        <div class="fx4-sub"><span style="color:var(--red)">Below ASIA_EQ</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Order Flow</div>
+        <div class="fx4-val" style="color:var(--green)">Bullish (PD close > open)</div>
+        <div class="fx4-sub" style="color:var(--red)">ACC building bearish</div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Double Zone Status</div>
+        <div class="fx4-val" style="color:var(--green)">Double Discount</div>
+        <div class="fx4-sub">PD_EQ: ✗ below (4496.9)</div>
+        <div class="fx4-sub">ACC_EQ: ✗ below (4448.8)</div>
+      </div>
+    </div>
+    <div class="fx4-note"><b>FX4 London KZ:</b> Double discount — below PD_EQ and below ACC_EQ. OTE long after stop hunt of ACC_Low (4395.6). Target: ACC_EQ 4448.8 → PD_EQ 4496.9.<br><b>Re-acceptance risk:</b> price below PDL (4432.1). PD range remains a magnet — any recovery above PDL targets PD_EQ 4496.9 then PD_Close 4488.5. Next DOL below: NWOG1_Close 4544.1 → NWOG1_EQ 4562.7 → NWOG1_Open 4581.2. Check chart for FVG/imbalance below PDL as reversal zone.</div>
+  </div>
+
+  <div class="fx4-inst">
+    <div class="fx4-head">
+      <span class="fx4-sym">CL · NYMEX Crude Oil</span>
+      <span class="inst-badge badge-bear" style="font-size:9px">Double Premium — strongest short signal</span>
+    </div>
+    <div class="fx4-grid">
+      <div class="fx4-box">
+        <div class="fx4-lbl">ACC Range (FX4) 18:00–02:00</div>
+        <div class="fx4-val">89.11 – 92.52</div>
+        <div class="fx4-sub">EQ: 90.82 · Range: 3.41 pts</div>
+        <div class="fx4-sub"><span style="color:var(--green)">In ACC premium (above EQ 90.82)</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Asian Range (ICT) 20:00–00:00</div>
+        <div class="fx4-val">89.93 – 92.23</div>
+        <div class="fx4-sub">EQ: 91.08 · Range: 2.30 pts</div>
+        <div class="fx4-sub"><span style="color:var(--green)">Above ASIA_EQ</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Order Flow</div>
+        <div class="fx4-val" style="color:var(--green)">Bullish (PD close > open)</div>
+        <div class="fx4-sub" style="color:var(--green)">ACC building bullish</div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Double Zone Status</div>
+        <div class="fx4-val" style="color:var(--red)">Double Premium</div>
+        <div class="fx4-sub">PD_EQ: ✓ above (90.73)</div>
+        <div class="fx4-sub">ACC_EQ: ✓ above (90.82)</div>
+      </div>
+    </div>
+    <div class="fx4-note"><b>FX4 London KZ:</b> Double premium — above PD_EQ and above ACC_EQ. OTE short after stop hunt of ACC_High (92.52). Target: ACC_EQ 90.82 → PD_EQ 90.73.</div>
+  </div>
+
+  <div class="fx4-inst">
+    <div class="fx4-head">
+      <span class="fx4-sym">6E · Euro FX Futures</span>
+      <span class="inst-badge badge-bull" style="font-size:9px">Double Discount — strongest long signal</span>
+    </div>
+    <div class="fx4-grid">
+      <div class="fx4-box">
+        <div class="fx4-lbl">ACC Range (FX4) 18:00–02:00</div>
+        <div class="fx4-val">1.15945 – 1.1639</div>
+        <div class="fx4-sub">EQ: 1.16168 · Range: 0.00 pts</div>
+        <div class="fx4-sub"><span style="color:var(--amber)">In ACC discount (below EQ 1.16168)</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Asian Range (ICT) 20:00–00:00</div>
+        <div class="fx4-val">1.15955 – 1.1632</div>
+        <div class="fx4-sub">EQ: 1.16138 · Range: 0.00 pts</div>
+        <div class="fx4-sub"><span style="color:var(--red)">Below ASIA_EQ</span></div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Order Flow</div>
+        <div class="fx4-val" style="color:var(--red)">Bearish (PD close < open)</div>
+        <div class="fx4-sub" style="color:var(--red)">ACC building bearish</div>
+      </div>
+      <div class="fx4-box">
+        <div class="fx4-lbl">Double Zone Status</div>
+        <div class="fx4-val" style="color:var(--green)">Double Discount</div>
+        <div class="fx4-sub">PD_EQ: ✗ below (1.16523)</div>
+        <div class="fx4-sub">ACC_EQ: ✗ below (1.16168)</div>
+      </div>
+    </div>
+    <div class="fx4-note"><b>FX4 London KZ:</b> Double discount — below PD_EQ and below ACC_EQ. OTE long after stop hunt of ACC_Low (1.15945). Target: ACC_EQ 1.16168 → PD_EQ 1.16523.<br><b>Re-acceptance risk:</b> price below PDL (1.16325). PD range remains a magnet — any recovery above PDL targets PD_EQ 1.16523 then PD_Close 1.16355. Next DOL below: NWOG1_Close 1.16175 → NWOG1_EQ 1.16273 → NWOG1_Open 1.1637. Check chart for FVG/imbalance below PDL as reversal zone.</div>
+  </div>
+</div>
+
+<div class="sec-hdr"><span class="sec-title">NWOG · NDOG — opening gap panel · all instruments</span></div>
+<div style="margin-bottom:0">
+  <div class="tab-nav" style="background:var(--card);border:1px solid var(--border);border-bottom:none;border-radius:8px 8px 0 0">
+    <button class="tab-btn active" onclick="showGap('gap-es',this)">ES</button>
+    <button class="tab-btn" onclick="showGap('gap-nq',this)">NQ</button>
+    <button class="tab-btn" onclick="showGap('gap-ym',this)">YM</button>
+    <button class="tab-btn" onclick="showGap('gap-gc',this)">GC</button>
+    <button class="tab-btn" onclick="showGap('gap-cl',this)">CL</button>
+    <button class="tab-btn" onclick="showGap('gap-6e',this)">6E</button>
+  </div>
+  
+  <div id="gap-es" class="gap-wrap" style=";border-radius:0 0 8px 8px;border-top:none">
+    
+  <table class="gap-tbl" style="width:100%;border-collapse:collapse;font-size:11px">
+    <thead>
+      <tr><th colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);text-align:left">NWOG — New Week Opening Gaps (last 5)</th></tr>
+      <tr style="background:var(--bg3)"><th style="padding:4px 8px;font-size:9px;color:var(--muted)">#</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Fri Close</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Sun Open</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">EQ</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Direction</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Size</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Price context</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td><b>NWOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">7484.25</td>
+      <td style="font-variant-numeric:tabular-nums">7410</td>
+      <td style="font-variant-numeric:tabular-nums">7447.13</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">74.2500</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">7418</td>
+      <td style="font-variant-numeric:tabular-nums">7403.5</td>
+      <td style="font-variant-numeric:tabular-nums">7410.75</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">14.5000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">7420.5</td>
+      <td style="font-variant-numeric:tabular-nums">7276.25</td>
+      <td style="font-variant-numeric:tabular-nums">7348.38</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">144.2500</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG4</b></td>
+      <td style="font-variant-numeric:tabular-nums">7247.75</td>
+      <td style="font-variant-numeric:tabular-nums">7185</td>
+      <td style="font-variant-numeric:tabular-nums">7216.38</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">62.7500</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG5</b></td>
+      <td style="font-variant-numeric:tabular-nums">7195.5</td>
+      <td style="font-variant-numeric:tabular-nums">7102.5</td>
+      <td style="font-variant-numeric:tabular-nums">7149</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">93.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+      <tr><td colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)">NDOG — New Day Opening Gaps (last 3)</td></tr>
+      <tr>
+      <td><b>NDOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">7554.25</td>
+      <td style="font-variant-numeric:tabular-nums">7553.75</td>
+      <td style="font-variant-numeric:tabular-nums">7554</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.5000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NDOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">7532.75</td>
+      <td style="font-variant-numeric:tabular-nums">7533</td>
+      <td style="font-variant-numeric:tabular-nums">7532.88</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.2500</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr class="gap-inside">
+      <td><b>NDOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">7484.25</td>
+      <td style="font-variant-numeric:tabular-nums">7561.25</td>
+      <td style="font-variant-numeric:tabular-nums">7522.75</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">77.0000</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="gap-nq" class="gap-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
+    
+  <table class="gap-tbl" style="width:100%;border-collapse:collapse;font-size:11px">
+    <thead>
+      <tr><th colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);text-align:left">NWOG — New Week Opening Gaps (last 5)</th></tr>
+      <tr style="background:var(--bg3)"><th style="padding:4px 8px;font-size:9px;color:var(--muted)">#</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Fri Close</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Sun Open</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">EQ</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Direction</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Size</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Price context</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td><b>NWOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">29520.75</td>
+      <td style="font-variant-numeric:tabular-nums">29135</td>
+      <td style="font-variant-numeric:tabular-nums">29327.88</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">385.7500</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">29173</td>
+      <td style="font-variant-numeric:tabular-nums">29294</td>
+      <td style="font-variant-numeric:tabular-nums">29233.5</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">121.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">29333.75</td>
+      <td style="font-variant-numeric:tabular-nums">27890</td>
+      <td style="font-variant-numeric:tabular-nums">28611.88</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">1443.7500</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG4</b></td>
+      <td style="font-variant-numeric:tabular-nums">27783.25</td>
+      <td style="font-variant-numeric:tabular-nums">27403.25</td>
+      <td style="font-variant-numeric:tabular-nums">27593.25</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">380.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG5</b></td>
+      <td style="font-variant-numeric:tabular-nums">27440.25</td>
+      <td style="font-variant-numeric:tabular-nums">26599.75</td>
+      <td style="font-variant-numeric:tabular-nums">27020</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">840.5000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+      <tr><td colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)">NDOG — New Day Opening Gaps (last 3)</td></tr>
+      <tr>
+      <td><b>NDOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">30125.25</td>
+      <td style="font-variant-numeric:tabular-nums">30120</td>
+      <td style="font-variant-numeric:tabular-nums">30122.63</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">5.2500</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NDOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">30044.25</td>
+      <td style="font-variant-numeric:tabular-nums">30050</td>
+      <td style="font-variant-numeric:tabular-nums">30047.13</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">5.7500</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr class="gap-inside">
+      <td><b>NDOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">29520.75</td>
+      <td style="font-variant-numeric:tabular-nums">29962</td>
+      <td style="font-variant-numeric:tabular-nums">29741.38</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">441.2500</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="gap-ym" class="gap-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
+    
+  <table class="gap-tbl" style="width:100%;border-collapse:collapse;font-size:11px">
+    <thead>
+      <tr><th colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);text-align:left">NWOG — New Week Opening Gaps (last 5)</th></tr>
+      <tr style="background:var(--bg3)"><th style="padding:4px 8px;font-size:9px;color:var(--muted)">#</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Fri Close</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Sun Open</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">EQ</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Direction</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Size</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Price context</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td><b>NWOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">50623</td>
+      <td style="font-variant-numeric:tabular-nums">49464</td>
+      <td style="font-variant-numeric:tabular-nums">50044</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">1159.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">49485</td>
+      <td style="font-variant-numeric:tabular-nums">49640</td>
+      <td style="font-variant-numeric:tabular-nums">49563</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">155.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">49745</td>
+      <td style="font-variant-numeric:tabular-nums">49705</td>
+      <td style="font-variant-numeric:tabular-nums">49725</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">40.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG4</b></td>
+      <td style="font-variant-numeric:tabular-nums">49595</td>
+      <td style="font-variant-numeric:tabular-nums">49382</td>
+      <td style="font-variant-numeric:tabular-nums">49489</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">213.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG5</b></td>
+      <td style="font-variant-numeric:tabular-nums">49424</td>
+      <td style="font-variant-numeric:tabular-nums">49324</td>
+      <td style="font-variant-numeric:tabular-nums">49374</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">100.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+      <tr><td colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)">NDOG — New Day Opening Gaps (last 3)</td></tr>
+      <tr>
+      <td><b>NDOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">50788</td>
+      <td style="font-variant-numeric:tabular-nums">50784</td>
+      <td style="font-variant-numeric:tabular-nums">50786</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">4.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NDOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">50520</td>
+      <td style="font-variant-numeric:tabular-nums">50508</td>
+      <td style="font-variant-numeric:tabular-nums">50514</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">12.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr class="gap-inside">
+      <td><b>NDOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">50623</td>
+      <td style="font-variant-numeric:tabular-nums">51122</td>
+      <td style="font-variant-numeric:tabular-nums">50873</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">499.0000</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="gap-gc" class="gap-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
+    
+  <table class="gap-tbl" style="width:100%;border-collapse:collapse;font-size:11px">
+    <thead>
+      <tr><th colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);text-align:left">NWOG — New Week Opening Gaps (last 5)</th></tr>
+      <tr style="background:var(--bg3)"><th style="padding:4px 8px;font-size:9px;color:var(--muted)">#</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Fri Close</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Sun Open</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">EQ</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Direction</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Size</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Price context</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td><b>NWOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">4544.1</td>
+      <td style="font-variant-numeric:tabular-nums">4581.2</td>
+      <td style="font-variant-numeric:tabular-nums">4562.7</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">37.1000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">4577.2</td>
+      <td style="font-variant-numeric:tabular-nums">4723.6</td>
+      <td style="font-variant-numeric:tabular-nums">4650.4</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">146.4000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">4757.3</td>
+      <td style="font-variant-numeric:tabular-nums">4677.6</td>
+      <td style="font-variant-numeric:tabular-nums">4717.5</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">79.7000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG4</b></td>
+      <td style="font-variant-numeric:tabular-nums">4659.2</td>
+      <td style="font-variant-numeric:tabular-nums">4746.7</td>
+      <td style="font-variant-numeric:tabular-nums">4703</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">87.5000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG5</b></td>
+      <td style="font-variant-numeric:tabular-nums">4759</td>
+      <td style="font-variant-numeric:tabular-nums">4845.4</td>
+      <td style="font-variant-numeric:tabular-nums">4802.2</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">86.4000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+      <tr><td colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)">NDOG — New Day Opening Gaps (last 3)</td></tr>
+      <tr>
+      <td><b>NDOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">4488.5</td>
+      <td style="font-variant-numeric:tabular-nums">4488</td>
+      <td style="font-variant-numeric:tabular-nums">4488.3</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.5000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NDOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">4540.9</td>
+      <td style="font-variant-numeric:tabular-nums">4541</td>
+      <td style="font-variant-numeric:tabular-nums">4541</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.1000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NDOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">4544.1</td>
+      <td style="font-variant-numeric:tabular-nums">4605.2</td>
+      <td style="font-variant-numeric:tabular-nums">4574.7</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">61.1000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="gap-cl" class="gap-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
+    
+  <table class="gap-tbl" style="width:100%;border-collapse:collapse;font-size:11px">
+    <thead>
+      <tr><th colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);text-align:left">NWOG — New Week Opening Gaps (last 5)</th></tr>
+      <tr style="background:var(--bg3)"><th style="padding:4px 8px;font-size:9px;color:var(--muted)">#</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Fri Close</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Sun Open</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">EQ</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Direction</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Size</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Price context</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td><b>NWOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">97</td>
+      <td style="font-variant-numeric:tabular-nums">101.74</td>
+      <td style="font-variant-numeric:tabular-nums">99.37</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">4.7400</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">101.16</td>
+      <td style="font-variant-numeric:tabular-nums">93.99</td>
+      <td style="font-variant-numeric:tabular-nums">97.57</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">7.1700</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr class="gap-inside">
+      <td><b>NWOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">90.48</td>
+      <td style="font-variant-numeric:tabular-nums">95.53</td>
+      <td style="font-variant-numeric:tabular-nums">93.01</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">5.0500</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+    </tr>
+<tr class="gap-inside">
+      <td><b>NWOG4</b></td>
+      <td style="font-variant-numeric:tabular-nums">98.3</td>
+      <td style="font-variant-numeric:tabular-nums">91.4</td>
+      <td style="font-variant-numeric:tabular-nums">94.85</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">6.9000</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG5</b></td>
+      <td style="font-variant-numeric:tabular-nums">90.68</td>
+      <td style="font-variant-numeric:tabular-nums">83.95</td>
+      <td style="font-variant-numeric:tabular-nums">87.32</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">6.7300</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+      <tr><td colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)">NDOG — New Day Opening Gaps (last 3)</td></tr>
+      <tr>
+      <td><b>NDOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">89.41</td>
+      <td style="font-variant-numeric:tabular-nums">89.11</td>
+      <td style="font-variant-numeric:tabular-nums">89.26</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.3000</td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+    </tr>
+<tr>
+      <td><b>NDOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">93.57</td>
+      <td style="font-variant-numeric:tabular-nums">93.39</td>
+      <td style="font-variant-numeric:tabular-nums">93.48</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.1800</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr class="gap-inside">
+      <td><b>NDOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">97</td>
+      <td style="font-variant-numeric:tabular-nums">91</td>
+      <td style="font-variant-numeric:tabular-nums">94</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">6.0000</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="gap-6e" class="gap-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
+    
+  <table class="gap-tbl" style="width:100%;border-collapse:collapse;font-size:11px">
+    <thead>
+      <tr><th colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);text-align:left">NWOG — New Week Opening Gaps (last 5)</th></tr>
+      <tr style="background:var(--bg3)"><th style="padding:4px 8px;font-size:9px;color:var(--muted)">#</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Fri Close</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Sun Open</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">EQ</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Direction</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Size</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Price context</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td><b>NWOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">1.16175</td>
+      <td style="font-variant-numeric:tabular-nums">1.1637</td>
+      <td style="font-variant-numeric:tabular-nums">1.16273</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0019</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">1.16415</td>
+      <td style="font-variant-numeric:tabular-nums">1.1789</td>
+      <td style="font-variant-numeric:tabular-nums">1.17153</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0148</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">1.1807</td>
+      <td style="font-variant-numeric:tabular-nums">1.17605</td>
+      <td style="font-variant-numeric:tabular-nums">1.17838</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0047</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG4</b></td>
+      <td style="font-variant-numeric:tabular-nums">1.1744</td>
+      <td style="font-variant-numeric:tabular-nums">1.17405</td>
+      <td style="font-variant-numeric:tabular-nums">1.17423</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0004</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NWOG5</b></td>
+      <td style="font-variant-numeric:tabular-nums">1.1749</td>
+      <td style="font-variant-numeric:tabular-nums">1.1767</td>
+      <td style="font-variant-numeric:tabular-nums">1.1758</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0018</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+      <tr><td colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)">NDOG — New Day Opening Gaps (last 3)</td></tr>
+      <tr>
+      <td><b>NDOG1</b></td>
+      <td style="font-variant-numeric:tabular-nums">1.16355</td>
+      <td style="font-variant-numeric:tabular-nums">1.16355</td>
+      <td style="font-variant-numeric:tabular-nums">1.16355</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0000</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NDOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">1.16425</td>
+      <td style="font-variant-numeric:tabular-nums">1.1641</td>
+      <td style="font-variant-numeric:tabular-nums">1.16418</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0002</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+<tr>
+      <td><b>NDOG3</b></td>
+      <td style="font-variant-numeric:tabular-nums">1.16555</td>
+      <td style="font-variant-numeric:tabular-nums">1.165</td>
+      <td style="font-variant-numeric:tabular-nums">1.16528</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0006</td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="sec-hdr"><span class="sec-title">Session breakdown — ES · NQ · GC · focus: London + NY AM</span></div>
 <div>
   <div class="tab-nav">
     <button class="tab-btn active" onclick="showTab('es',this)">ES — S&amp;P 500</button>
@@ -577,118 +1317,152 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   </div>
   <div id="tab-es" class="tab-content active">
     <div class="sess-grid">
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">Asia (4H #1+#2)</span><span class="inst-badge badge-bull">Done</span></div>
-        <div class="sess-time">18:00–02:00 NY</div>
-        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">Asia box formed. 4H #2 swept above. Closed above PD_UW (7562.5), PD_EQ (7542.88) and MN_Open (7512.75). <b>All bias flags green.</b></div></div>
-        <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">CL selling on Iran deal = macro tailwind. 6E above MN_Open = USD weak confirmation.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-info">Active now</span></div>
-        <div class="sess-time">02:00–06:00 NY · Now</div>
-        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt"><b>Primary:</b> PDH (7570.75) swept + holds = long continuation. Confluence: NQ > P4H_EQ + 6E above MN.</div></div>
-        <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt"><b>Conditional short:</b> PDH swept + NQ rejects ON_High + YM below PD_EQ = SMT → OTE short to PD_UW 7562.5.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">NY AM / RTH (4H #4)</span><span class="inst-badge badge-warn">Pending</span></div>
-        <div class="sess-time">06:00–10:00 NY</div>
-        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">RTH 09:30 NY: above PD_UW (7562.5) = bull all session. Below = OTE long at PD_EQ 7542.88. 10:00 NY: 3 releases → wait 5–10 min.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">NY PM (4H #5)</span><span class="inst-badge badge-warn">Reduce size</span></div>
-        <div class="sess-time">10:00–14:00 NY</div>
-        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pre-GDP positioning. DW close: above PD_UW 7562.5 = bull confirmed. Below PD_EQ 7542.88 = first bearish signal. Reduce all size after 16:00 NY.</div></div>
-      </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">Asia (4H #1+#2)</span><span class="inst-badge badge-info">Active</span></div>
+      <div class="sess-time">18:00–02:00 NY · 00:00–08:00 AMS</div>
+      <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">Asia session in progress. Current range: ON_High 7557.75 → ON_Low 7505.75 (52 pts). MN_Open (7512.75) = key mid reference. Watch for 4H box to complete before London.</div></div>
     </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-warn">Pending</span></div>
+      <div class="sess-time">02:00–06:00 NY · 08:00–12:00 AMS</div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">Price extended below PDL (7515). Watch for sweep of ON_Low (7505.75) → reclaim PDL = OTE long. Target: PD_LW 7524 → MN_Open 7512.75 → P4H_EQ 7545. If PDL holds as resistance = continuation short toward PW_Low.</div></div>
+    </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">NY AM (4H #4)</span><span class="inst-badge badge-warn">Pending</span></div>
+      <div class="sess-time">06:00–10:00 NY · 12:00–16:00 AMS</div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">Still below PDL (7515). RTH open = key tell. Reclaim PDL on first 5-min close = long opportunity. Fail = continuation short. Watch for London low sweep before entry.</div></div>
+    </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">Key levels to watch</span><span class="inst-badge badge-warn">Reference</span></div>
+      <div class="sess-time">All sessions</div>
+      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">BSL: PDH 7570.75 · ON_High 7557.75 · P4H_High 7557.75</div></div>
+      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pivots: PD_EQ 7542.88 · MN_Open 7512.75 · P4H_EQ 7545</div></div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">SSL: PDL 7515 · ON_Low 7505.75 · P4H_Low 7532.25</div></div>
+    </div></div>
   </div>
   <div id="tab-nq" class="tab-content">
     <div class="sess-grid">
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">Asia (4H #1+#2)</span><span class="inst-badge badge-warn">Extended</span></div>
-        <div class="sess-time">18:00–02:00 NY · Done</div>
-        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Opened above PDH (30379) — <b>no 4H low sweep during Asia.</b> One-directional run to 30136.25. Elevated reversal risk.</div></div>
-        <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">OTE long zone: P4H_Low 29963.25 → MN_Open 29811.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-info">Active</span></div>
-        <div class="sess-time">02:00–06:00 NY · Now</div>
-        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt"><b>Long:</b> pullback to P4H_Low (29963.25) / MN_Open (29811) → OTE long → target ON_High 30136.25.</div></div>
-        <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt"><b>Rejection:</b> ON_High swept + rejected → P4H_EQ 30049.75 → PDH 30379 reclaim.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">NY AM / RTH (4H #4)</span><span class="inst-badge badge-warn">PDH test</span></div>
-        <div class="sess-time">06:00–10:00 NY</div>
-        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">Hold above PDH (30379) on 5-min close = confirmed breakout. Fail = OTE long at P4H_EQ 30049.75 / MN_Open 29811.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">NY PM (4H #5)</span><span class="inst-badge badge-warn">Reduce size</span></div>
-        <div class="sess-time">10:00–14:00 NY</div>
-        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Watch weekly close above PDH (30379). Hot PCE tomorrow = NQ gaps down hard.</div></div>
-      </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">Asia (4H #1+#2)</span><span class="inst-badge badge-info">Active</span></div>
+      <div class="sess-time">18:00–02:00 NY · 00:00–08:00 AMS</div>
+      <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">Asia session in progress. Current range: ON_High 30136.25 → ON_Low 29763 (373.25 pts). MN_Open (29811) = key mid reference. Watch for 4H box to complete before London.</div></div>
     </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-warn">Pending</span></div>
+      <div class="sess-time">02:00–06:00 NY · 08:00–12:00 AMS</div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">Price extended below PDL (29877.5). Watch for sweep of ON_Low (29763) → reclaim PDL = OTE long. Target: PD_LW 29963.75 → MN_Open 29811 → P4H_EQ 30049.75. If PDL holds as resistance = continuation short toward PW_Low.</div></div>
+    </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">NY AM (4H #4)</span><span class="inst-badge badge-warn">Pending</span></div>
+      <div class="sess-time">06:00–10:00 NY · 12:00–16:00 AMS</div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">Still below PDL (29877.5). RTH open = key tell. Reclaim PDL on first 5-min close = long opportunity. Fail = continuation short. Watch for London low sweep before entry.</div></div>
+    </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">Key levels to watch</span><span class="inst-badge badge-warn">Reference</span></div>
+      <div class="sess-time">All sessions</div>
+      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">BSL: PDH 30379 · ON_High 30136.25 · P4H_High 30136.25</div></div>
+      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pivots: PD_EQ 30128.25 · MN_Open 29811 · P4H_EQ 30049.75</div></div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">SSL: PDL 29877.5 · ON_Low 29763 · P4H_Low 29963.25</div></div>
+    </div></div>
   </div>
   <div id="tab-gc" class="tab-content">
     <div class="sess-grid">
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">Asia (4H #1+#2)</span><span class="inst-badge badge-bear">SSL sweep</span></div>
-        <div class="sess-time">18:00–02:00 NY · Done</div>
-        <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">ON_Low (4395.6) broke below PDL (4432.1) — <b>SSL sweep confirmed.</b> Both 4H candles closed below PDL.</div></div>
-        <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">6E bullish = USD weak = macro GC tailwind. OTE long zone: ON_Low 4395.6 → PDL 4432.1.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">Pre-RTH (4H #3)</span><span class="inst-badge badge-info">Active</span></div>
-        <div class="sess-time">02:00–06:00 NY · RTH 08:20 NY</div>
-        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt"><b>Long:</b> reclaim P4H_Low (4437.3) then MN_Open (4404.2) at RTH open = bull confirmation. Targets: PD_LW 4460.3 → P4H_EQ 4469.7 → D_Open 4488.</div></div>
-        <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt"><b>Bear:</b> fails MN_Open → retest ON_Low 4395.6.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">NY AM RTH (4H #4)</span><span class="inst-badge badge-warn">MN_Open test</span></div>
-        <div class="sess-time">06:00–10:00 NY · RTH 08:20</div>
-        <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">RTH open above MN_Open (4404.2) + hold = OTE long active. Watch 6E reaction at 10:00 NY first.</div></div>
-      </div>
-      <div class="sess-card">
-        <div class="sess-head"><span class="sess-name">NY PM (4H #5)</span><span class="inst-badge badge-warn">Reduce size</span></div>
-        <div class="sess-time">10:00–13:30 NY settlement</div>
-        <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">COMEX settlement 13:30 NY. Tomorrow PCE = primary GC driver. Do not hold into settlement with GDP risk tomorrow.</div></div>
-      </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">Asia (4H #1+#2)</span><span class="inst-badge badge-info">Active</span></div>
+      <div class="sess-time">18:00–02:00 NY · 00:00–08:00 AMS</div>
+      <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">Asia session in progress. Current range: ON_High 4502 → ON_Low 4395.6 (106.4 pts). MN_Open (4404.2) = key mid reference. Watch for 4H box to complete before London.</div></div>
     </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-warn">Pending</span></div>
+      <div class="sess-time">02:00–06:00 NY · 08:00–12:00 AMS</div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">Price extended below PDL (4432.1). Watch for sweep of ON_Low (4395.6) → reclaim PDL = OTE long. Target: PD_LW 4460.3 → MN_Open 4404.2 → P4H_EQ 4469.7. If PDL holds as resistance = continuation short toward PW_Low.</div></div>
+    </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">NY AM (4H #4)</span><span class="inst-badge badge-warn">Pending</span></div>
+      <div class="sess-time">06:00–10:00 NY · 12:00–16:00 AMS</div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">Still below PDL (4432.1). RTH open = key tell. Reclaim PDL on first 5-min close = long opportunity. Fail = continuation short. Watch for London low sweep before entry.</div></div>
+    </div>
+    <div class="sess-card">
+      <div class="sess-head"><span class="sess-name">Key levels to watch</span><span class="inst-badge badge-warn">Reference</span></div>
+      <div class="sess-time">All sessions</div>
+      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">BSL: PDH 4561.7 · ON_High 4502 · P4H_High 4502</div></div>
+      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pivots: PD_EQ 4496.9 · MN_Open 4404.2 · P4H_EQ 4469.7</div></div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">SSL: PDL 4432.1 · ON_Low 4395.6 · P4H_Low 4437.3</div></div>
+    </div></div>
   </div>
 </div>
 
-<div class="sec-hdr"><span class="sec-title">Priority sweep setups — 4H mid/low focus</span></div>
+<div class="sec-hdr"><span class="sec-title">Priority sweep setups — generated from live data · London prep</span></div>
+
 <div class="setup-row">
   <div class="setup-icon si-bull">▲</div>
   <div class="setup-body">
-    <div class="setup-title c-green">ES — PDH sweep → continuation long <span class="inst-badge badge-bull" style="margin-left:6px">Primary ES</span></div>
-    <div class="setup-detail">PDH (7570.75) swept + holds on 1-min close = long continuation. Confluence: NQ > P4H_EQ + 6E above MN_Open + CL breaks PDL. Stop: below PD_UW 7562.5.</div>
+    <div class="setup-title c-green">ES — SSL sweep → OTE long (below PDL) <span class="inst-badge badge-bull" style="margin-left:6px">London Setup</span></div>
+    <div class="setup-detail">Price 7510 extended below PDL (7515). Watch for sweep of ON_Low (7505.75) then reclaim PDL on 1-min close = OTE long entry. Zone: 7505.75–7515. Targets: PD_LW 7524 → MN_Open 7512.75 → P4H_EQ 7545. Stop: below ON_Low 7505.75. Confluence: 6E reaction to confirm USD direction.</div>
   </div>
 </div>
+
 <div class="setup-row">
   <div class="setup-icon si-bear">▼</div>
   <div class="setup-body">
-    <div class="setup-title c-red">ES — PDH rejection → OTE short <span class="inst-badge badge-warn" style="margin-left:6px">Conditional</span></div>
-    <div class="setup-detail">PDH swept + NQ rejects ON_High + YM below PD_EQ = SMT divergence → OTE short 62–79%. Targets: PD_UW 7562.5 → P4H_EQ 7545. Stop: above PDH + 2 ticks.</div>
+    <div class="setup-title c-red">ES — continuation short if PDL holds as resistance <span class="inst-badge badge-warn" style="margin-left:6px">Conditional</span></div>
+    <div class="setup-detail">If PDL (7515) acts as resistance on any retrace → continuation short. Target: ON_Low 7505.75 → PW_Low area. Only valid if MN_Open (7512.75) also holds as resistance.</div>
   </div>
 </div>
+
 <div class="setup-row">
   <div class="setup-icon si-bull">▲</div>
   <div class="setup-body">
-    <div class="setup-title c-green">NQ — 4H low sweep → OTE long <span class="inst-badge badge-bull" style="margin-left:6px">Primary NQ</span></div>
-    <div class="setup-detail">No Asia 4H low sweep. Pullback to P4H_Low (29963.25) / MN_Open (29811) = OTE long. Target: ON_High 30136.25. Stop: below P4H_Low 29963.25.</div>
+    <div class="setup-title c-green">NQ — SSL sweep → OTE long (below PDL) <span class="inst-badge badge-bull" style="margin-left:6px">London Setup</span></div>
+    <div class="setup-detail">Price 29787 extended below PDL (29877.5). Watch for sweep of ON_Low (29763) then reclaim PDL on 1-min close = OTE long entry. Zone: 29763–29877.5. Targets: PD_LW 29963.75 → MN_Open 29811 → P4H_EQ 30049.75. Stop: below ON_Low 29763. Confluence: 6E reaction to confirm USD direction.</div>
   </div>
 </div>
+
+<div class="setup-row">
+  <div class="setup-icon si-bear">▼</div>
+  <div class="setup-body">
+    <div class="setup-title c-red">NQ — continuation short if PDL holds as resistance <span class="inst-badge badge-warn" style="margin-left:6px">Conditional</span></div>
+    <div class="setup-detail">If PDL (29877.5) acts as resistance on any retrace → continuation short. Target: ON_Low 29763 → PW_Low area. Only valid if MN_Open (29811) also holds as resistance.</div>
+  </div>
+</div>
+
 <div class="setup-row">
   <div class="setup-icon si-bull">▲</div>
   <div class="setup-body">
-    <div class="setup-title c-green">GC — PDL zone → OTE long <span class="inst-badge badge-bull" style="margin-left:6px">Primary GC</span></div>
-    <div class="setup-detail">OTE long zone: ON_Low 4395.6 → PDL 4432.1. RTH open 08:20 NY = confirmation bar. Targets: PD_LW 4460.3 → P4H_EQ 4469.7 → D_Open 4488. Stop: below ON_Low 4395.6.</div>
+    <div class="setup-title c-green">GC — SSL sweep → OTE long (below PDL) <span class="inst-badge badge-bull" style="margin-left:6px">London Setup</span></div>
+    <div class="setup-detail">Price 4401.8 extended below PDL (4432.1). Watch for sweep of ON_Low (4395.6) then reclaim PDL on 1-min close = OTE long entry. Zone: 4395.6–4432.1. Targets: PD_LW 4460.3 → MN_Open 4404.2 → P4H_EQ 4469.7. Stop: below ON_Low 4395.6. Confluence: 6E reaction to confirm USD direction.</div>
   </div>
 </div>
+
 <div class="setup-row">
-  <div class="setup-icon si-warn">!</div>
+  <div class="setup-icon si-bear">▼</div>
   <div class="setup-body">
-    <div class="setup-title c-amber">CL — PDL macro tell · Iran deal signal <span class="inst-badge badge-info" style="margin-left:6px">Monitor</span></div>
-    <div class="setup-detail">CL at 92.16 — PDL 89.41. CL breaks PDL = Iran deal advancing = ES higher + GC supported. CL bounces = deal stalling = risk off. Watch CL at 09:00 NY RTH open.</div>
+    <div class="setup-title c-red">GC — continuation short if PDL holds as resistance <span class="inst-badge badge-warn" style="margin-left:6px">Conditional</span></div>
+    <div class="setup-detail">If PDL (4432.1) acts as resistance on any retrace → continuation short. Target: ON_Low 4395.6 → PW_Low area. Only valid if MN_Open (4404.2) also holds as resistance.</div>
+  </div>
+</div>
+
+<div class="setup-row">
+  <div class="setup-icon si-info">i</div>
+  <div class="setup-body">
+    <div class="setup-title c-blue">YM — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
+    <div class="setup-detail">YM at 50625 — below PD_EQ. Watch YM PD_EQ (50698) for intermarket alignment.</div>
+  </div>
+</div>
+
+<div class="setup-row">
+  <div class="setup-icon si-info">i</div>
+  <div class="setup-body">
+    <div class="setup-title c-blue">CL — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
+    <div class="setup-detail">CL at 92.06 — Above PD_EQ = CL constructive, watch for ES correlation. Watch CL at RTH open (09:00 NY) as macro tell.</div>
+  </div>
+</div>
+
+<div class="setup-row">
+  <div class="setup-icon si-info">i</div>
+  <div class="setup-body">
+    <div class="setup-title c-blue">6E — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
+    <div class="setup-detail">6E at 1.16005 — BELOW PDL = USD strong = headwind for ES and GC. Watch 6E at RTH open (08:00 NY). 6E leads USD repricing before ES and GC respond.</div>
   </div>
 </div>
 
@@ -721,6 +1495,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 
 <script>
+function showGap(id,btn){
+  document.querySelectorAll('[id^="gap-"]').forEach(t=>t.style.display='none');
+  document.getElementById(id).style.display='block';
+  btn.parentElement.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
 function show4H(id,btn){
   document.querySelectorAll('.fh-tab').forEach(t=>t.style.display='none');
   document.getElementById(id).style.display='block';
@@ -736,12 +1516,12 @@ function showTab(id,btn){
 
 // Build pills from data
 const pills = [];
-pills.push('<span class="pill pill-bear">ES 7511 ⚠ below PDL</span>');
-pills.push('<span class="pill pill-warn">CL 92.16</span>');
-pills.push('<span class="pill pill-warn">YM 50627</span>');
-pills.push('<span class="pill pill-warn">6E 1.16 ⚠ below PDL</span>');
-pills.push('<span class="pill pill-bear">GC 4401.4 ⚠ below PDL</span>');
-pills.push('<span class="pill pill-bear">NQ 29798.5 ⚠ below PDL</span>');
+pills.push('<span class="pill pill-bear">ES 7510 ⚠ below PDL</span>');
+pills.push('<span class="pill pill-warn">CL 92.06</span>');
+pills.push('<span class="pill pill-warn">YM 50625</span>');
+pills.push('<span class="pill pill-warn">6E 1.16005 ⚠ below PDL</span>');
+pills.push('<span class="pill pill-bear">GC 4401.8 ⚠ below PDL</span>');
+pills.push('<span class="pill pill-bear">NQ 29787 ⚠ below PDL</span>');
 document.getElementById('pills-container').innerHTML = pills.join('');
 </script>
 </body>
