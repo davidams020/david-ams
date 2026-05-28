@@ -8,12 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#080b0f;--bg2:#0d1117;--bg3:#111820;--card:#131b25;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--amber:#f0a500;--green:#22c55e;--red:#ef4444;--blue:#38bdf8;--text:#e2e8f0;--muted:#64748b;--dim:#334155;--mono:'Geist Mono',monospace;--sans:'Syne',sans-serif}
-body.light{--bg:#f4f6f9;--bg2:#edf0f4;--bg3:#e4e8ee;--card:#ffffff;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.16);--amber:#c47d00;--green:#16a34a;--red:#dc2626;--blue:#0284c7;--text:#0f172a;--muted:#64748b;--dim:#94a3b8}
-body.light::before{background-image:linear-gradient(rgba(196,125,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(196,125,0,0.04) 1px,transparent 1px)}
-body.light::after{background:radial-gradient(ellipse,rgba(196,125,0,0.05) 0%,transparent 70%)}
-body.light .fh-table tr:hover td,body.light .btable tr:hover td{background:rgba(0,0,0,0.02)}
-.theme-toggle{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--muted);cursor:pointer;font-family:var(--mono);font-size:10px;font-weight:500;padding:5px 10px;transition:color .15s,background .15s}
-.theme-toggle:hover{color:var(--text)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(240,165,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,165,0,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
@@ -173,7 +167,10 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </div>
     <div>
       <div class="live-badge"><span class="live-dot"></span>NY AM / PM · Bridge v1.2</div>
-      <div class="date-time"><strong>Thu, May 28, 2026</strong><br>Thursday, May 28, 2026 at 10:42<br>4H #5 active · NY AM / PM · NY mid-session. Follow AM direction. Reduce size into close. Watch 15/30-min sweeps and Dave Wick formations.</div>
+      <div class="date-time"><strong>Thu, May 28, 2026</strong><br>Thursday, May 28, 2026 at 10:56<br>4H #5 active · NY AM / PM · NY mid-session. Follow AM direction. Reduce size into close. Watch 15/30-min sweeps and Dave Wick formations.</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <select id="tz-selector" style="background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--muted);cursor:pointer;font-family:var(--mono);font-size:10px;padding:5px 8px"></select>
       <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀ Light</button>
     </div>
   </div>
@@ -186,15 +183,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">ES</div><div class="inst-desc">E-mini S&P 500</div></div>
       <div class="inst-price">
-        <div class="inst-last">7557.5</div>
+        <div class="inst-last">7562</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 7515</span><span>7557.5</span><span>PDH 7570.75</span></div>
+      <div class="pos-label"><span>PDL 7515</span><span>7562</span><span>PDH 7570.75</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:76%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:76%"></div>
+        <div class="pos-fill" style="width:84%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:84%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -238,15 +235,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">NQ</div><div class="inst-desc">E-mini NASDAQ 100</div></div>
       <div class="inst-price">
-        <div class="inst-last">30148</div>
+        <div class="inst-last">30174.75</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 29877.5</span><span>30148</span><span>PDH 30379</span></div>
+      <div class="pos-label"><span>PDL 29877.5</span><span>30174.75</span><span>PDH 30379</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:54%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:54%"></div>
+        <div class="pos-fill" style="width:59%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:59%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -290,15 +287,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">YM</div><div class="inst-desc">E-mini Dow Jones</div></div>
       <div class="inst-price">
-        <div class="inst-last">50650</div>
+        <div class="inst-last">50678</div>
         <div class="inst-badge badge-warn">Watch</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 50500</span><span>50650</span><span>PDH 50896</span></div>
+      <div class="pos-label"><span>PDL 50500</span><span>50678</span><span>PDH 50896</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:38%;background:var(--amber);opacity:0.5"></div>
-        <div class="pos-marker" style="left:38%"></div>
+        <div class="pos-fill" style="width:45%;background:var(--amber);opacity:0.5"></div>
+        <div class="pos-marker" style="left:45%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -394,15 +391,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">CL</div><div class="inst-desc">NYMEX Crude Oil</div></div>
       <div class="inst-price">
-        <div class="inst-last">89.3</div>
+        <div class="inst-last">89.55</div>
         <div class="inst-badge badge-bear">Bearish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 87.77</span><span>89.3</span><span>PDH 93.69</span></div>
+      <div class="pos-label"><span>PDL 87.77</span><span>89.55</span><span>PDH 93.69</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:26%;background:var(--red);opacity:0.5"></div>
-        <div class="pos-marker" style="left:26%"></div>
+        <div class="pos-fill" style="width:30%;background:var(--red);opacity:0.5"></div>
+        <div class="pos-marker" style="left:30%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -446,15 +443,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">6E</div><div class="inst-desc">Euro FX Futures</div></div>
       <div class="inst-price">
-        <div class="inst-last">1.16625</div>
+        <div class="inst-last">1.16545</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 1.16325</span><span>1.16625</span><span>PDH 1.1672</span></div>
+      <div class="pos-label"><span>PDL 1.16325</span><span>1.16545</span><span>PDH 1.1672</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:76%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:76%"></div>
+        <div class="pos-fill" style="width:56%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:56%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -500,7 +497,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <thead><tr><th>Inst</th><th>Last</th><th>PD_EQ</th><th>MN_Open</th><th>FX4 Zone</th><th>Asia Setup</th><th>DOL</th><th>Suggested target</th></tr></thead>
     <tbody><tr>
       <td style="color:var(--green);font-weight:600">ES</td>
-      <td style="font-variant-numeric:tabular-nums">7557.5</td>
+      <td style="font-variant-numeric:tabular-nums">7562</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
@@ -510,7 +507,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--green);font-weight:600">NQ</td>
-      <td style="font-variant-numeric:tabular-nums">30148</td>
+      <td style="font-variant-numeric:tabular-nums">30174.75</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
@@ -520,7 +517,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--amber);font-weight:600">YM</td>
-      <td style="font-variant-numeric:tabular-nums">50650</td>
+      <td style="font-variant-numeric:tabular-nums">50678</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y" style="font-size:9px">Dbl Discount</span></td>
@@ -540,7 +537,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--red);font-weight:600">CL</td>
-      <td style="font-variant-numeric:tabular-nums">89.3</td>
+      <td style="font-variant-numeric:tabular-nums">89.55</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-y" style="font-size:9px">Dbl Discount</span></td>
@@ -550,7 +547,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--green);font-weight:600">6E</td>
-      <td style="font-variant-numeric:tabular-nums">1.16625</td>
+      <td style="font-variant-numeric:tabular-nums">1.16545</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
@@ -571,22 +568,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <button class="tab-btn" onclick="show4H('6e4h',this)">6E</button>
   </div>
   <div id="es4h" class="fh-tab active" style="background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 18:00 <span style="font-size:9px">5/27, 18:00</span></span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">7557.75 ↑</span>
-        </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 18:00 <span style="font-size:9px">5/27, 18:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7532.25 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 02:00 <span style="font-size:9px">5/28, 02:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7523.75 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 06:00 <span style="font-size:9px">5/28, 06:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7515 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 22:00 <span style="font-size:9px">5/27, 22:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7505.75 ↓</span>
-        </div></div></div><table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
+  <table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
       <td>#1</td>
       <td>18:00–22:00</td>
       <td style="color:var(--muted)">00:00–04:00</td>
@@ -648,19 +630,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr></tbody></table>
   </div>
   <div id="nq4h" class="fh-tab" style="display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL</div><div style="font-size:10px;color:var(--muted);padding-top:4px">None above last price</div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 18:00 <span style="font-size:9px">5/27, 18:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29963.25 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 02:00 <span style="font-size:9px">5/28, 02:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29880.5 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 06:00 <span style="font-size:9px">5/28, 06:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29863.5 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 22:00 <span style="font-size:9px">5/27, 22:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29763 ↓</span>
-        </div></div></div><table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
+  <table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
       <td>#1</td>
       <td>18:00–22:00</td>
       <td style="color:var(--muted)">00:00–04:00</td>
@@ -722,10 +692,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr></tbody></table>
   </div>
   <div id="gc4h" class="fh-tab" style="display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL</div><div style="font-size:10px;color:var(--muted);padding-top:4px">None above last price</div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 06:00 <span style="font-size:9px">5/27, 06:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">4439.7 ↓</span>
-        </div></div></div><table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
+  <table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
       <td>#1</td>
       <td>18:00–22:00</td>
       <td style="color:var(--muted)">00:00–04:00</td>
@@ -787,28 +754,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr></tbody></table>
   </div>
   <div id="ym4h" class="fh-tab" style="display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 18:00 <span style="font-size:9px">5/27, 18:00</span></span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50819 ↑</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 22:00 <span style="font-size:9px">5/27, 22:00</span></span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50788 ↑</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 02:00 <span style="font-size:9px">5/28, 02:00</span></span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50735 ↑</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 06:00 <span style="font-size:9px">5/28, 06:00</span></span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50692 ↑</span>
-        </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 02:00 <span style="font-size:9px">5/28, 02:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50648 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 22:00 <span style="font-size:9px">5/27, 22:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50594 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 06:00 <span style="font-size:9px">5/28, 06:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50386 ↓</span>
-        </div></div></div><table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
+  <table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
       <td>#1</td>
       <td>18:00–22:00</td>
       <td style="color:var(--muted)">00:00–04:00</td>
@@ -870,19 +816,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr></tbody></table>
   </div>
   <div id="6e4h" class="fh-tab" style="display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL</div><div style="font-size:10px;color:var(--muted);padding-top:4px">None above last price</div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 18:00 <span style="font-size:9px">5/27, 18:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.1618 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 06:00 <span style="font-size:9px">5/28, 06:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16125 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 02:00 <span style="font-size:9px">5/28, 02:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16075 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">TV 22:00 <span style="font-size:9px">5/27, 22:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.15945 ↓</span>
-        </div></div></div><table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
+  <table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
       <td>#1</td>
       <td>18:00–22:00</td>
       <td style="color:var(--muted)">00:00–04:00</td>
@@ -1371,14 +1305,14 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:10px;font-variant-numeric:tabular-nums">23.0000</td>
       <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
     </tr>
-<tr class="gap-inside">
+<tr>
       <td><b>NWOG5</b></td>
       <td style="font-variant-numeric:tabular-nums">50662</td>
       <td style="font-variant-numeric:tabular-nums">49464</td>
       <td style="font-variant-numeric:tabular-nums">50063</td>
       <td><span class="bf bf-n">▼ Bear gap</span></td>
       <td style="font-size:10px;font-variant-numeric:tabular-nums">1198.0000</td>
-      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
     </tr>
       <tr><td colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)">NDOG — New Day Opening Gaps (last 3)</td></tr>
       <tr class="gap-inside">
@@ -1569,14 +1503,14 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:10px;font-variant-numeric:tabular-nums">93.3900</td>
       <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
-<tr>
+<tr class="gap-inside">
       <td><b>NDOG3</b></td>
       <td style="font-variant-numeric:tabular-nums">89.41</td>
       <td style="font-variant-numeric:tabular-nums">93.88</td>
       <td style="font-variant-numeric:tabular-nums">91.64</td>
       <td><span class="bf bf-y">▲ Bull gap</span></td>
       <td style="font-size:10px;font-variant-numeric:tabular-nums">4.4700</td>
-      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
     </tbody>
   </table>
@@ -1681,682 +1615,1123 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   
   <div id="ib4h-es" class="asia-wrap" style=";border-radius:0 0 8px 8px;border-top:none">
     <div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">1 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">7 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">7574 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/22, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779451200" data-type="label">Box 8</span>
+            <span data-ts="1779451200" data-type="dt" style="font-size:9px"> May 22, 08:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7478 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 16 <span style="font-size:9px">5/22, 16:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779480000" data-type="label">Box 16</span>
+            <span data-ts="1779480000" data-type="dt" style="font-size:9px"> May 22, 16:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7482.25 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 0 <span style="font-size:9px">5/28, 00:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779940800" data-type="label">Box 0</span>
+            <span data-ts="1779940800" data-type="dt" style="font-size:9px"> May 28, 00:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7505.75 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 4 <span style="font-size:9px">5/28, 04:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779955200" data-type="label">Box 4</span>
+            <span data-ts="1779955200" data-type="dt" style="font-size:9px"> May 28, 04:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7515 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7520.75 ↓</span>
-        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar — Box 8 · 5/28, 08:00</div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
+        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
+      <span data-ts="1779969600" data-type="label">Box 8</span> ·
+      <span data-ts="1779969600" data-type="dt">May 28, 08:00</span>
+      </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
-      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">NY time</th>
+      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
+      <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Open</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">High</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">EQ</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Low</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">H swept</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">L swept</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779969600" data-type="dt">May 28, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7522</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">7574 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7547.38</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">7520.75 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779955200" data-type="dt">May 28, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7531.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7536</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7525.5</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">7515 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779940800" data-type="dt">May 28, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7512.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7534.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7520</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">7505.75 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 20</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 20:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779926400" data-type="dt">May 27, 20:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7534.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7551.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7531.63</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7511.5</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 0</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 18</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 18:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779919200" data-type="dt">May 27, 18:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7553.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7557.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7545</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7532.25</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 16</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 16:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779912000" data-type="dt">May 27, 16:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7539.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7557.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7547.88</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7538.5</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 12</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 12:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779897600" data-type="dt">May 27, 12:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7524.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7545.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7530.13</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7515</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 16</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779883200" data-type="dt">May 27, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7551.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7570.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7543.63</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7516.5</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 12</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7547.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7566.5</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7556.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7547</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779854400" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779854400" data-type="dt">May 27, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7539</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7548.5</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7542</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7535.5</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below</div></div>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
   <div id="ib4h-nq" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
     <div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">2 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">9 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30187 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/27, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779883200" data-type="label">Box 8</span>
+            <span data-ts="1779883200" data-type="dt" style="font-size:9px"> May 27, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30379 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 0 <span style="font-size:9px">5/26, 00:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779768000" data-type="label">Box 0</span>
+            <span data-ts="1779768000" data-type="dt" style="font-size:9px"> May 26, 00:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29744 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 4 <span style="font-size:9px">5/26, 04:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779782400" data-type="label">Box 4</span>
+            <span data-ts="1779782400" data-type="dt" style="font-size:9px"> May 26, 04:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29758 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 0 <span style="font-size:9px">5/28, 00:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779940800" data-type="label">Box 0</span>
+            <span data-ts="1779940800" data-type="dt" style="font-size:9px"> May 28, 00:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29763 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 4 <span style="font-size:9px">5/28, 04:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779955200" data-type="label">Box 4</span>
+            <span data-ts="1779955200" data-type="dt" style="font-size:9px"> May 28, 04:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29863.5 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29920.25 ↓</span>
-        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar — Box 8 · 5/28, 08:00</div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
+        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
+      <span data-ts="1779969600" data-type="label">Box 8</span> ·
+      <span data-ts="1779969600" data-type="dt">May 28, 08:00</span>
+      </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
-      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">NY time</th>
+      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
+      <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Open</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">High</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">EQ</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Low</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">H swept</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">L swept</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779969600" data-type="dt">May 28, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">29923.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">30187 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30053.63</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">29920.25 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779955200" data-type="dt">May 28, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">29958.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">29998</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">29930.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">29863.5 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779940800" data-type="dt">May 28, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">29811</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">29965</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">29864</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">29763 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 20</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 20:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779926400" data-type="dt">May 27, 20:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">29978</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30090</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">29942.88</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">29795.75</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 0</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 18</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 18:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779919200" data-type="dt">May 27, 18:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">30120</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30136.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30051.5</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">29966.75</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 16</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 16:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779912000" data-type="dt">May 27, 16:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">30047</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30129.5</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30080.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30031</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 12</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 12:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779897600" data-type="dt">May 27, 12:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">29934.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30072</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">29983.38</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">29894.75</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 16</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779883200" data-type="dt">May 27, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">30265.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">30379 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30128.25</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">29877.5</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">30141</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30297</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30213.63</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30130.25</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779854400" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779854400" data-type="dt">May 27, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">30097</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30144</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30099.88</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30055.75</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below</div></div>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
   <div id="ib4h-ym" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
     <div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">7 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">1 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50855 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/27, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779883200" data-type="label">Box 8</span>
+            <span data-ts="1779883200" data-type="dt" style="font-size:9px"> May 27, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50896 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/26, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779796800" data-type="label">Box 8</span>
+            <span data-ts="1779796800" data-type="dt" style="font-size:9px"> May 26, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50949 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 4 <span style="font-size:9px">5/26, 04:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779782400" data-type="label">Box 4</span>
+            <span data-ts="1779782400" data-type="dt" style="font-size:9px"> May 26, 04:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50975 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 0 <span style="font-size:9px">5/26, 00:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779768000" data-type="label">Box 0</span>
+            <span data-ts="1779768000" data-type="dt" style="font-size:9px"> May 26, 00:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">51028 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50386 ↓</span>
-        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar — Box 8 · 5/28, 08:00</div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
+        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
+      <span data-ts="1779969600" data-type="label">Box 8</span> ·
+      <span data-ts="1779969600" data-type="dt">May 28, 08:00</span>
+      </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
-      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">NY time</th>
+      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
+      <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Open</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">High</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">EQ</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Low</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">H swept</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">L swept</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779969600" data-type="dt">May 28, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50636</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">50855 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50621</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">50386 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779955200" data-type="dt">May 28, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50705</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50724</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50651</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50578</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779940800" data-type="dt">May 28, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50623</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50735</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50665</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50594</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 20</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 20:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779926400" data-type="dt">May 27, 20:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50718</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50791</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50705</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50618</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 0</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 18</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 18:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779919200" data-type="dt">May 27, 18:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50784</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50819</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50764</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50709</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 16</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 16:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779912000" data-type="dt">May 27, 16:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50717</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50805</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50731</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50656</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 12</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 12:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779897600" data-type="dt">May 27, 12:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50695</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50790</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50725</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50659</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 16</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 16</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779883200" data-type="dt">May 27, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50582</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">50896 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50702</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50508</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50662</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50797</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50683</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50568</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779854400" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779854400" data-type="dt">May 27, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50588</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50680</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50624</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50568</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below</div></div>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
   <div id="ib4h-gc" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
     <div class="asia-card"><div class="asia-head"><span class="asia-sym">GC · COMEX Gold</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">10 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">4 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 16 <span style="font-size:9px">5/27, 16:00</span></span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">4447</span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779912000" data-type="label">Box 16</span>
+            <span data-ts="1779912000" data-type="dt" style="font-size:9px"> May 27, 16:00</span>
+          </span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">4447 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 12 <span style="font-size:9px">5/27, 12:00</span></span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">4447</span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779897600" data-type="label">Box 12</span>
+            <span data-ts="1779897600" data-type="dt" style="font-size:9px"> May 27, 12:00</span>
+          </span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">4447 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 16 <span style="font-size:9px">5/26, 16:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779825600" data-type="label">Box 16</span>
+            <span data-ts="1779825600" data-type="dt" style="font-size:9px"> May 26, 16:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">4501.1 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 12 <span style="font-size:9px">5/26, 12:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779811200" data-type="label">Box 12</span>
+            <span data-ts="1779811200" data-type="dt" style="font-size:9px"> May 26, 12:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">4501.4 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/26, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779796800" data-type="label">Box 8</span>
+            <span data-ts="1779796800" data-type="dt" style="font-size:9px"> May 26, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">4525.6 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 4 <span style="font-size:9px">5/27, 04:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779868800" data-type="label">Box 4</span>
+            <span data-ts="1779868800" data-type="dt" style="font-size:9px"> May 27, 04:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">4439.7 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/27, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779883200" data-type="label">Box 8</span>
+            <span data-ts="1779883200" data-type="dt" style="font-size:9px"> May 27, 08:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">4439.7 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 12 <span style="font-size:9px">5/27, 12:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">4447</span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779897600" data-type="label">Box 12</span>
+            <span data-ts="1779897600" data-type="dt" style="font-size:9px"> May 27, 12:00</span>
+          </span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">4447 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 16 <span style="font-size:9px">5/27, 16:00</span></span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">4447</span>
-        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar — Box 8 · 5/28, 08:00</div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
+          <span style="color:var(--muted)">
+            <span data-ts="1779912000" data-type="label">Box 16</span>
+            <span data-ts="1779912000" data-type="dt" style="font-size:9px"> May 27, 16:00</span>
+          </span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">4447 ↓</span>
+        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
+      <span data-ts="1779969600" data-type="label">Box 8</span> ·
+      <span data-ts="1779969600" data-type="dt">May 28, 08:00</span>
+      </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
-      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">NY time</th>
+      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
+      <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Open</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">High</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">EQ</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Low</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">H swept</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">L swept</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 16</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 16:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779912000" data-type="dt">May 27, 16:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4447</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">4447 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4447</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">4447 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 12</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 12:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779897600" data-type="dt">May 27, 12:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4447</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">4447 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4447</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">4447 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779883200" data-type="dt">May 27, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4439.7</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">4439.7</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4439.7</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">4439.7 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 12</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4439.7</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">4439.7</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4439.7</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">4439.7 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 12</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 16</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/26, 16:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779825600" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779825600" data-type="dt">May 26, 16:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4501.1</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">4501.1 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4501.1</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">4501.1</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 12</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/26, 12:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779811200" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779811200" data-type="dt">May 26, 12:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4501.4</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">4501.4 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4501.3</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">4501.1</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/26, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779796800" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779796800" data-type="dt">May 26, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4521.5</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">4525.6 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4523.6</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">4521.5</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 12</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779811200" data-type="label">Box 12</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/26, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779782400" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779782400" data-type="dt">May 26, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4572.8</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">4572.8 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4572.8</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">4572.8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779796800" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/26, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779768000" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779768000" data-type="dt">May 26, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4572.8</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">4572.8 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4572.8</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">4572.8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779796800" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 20</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/25, 20:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779753600" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779753600" data-type="dt">May 25, 20:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">4572.8</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">4572.8 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">4572.8</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">4572.8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below</div></div>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779796800" data-type="label">Box 8</span></td>
+      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
   <div id="ib4h-cl" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
     <div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">12 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">1 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">91.45 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 4 <span style="font-size:9px">5/28, 04:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779955200" data-type="label">Box 4</span>
+            <span data-ts="1779955200" data-type="dt" style="font-size:9px"> May 28, 04:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">91.57 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 0 <span style="font-size:9px">5/28, 00:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779940800" data-type="label">Box 0</span>
+            <span data-ts="1779940800" data-type="dt" style="font-size:9px"> May 28, 00:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">92.52 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 20 <span style="font-size:9px">5/26, 20:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779840000" data-type="label">Box 20</span>
+            <span data-ts="1779840000" data-type="dt" style="font-size:9px"> May 26, 20:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">93.43 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 18 <span style="font-size:9px">5/26, 18:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779832800" data-type="label">Box 18</span>
+            <span data-ts="1779832800" data-type="dt" style="font-size:9px"> May 26, 18:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">93.69 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">87.11 ↓</span>
-        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar — Box 8 · 5/28, 08:00</div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
+        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
+      <span data-ts="1779969600" data-type="label">Box 8</span> ·
+      <span data-ts="1779969600" data-type="dt">May 28, 08:00</span>
+      </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
-      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">NY time</th>
+      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
+      <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Open</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">High</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">EQ</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Low</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">H swept</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">L swept</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779969600" data-type="dt">May 28, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">91.31</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">91.45 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.28</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">87.11 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779955200" data-type="dt">May 28, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">90.93</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">91.57 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">90.72</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">89.87</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779940800" data-type="dt">May 28, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">92.2</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">92.52 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">91.63</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">90.75</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 20</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 20:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779926400" data-type="dt">May 27, 20:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">90.21</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">92.23</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">91.08</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">89.93</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 0</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 18</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 18:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779919200" data-type="dt">May 27, 18:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">89.11</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">90.4</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.75</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">89.11</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 16</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 16:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779912000" data-type="dt">May 27, 16:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">89.44</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">89.6</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.45</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">89.3</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 12</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 12:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779897600" data-type="dt">May 27, 12:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">90.02</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">90.4</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.44</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">88.48</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779883200" data-type="dt">May 27, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">90.55</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">91.19</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.48</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">87.77</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">91.1</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">91.26</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">90.45</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">89.64</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779854400" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779854400" data-type="dt">May 27, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">92.11</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">92.22</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">91.53</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">90.85</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
-      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below</div></div>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
   <div id="ib4h-6e" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
     <div class="asia-card"><div class="asia-head"><span class="asia-sym">6E · Euro FX Futures</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">2 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">3 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.1667 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/27, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779883200" data-type="label">Box 8</span>
+            <span data-ts="1779883200" data-type="dt" style="font-size:9px"> May 27, 08:00</span>
+          </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.1672 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 0 <span style="font-size:9px">5/28, 00:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779940800" data-type="label">Box 0</span>
+            <span data-ts="1779940800" data-type="dt" style="font-size:9px"> May 28, 00:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.15945 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 4 <span style="font-size:9px">5/28, 04:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779955200" data-type="label">Box 4</span>
+            <span data-ts="1779955200" data-type="dt" style="font-size:9px"> May 28, 04:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16125 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">Box 8 <span style="font-size:9px">5/28, 08:00</span></span>
+          <span style="color:var(--muted)">
+            <span data-ts="1779969600" data-type="label">Box 8</span>
+            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
+          </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16245 ↓</span>
-        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar — Box 8 · 5/28, 08:00</div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
+        </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
+      <span data-ts="1779969600" data-type="label">Box 8</span> ·
+      <span data-ts="1779969600" data-type="dt">May 28, 08:00</span>
+      </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
-      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">NY time</th>
+      <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
+      <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Open</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">High</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">EQ</th>
       <th style="padding:4px 8px;text-align:right;color:var(--muted);font-size:9px">Low</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">H swept</th>
       <th style="padding:4px 8px;text-align:center;color:var(--muted);font-size:9px">L swept</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779969600" data-type="dt">May 28, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16255</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">1.1667 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16458</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">1.16245 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779955200" data-type="dt">May 28, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.1621</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.16315</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.1622</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">1.16125 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/28, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779940800" data-type="dt">May 28, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.15955</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1626</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16102</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">1.15945 ●</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779955200" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 20</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 20:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779926400" data-type="dt">May 27, 20:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.1626</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1632</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16138</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.15955</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 0</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779940800" data-type="label">Box 0</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 18</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 18:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779919200" data-type="dt">May 27, 18:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16355</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1639</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16317</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.16245</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 20</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779926400" data-type="label">Box 20</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 16</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 16:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779912000" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779912000" data-type="dt">May 27, 16:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16395</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1641</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16383</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.16355</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 12</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 12:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779897600" data-type="dt">May 27, 12:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.1641</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.16435</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.1638</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.16325</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 18</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779969600" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779919200" data-type="label">Box 18</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 8</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 08:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779883200" data-type="dt">May 27, 08:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16485</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">1.1672 ●</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16525</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1633</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">—</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 12</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779897600" data-type="label">Box 12</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 4</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 04:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16515</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1659</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16512</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.16435</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">Box 0</td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">5/27, 00:00</td>
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779854400" data-type="label">Box 0</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779854400" data-type="dt">May 27, 00:00</span></td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.1649</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.166</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16538</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.16475</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 8</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">Box 4</td>
-      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below</div></div>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779883200" data-type="label">Box 8</span></td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779868800" data-type="label">Box 4</span></td>
+      </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 </div>
 
 <div class="sec-hdr"><span class="sec-title">Asian session setup — 20:00–02:00 NY · fractal reversal model · all instruments</span></div>
 <div class="asia-wrap">
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 7557.5 inside PD range (7515–7570.75). No Asian session reversal setup active — monitor ASIA_High (7551.75) and ASIA_Low (7511.5) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 30148 inside PD range (29877.5–30379). No Asian session reversal setup active — monitor ASIA_High (30090) and ASIA_Low (29795.75) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 50650 inside PD range (50500–50896). No Asian session reversal setup active — monitor ASIA_High (50791) and ASIA_Low (50618) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 7562 inside PD range (7515–7570.75). No Asian session reversal setup active — monitor ASIA_High (7551.75) and ASIA_Low (7511.5) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 30174.75 inside PD range (29877.5–30379). No Asian session reversal setup active — monitor ASIA_High (30090) and ASIA_Low (29795.75) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 50678 inside PD range (50500–50896). No Asian session reversal setup active — monitor ASIA_High (50791) and ASIA_Low (50618) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
 <div class="asia-card"><div class="asia-head"><span class="asia-sym">GC · COMEX Gold<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 4447 inside PD range (4500.4–4572.8). No Asian session reversal setup active — monitor ASIA_High (—) and ASIA_Low (—) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 89.3 inside PD range (87.77–93.69). No Asian session reversal setup active — monitor ASIA_High (92.23) and ASIA_Low (89.93) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">6E · Euro FX Futures<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 1.16625 inside PD range (1.16325–1.1672). No Asian session reversal setup active — monitor ASIA_High (1.1632) and ASIA_Low (1.15955) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 89.55 inside PD range (87.77–93.69). No Asian session reversal setup active — monitor ASIA_High (92.23) and ASIA_Low (89.93) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">6E · Euro FX Futures<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 1.16545 inside PD range (1.16325–1.1672). No Asian session reversal setup active — monitor ASIA_High (1.1632) and ASIA_Low (1.15955) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
 </div>
 
 <div class="sec-hdr"><span class="sec-title">Session breakdown — ES · NQ · GC · focus: London + NY AM</span></div>
@@ -2497,7 +2872,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">YM — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">YM at 50650 — below PD_EQ. ⚠ SMT divergence vs NQ/ES — use as OTE short confirmation on ES when NQ rejects a high.</div>
+    <div class="setup-detail">YM at 50678 — below PD_EQ. ⚠ SMT divergence vs NQ/ES — use as OTE short confirmation on ES when NQ rejects a high.</div>
   </div>
 </div>
 
@@ -2505,7 +2880,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">CL — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">CL at 89.3 — Between PDL and PD_EQ = ranging. Watch CL at RTH open (09:00 NY) as macro tell.</div>
+    <div class="setup-detail">CL at 89.55 — Between PDL and PD_EQ = ranging. Watch CL at RTH open (09:00 NY) as macro tell.</div>
   </div>
 </div>
 
@@ -2513,7 +2888,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">6E — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">6E at 1.16625 — above PD_EQ + MN_Open = USD weak = tailwind for ES and GC. 6E leads USD repricing before ES and GC respond.</div>
+    <div class="setup-detail">6E at 1.16545 — above PD_EQ + MN_Open = USD weak = tailwind for ES and GC. 6E leads USD repricing before ES and GC respond.</div>
   </div>
 </div>
 
@@ -2602,27 +2977,78 @@ function showTab(id,btn){
 
 // Build pills from data
 const pills = [];
-pills.push('<span class="pill pill-bull">ES 7557.5</span>');
-pills.push('<span class="pill pill-bull">NQ 30148</span>');
-pills.push('<span class="pill pill-warn">YM 50650</span>');
+pills.push('<span class="pill pill-bull">ES 7562</span>');
+pills.push('<span class="pill pill-bull">NQ 30174.75</span>');
+pills.push('<span class="pill pill-warn">YM 50678</span>');
 pills.push('<span class="pill pill-bear">GC 4447 ⚠ below PDL</span>');
-pills.push('<span class="pill pill-bear">CL 89.3</span>');
-pills.push('<span class="pill pill-bull">6E 1.16625</span>');
+pills.push('<span class="pill pill-bear">CL 89.55</span>');
+pills.push('<span class="pill pill-bull">6E 1.16545</span>');
 document.getElementById('pills-container').innerHTML = pills.join('');
 
-// Theme toggle
-function toggleTheme(){
-  const light = document.body.classList.toggle('light');
-  document.getElementById('themeBtn').textContent = light ? '🌙 Dark' : '☀ Light';
-  try { localStorage.setItem('ams-theme', light ? 'light' : 'dark') } catch(e){}
+// ── Timezone display system ────────────────────────────────────────────────────
+// All timestamps stored as unix seconds in the JSON. Labels are computed here
+// in the browser using the user's chosen display timezone.
+
+let DISPLAY_TZ = localStorage.getItem('ams-tz') || 'America/New_York'
+
+const TZ_OPTIONS = [
+  { label: 'NY (EST/EDT)',  value: 'America/New_York' },
+  { label: 'AMS (CET/CEST)', value: 'Europe/Amsterdam' },
+  { label: 'London (GMT/BST)', value: 'Europe/London' },
+  { label: 'UTC',           value: 'UTC' },
+]
+
+function fmtTZ(ts, opts = {}) {
+  if (!ts) return '—'
+  const d = new Date(ts * 1000)
+  const base = { timeZone: DISPLAY_TZ, hour12: false }
+  if (opts.timeOnly)  return d.toLocaleTimeString('en-US', { ...base, hour: '2-digit', minute: '2-digit' })
+  if (opts.dateOnly)  return d.toLocaleDateString('en-US', { ...base, month: 'short', day: 'numeric' })
+  return d.toLocaleString('en-US', { ...base, month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
 }
-// Restore preference
+
+function boxLabel(ts) {
+  if (!ts) return '—'
+  const h = parseInt(new Date(ts * 1000).toLocaleString('en-US', { timeZone: DISPLAY_TZ, hour: '2-digit', hour12: false }))
+  return 'Box ' + (h === 24 ? 0 : h)
+}
+
+function renderTZSelector() {
+  const sel = document.getElementById('tz-selector')
+  if (!sel) return
+  sel.innerHTML = TZ_OPTIONS.map(o =>
+    '<option value="' + o.value + '"' + (o.value === DISPLAY_TZ ? ' selected' : '') + '>' + o.label + '</option>'
+  ).join('')
+}
+
+function applyTZ(tz) {
+  DISPLAY_TZ = tz
+  try { localStorage.setItem('ams-tz', tz) } catch(e) {}
+  // Re-render all dynamic labels
+  document.querySelectorAll('[data-ts]').forEach(el => {
+    const ts  = parseInt(el.dataset.ts)
+    const typ = el.dataset.type
+    if (typ === 'label')  el.textContent = boxLabel(ts)
+    if (typ === 'time')   el.textContent = fmtTZ(ts, { timeOnly: true })
+    if (typ === 'dt')     el.textContent = fmtTZ(ts)
+  })
+}
+
+renderTZSelector()
+document.getElementById('tz-selector')?.addEventListener('change', e => applyTZ(e.target.value))
+
+// Theme toggle
+function toggleTheme() {
+  const light = document.body.classList.toggle('light')
+  document.getElementById('themeBtn').textContent = light ? '🌙 Dark' : '☀ Light'
+  try { localStorage.setItem('ams-theme', light ? 'light' : 'dark') } catch(e) {}
+}
 try {
   if (localStorage.getItem('ams-theme') === 'light') {
-    document.body.classList.add('light');
-    document.getElementById('themeBtn').textContent = '🌙 Dark';
+    document.body.classList.add('light')
+    document.getElementById('themeBtn').textContent = '🌙 Dark'
   }
-} catch(e){}
+} catch(e) {}
 </script>
 </body>
 </html>
