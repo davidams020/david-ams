@@ -157,6 +157,43 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 .asia-note{font-size:10.5px;color:var(--muted);line-height:1.6;padding:4px 0 2px}
 .asia-note b{color:var(--text);font-weight:500}
 .c-green{color:var(--green)}.c-red{color:var(--red)}.c-amber{color:var(--amber)}.c-blue{color:var(--blue)}.c-text{color:var(--text)}.c-muted{color:var(--muted)}
+/* ── PO3 / HTF Order Flow section ────────────────────────────────────────── */
+.po3-section{margin:0 0 40px 0}
+.po3-banners{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.po3-banner{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:6px;padding:8px 16px;font-size:11px;flex:1;min-width:220px}
+.po3-banner-label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.5;white-space:nowrap}
+.po3-banner-phase{font-weight:700;font-size:12px;white-space:nowrap}
+.po3-banner-desc{opacity:.75;flex:1;font-size:10.5px}
+.po3-banner-sub{opacity:.5;font-size:10px;white-space:nowrap}
+.po3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:1100px){.po3-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.po3-grid{grid-template-columns:1fr}}
+.po3-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s}
+.po3-card:hover{border-color:var(--border2)}
+.po3-card-hdr{display:flex;align-items:center;gap:8px;padding:8px 14px;background:var(--bg3);border-bottom:1px solid var(--border)}
+.po3-sym{font-family:var(--sans);font-size:14px;font-weight:800;color:var(--text)}
+.po3-desc{font-size:10px;color:var(--muted);flex:1}
+.po3-bias{font-size:9px;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:3px;color:#fff}
+.po3-body{display:grid;grid-template-columns:1fr 1fr 1fr;min-height:120px}
+.po3-col{padding:9px 11px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:4px}
+.po3-col:last-child{border-right:none}
+.po3-col-title{font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.po3-phase-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:3px;color:#fff;margin-bottom:3px;align-self:flex-start}
+.po3-phase-desc{font-size:9.5px;color:var(--muted);line-height:1.4}
+.po3-lvl{font-size:10.5px;padding:1px 0}
+.po3-vs{font-size:10.5px;color:var(--blue);font-weight:500}
+.po3-pw-rel{font-size:9.5px;color:var(--muted);line-height:1.3}
+.po3-conf{font-size:9px;color:var(--muted);opacity:.6}
+.htf-row{display:flex;align-items:center;gap:5px;font-size:11px;padding:1px 0}
+.htf-row.bull{color:var(--green)}.htf-row.bear{color:var(--red)}.htf-row.doji{color:var(--muted)}
+.htf-lbl{font-weight:700;min-width:20px;opacity:.7;font-size:10px}
+.htf-cnd{font-weight:600;font-size:10px}
+.htf-px{font-size:9.5px;opacity:.6}
+.htf-flags{display:flex;flex-direction:column;gap:2px;margin-top:4px;font-size:9.5px}
+.htf-disp-up{color:var(--green)}.htf-disp-dn{color:var(--red)}.htf-ftd-bull{color:var(--green)}.htf-ftd-bear{color:var(--amber)}
+.htf-score{font-size:9px;color:var(--muted);margin-top:4px}
+.judas-sweep{font-size:10.5px;font-weight:600;margin:3px 0}
+.judas-bear{color:var(--red)}.judas-bull{color:var(--green)}.judas-neutral{color:var(--amber)}.judas-none{color:var(--muted);font-weight:400}
 </style>
 </head>
 <body>
@@ -169,8 +206,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div style="font-size:12px;color:var(--muted);margin-top:4px">Morning Bias Report · ICT Framework · DW Foundation</div>
     </div>
     <div>
-      <div class="live-badge"><span class="live-dot"></span>NY AM / PM · Bridge v1.2</div>
-      <div class="date-time"><strong>Thu, May 28, 2026</strong><br>Thursday, May 28, 2026 at 12:02<br>4H #5 active · NY AM / PM · NY mid-session. Follow AM direction. Reduce size into close. Watch 15/30-min sweeps and Dave Wick formations.</div>
+      <div class="live-badge"><span class="live-dot"></span>Next day prep · Bridge v1.2</div>
+      <div class="date-time"><strong>Thu, May 28, 2026</strong><br>Thursday, May 28, 2026 at 16:54<br>4H #6 active · NY PM / Close · Late session. Build context for tomorrow. Asian session setup begins at 20:00 NY.</div>
     </div>
     <div style="display:flex;gap:8px;align-items:center;flex-shrink:0">
       <select id="tz-selector" style="background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--muted);cursor:pointer;font-family:var(--mono);font-size:10px;padding:5px 8px"></select>
@@ -180,18 +217,270 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="pills" id="pills-container"></div>
 </header>
 
+
+<div class="sec-hdr"><span class="sec-title">⚡ Power of Three &amp; HTF Order Flow — AMD phases · candle bias · PO3 profile per instrument</span></div>
+<div class="po3-section">
+  <div class="po3-banners"></div>
+  <div class="po3-grid"><div class="po3-card">
+      <div class="po3-card-hdr">
+        <span class="po3-sym">ES</span>
+        <span class="po3-desc">E-mini S&P 500</span>
+        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+      </div>
+      <div class="po3-body">
+
+        <div class="po3-col">
+          <div class="po3-col-title">HTF Order Flow</div>
+          
+          
+          
+          <div class="htf-flags"></div>
+          <div class="htf-score">Score: — of ±5</div>
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Weekly PO3</div>
+          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
+          <div class="po3-phase-desc">—</div>
+          
+          
+          
+          
+          
+          
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Intraday AMD</div>
+          <span class="po3-phase-badge" style="background:#64748b">—</span>
+          <div class="po3-phase-desc">—</div>
+          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
+          
+          
+          
+        </div>
+
+      </div>
+    </div>
+<div class="po3-card">
+      <div class="po3-card-hdr">
+        <span class="po3-sym">NQ</span>
+        <span class="po3-desc">E-mini NASDAQ 100</span>
+        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+      </div>
+      <div class="po3-body">
+
+        <div class="po3-col">
+          <div class="po3-col-title">HTF Order Flow</div>
+          
+          
+          
+          <div class="htf-flags"></div>
+          <div class="htf-score">Score: — of ±5</div>
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Weekly PO3</div>
+          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
+          <div class="po3-phase-desc">—</div>
+          
+          
+          
+          
+          
+          
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Intraday AMD</div>
+          <span class="po3-phase-badge" style="background:#64748b">—</span>
+          <div class="po3-phase-desc">—</div>
+          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
+          
+          
+          
+        </div>
+
+      </div>
+    </div>
+<div class="po3-card">
+      <div class="po3-card-hdr">
+        <span class="po3-sym">YM</span>
+        <span class="po3-desc">E-mini Dow Jones</span>
+        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+      </div>
+      <div class="po3-body">
+
+        <div class="po3-col">
+          <div class="po3-col-title">HTF Order Flow</div>
+          
+          
+          
+          <div class="htf-flags"></div>
+          <div class="htf-score">Score: — of ±5</div>
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Weekly PO3</div>
+          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
+          <div class="po3-phase-desc">—</div>
+          
+          
+          
+          
+          
+          
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Intraday AMD</div>
+          <span class="po3-phase-badge" style="background:#64748b">—</span>
+          <div class="po3-phase-desc">—</div>
+          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
+          
+          
+          
+        </div>
+
+      </div>
+    </div>
+<div class="po3-card">
+      <div class="po3-card-hdr">
+        <span class="po3-sym">GC</span>
+        <span class="po3-desc">COMEX Gold</span>
+        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+      </div>
+      <div class="po3-body">
+
+        <div class="po3-col">
+          <div class="po3-col-title">HTF Order Flow</div>
+          
+          
+          
+          <div class="htf-flags"></div>
+          <div class="htf-score">Score: — of ±5</div>
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Weekly PO3</div>
+          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
+          <div class="po3-phase-desc">—</div>
+          
+          
+          
+          
+          
+          
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Intraday AMD</div>
+          <span class="po3-phase-badge" style="background:#64748b">—</span>
+          <div class="po3-phase-desc">—</div>
+          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
+          
+          
+          
+        </div>
+
+      </div>
+    </div>
+<div class="po3-card">
+      <div class="po3-card-hdr">
+        <span class="po3-sym">CL</span>
+        <span class="po3-desc">NYMEX Crude Oil</span>
+        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+      </div>
+      <div class="po3-body">
+
+        <div class="po3-col">
+          <div class="po3-col-title">HTF Order Flow</div>
+          
+          
+          
+          <div class="htf-flags"></div>
+          <div class="htf-score">Score: — of ±5</div>
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Weekly PO3</div>
+          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
+          <div class="po3-phase-desc">—</div>
+          
+          
+          
+          
+          
+          
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Intraday AMD</div>
+          <span class="po3-phase-badge" style="background:#64748b">—</span>
+          <div class="po3-phase-desc">—</div>
+          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
+          
+          
+          
+        </div>
+
+      </div>
+    </div>
+<div class="po3-card">
+      <div class="po3-card-hdr">
+        <span class="po3-sym">6E</span>
+        <span class="po3-desc">Euro FX Futures</span>
+        <span class="po3-bias" style="background:#f59e0b">NEUTRAL</span>
+      </div>
+      <div class="po3-body">
+
+        <div class="po3-col">
+          <div class="po3-col-title">HTF Order Flow</div>
+          
+          
+          
+          <div class="htf-flags"></div>
+          <div class="htf-score">Score: — of ±5</div>
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Weekly PO3</div>
+          <span class="po3-phase-badge" style="background:#f59e0b">UNKNOWN</span>
+          <div class="po3-phase-desc">—</div>
+          
+          
+          
+          
+          
+          
+        </div>
+
+        <div class="po3-col">
+          <div class="po3-col-title">Intraday AMD</div>
+          <span class="po3-phase-badge" style="background:#64748b">—</span>
+          <div class="po3-phase-desc">—</div>
+          <div class="judas-sweep judas-none">— NO SWEEP YET</div>
+          
+          
+          
+        </div>
+
+      </div>
+    </div></div>
+</div>
+
 <div class="sec-hdr"><span class="sec-title">Key levels — all 6 instruments</span></div>
 <div class="inst-grid">
   <div class="inst-card bull">
     <div class="inst-head">
       <div><div class="inst-sym">ES</div><div class="inst-desc">E-mini S&P 500</div></div>
       <div class="inst-price">
-        <div class="inst-last">7573</div>
+        <div class="inst-last">7588.5</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 7515</span><span>7573</span><span>PDH 7570.75</span></div>
+      <div class="pos-label"><span>PDL 7515</span><span>7588.5</span><span>PDH 7570.75</span></div>
       <div class="pos-track">
         <div class="pos-fill" style="width:100%;background:var(--green);opacity:0.5"></div>
         <div class="pos-marker" style="left:100%"></div>
@@ -210,19 +499,19 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="lvl-row"><span class="lvl-name">D_Open</span><span class="lvl-val c-text">7546</span></div>
       <div class="lvl-row"><span class="lvl-name">RTH_Open</span><span class="lvl-val c-text">—</span></div>
       <div class="lvl-group-hdr">Overnight</div>
-      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">7577</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">7590.75</span></div>
       <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">7505.75</span></div>
-      <div class="lvl-row"><span class="lvl-name">ON_Range</span><span class="lvl-val c-text">71.25 pts</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Range</span><span class="lvl-val c-text">85 pts</span></div>
       <div class="lvl-group-hdr">TV 4H · anchor 18:00 NY</div>
-      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">7544</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">7529.5</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">7515</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">7583.75</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">7558.5</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">7533.25</span></div>
       <div class="lvl-group-hdr">Prev Week</div>
       <div class="lvl-row"><span class="lvl-name">PW_High</span><span class="lvl-val c-green">7524</span></div>
       <div class="lvl-row"><span class="lvl-name">PW_EQ</span><span class="lvl-val c-amber">7439.13</span></div>
       <div class="lvl-row"><span class="lvl-name">PW_Low</span><span class="lvl-val c-red">7354.25</span></div>
       <div class="lvl-group-hdr">Prev Month · Current Month</div>
-      <div class="lvl-row"><span class="lvl-name">PM_High / CM_High</span><span class="lvl-val c-green">7253.5 / 7577</span></div>
+      <div class="lvl-row"><span class="lvl-name">PM_High / CM_High</span><span class="lvl-val c-green">7253.5 / 7590.75</span></div>
       <div class="lvl-row"><span class="lvl-name">PM_EQ</span><span class="lvl-val c-amber">6878.63</span></div>
       <div class="lvl-row"><span class="lvl-name">PM_Low / CM_Low</span><span class="lvl-val c-red">6503.75 / 7199.5</span></div>
     </div>
@@ -238,15 +527,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">NQ</div><div class="inst-desc">E-mini NASDAQ 100</div></div>
       <div class="inst-price">
-        <div class="inst-last">30254</div>
+        <div class="inst-last">30324</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 29877.5</span><span>30254</span><span>PDH 30379</span></div>
+      <div class="pos-label"><span>PDL 29877.5</span><span>30324</span><span>PDH 30379</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:75%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:75%"></div>
+        <div class="pos-fill" style="width:89%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:89%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -262,13 +551,13 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="lvl-row"><span class="lvl-name">D_Open</span><span class="lvl-val c-text">30061.5</span></div>
       <div class="lvl-row"><span class="lvl-name">RTH_Open</span><span class="lvl-val c-text">—</span></div>
       <div class="lvl-group-hdr">Overnight</div>
-      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">30293</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">30344.5</span></div>
       <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">29763</span></div>
-      <div class="lvl-row"><span class="lvl-name">ON_Range</span><span class="lvl-val c-text">530 pts</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Range</span><span class="lvl-val c-text">581.5 pts</span></div>
       <div class="lvl-group-hdr">TV 4H · anchor 18:00 NY</div>
-      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">30112</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">29987.75</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">29863.5</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">30344.5</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">30153.88</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">29963.25</span></div>
       <div class="lvl-group-hdr">Prev Week</div>
       <div class="lvl-row"><span class="lvl-name">PW_High</span><span class="lvl-val c-green">29749</span></div>
       <div class="lvl-row"><span class="lvl-name">PW_EQ</span><span class="lvl-val c-amber">29206</span></div>
@@ -290,15 +579,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">YM</div><div class="inst-desc">E-mini Dow Jones</div></div>
       <div class="inst-price">
-        <div class="inst-last">50752</div>
+        <div class="inst-last">50765</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 50500</span><span>50752</span><span>PDH 50896</span></div>
+      <div class="pos-label"><span>PDL 50500</span><span>50765</span><span>PDH 50896</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:64%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:64%"></div>
+        <div class="pos-fill" style="width:67%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:67%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -318,9 +607,9 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">50386</span></div>
       <div class="lvl-row"><span class="lvl-name">ON_Range</span><span class="lvl-val c-text">469 pts</span></div>
       <div class="lvl-group-hdr">TV 4H · anchor 18:00 NY</div>
-      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">50692</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">50539</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">50386</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">50855</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">50679</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">50502</span></div>
       <div class="lvl-group-hdr">Prev Week</div>
       <div class="lvl-row"><span class="lvl-name">PW_High</span><span class="lvl-val c-green">50920</span></div>
       <div class="lvl-row"><span class="lvl-name">PW_EQ</span><span class="lvl-val c-amber">50036</span></div>
@@ -394,15 +683,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">CL</div><div class="inst-desc">NYMEX Crude Oil</div></div>
       <div class="inst-price">
-        <div class="inst-last">89.94</div>
+        <div class="inst-last">88.66</div>
         <div class="inst-badge badge-bear">Bearish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 87.77</span><span>89.94</span><span>PDH 93.69</span></div>
+      <div class="pos-label"><span>PDL 87.77</span><span>88.66</span><span>PDH 93.69</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:37%;background:var(--red);opacity:0.5"></div>
-        <div class="pos-marker" style="left:37%"></div>
+        <div class="pos-fill" style="width:15%;background:var(--red);opacity:0.5"></div>
+        <div class="pos-marker" style="left:15%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -422,9 +711,9 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">87.11</span></div>
       <div class="lvl-row"><span class="lvl-name">ON_Range</span><span class="lvl-val c-text">5.41 pts</span></div>
       <div class="lvl-group-hdr">TV 4H · anchor 18:00 NY</div>
-      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">91.57</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">90.78</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">90</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">91.14</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">89.13</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">87.11</span></div>
       <div class="lvl-group-hdr">Prev Week</div>
       <div class="lvl-row"><span class="lvl-name">PW_High</span><span class="lvl-val c-green">105.21</span></div>
       <div class="lvl-row"><span class="lvl-name">PW_EQ</span><span class="lvl-val c-amber">99.97</span></div>
@@ -446,15 +735,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="inst-head">
       <div><div class="inst-sym">6E</div><div class="inst-desc">Euro FX Futures</div></div>
       <div class="inst-price">
-        <div class="inst-last">1.1656</div>
+        <div class="inst-last">1.1658</div>
         <div class="inst-badge badge-bull">Bullish</div>
       </div>
     </div>
     <div class="pos-wrap">
-      <div class="pos-label"><span>PDL 1.16325</span><span>1.1656</span><span>PDH 1.1672</span></div>
+      <div class="pos-label"><span>PDL 1.16325</span><span>1.1658</span><span>PDH 1.1672</span></div>
       <div class="pos-track">
-        <div class="pos-fill" style="width:59%;background:var(--green);opacity:0.5"></div>
-        <div class="pos-marker" style="left:59%"></div>
+        <div class="pos-fill" style="width:65%;background:var(--green);opacity:0.5"></div>
+        <div class="pos-marker" style="left:65%"></div>
       </div>
     </div>
     <div class="inst-levels">
@@ -470,13 +759,13 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="lvl-row"><span class="lvl-name">D_Open</span><span class="lvl-val c-text">1.16345</span></div>
       <div class="lvl-row"><span class="lvl-name">RTH_Open</span><span class="lvl-val c-text">1.16255</span></div>
       <div class="lvl-group-hdr">Overnight</div>
-      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">1.1667</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_High</span><span class="lvl-val c-green">1.16705</span></div>
       <div class="lvl-row"><span class="lvl-name">ON_Low</span><span class="lvl-val c-red">1.15945</span></div>
-      <div class="lvl-row"><span class="lvl-name">ON_Range</span><span class="lvl-val c-text">0.00725 pts</span></div>
+      <div class="lvl-row"><span class="lvl-name">ON_Range</span><span class="lvl-val c-text">0.0076 pts</span></div>
       <div class="lvl-group-hdr">TV 4H · anchor 18:00 NY</div>
-      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">1.1652</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">1.16322</span></div>
-      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">1.16125</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_High</span><span class="lvl-val c-green">1.16705</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_EQ</span><span class="lvl-val c-amber">1.1653</span></div>
+      <div class="lvl-row"><span class="lvl-name">P4H_Low</span><span class="lvl-val c-red">1.16355</span></div>
       <div class="lvl-group-hdr">Prev Week</div>
       <div class="lvl-row"><span class="lvl-name">PW_High</span><span class="lvl-val c-green">1.1677</span></div>
       <div class="lvl-row"><span class="lvl-name">PW_EQ</span><span class="lvl-val c-amber">1.16328</span></div>
@@ -500,27 +789,27 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <thead><tr><th>Inst</th><th>Last</th><th>PD_EQ</th><th>MN_Open</th><th>FX4 Zone</th><th>Asia Setup</th><th>DOL</th><th>Suggested target</th></tr></thead>
     <tbody><tr>
       <td style="color:var(--green);font-weight:600">ES</td>
-      <td style="font-variant-numeric:tabular-nums">7573</td>
+      <td style="font-variant-numeric:tabular-nums">7588.5</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
       <td><span class="bf bf-na" style="font-size:9px">Watch ASIA_High</span></td>
       <td style="font-size:10px;color:var(--muted)">↓ PDH 7570.75 · ↑ ext</td>
-      <td style="font-size:10px;color:var(--amber)">T1: ON_High 7577 → T2: PDH 7570.75</td>
+      <td style="font-size:10px;color:var(--amber)">T1: ON_High 7590.75 → T2: PDH 7570.75</td>
     </tr>
 <tr>
       <td style="color:var(--green);font-weight:600">NQ</td>
-      <td style="font-variant-numeric:tabular-nums">30254</td>
+      <td style="font-variant-numeric:tabular-nums">30324</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
       <td><span class="bf bf-na" style="font-size:9px">Inside PD range</span></td>
-      <td style="font-size:10px;color:var(--muted)">↑ PDH 30379 · ON_High 30293</td>
-      <td style="font-size:10px;color:var(--amber)">T1: ON_High 30293 → T2: PDH 30379</td>
+      <td style="font-size:10px;color:var(--muted)">↑ PDH 30379 · ON_High 30344.5</td>
+      <td style="font-size:10px;color:var(--amber)">T1: ON_High 30344.5 → T2: PDH 30379</td>
     </tr>
 <tr>
       <td style="color:var(--green);font-weight:600">YM</td>
-      <td style="font-variant-numeric:tabular-nums">50752</td>
+      <td style="font-variant-numeric:tabular-nums">50765</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
@@ -540,7 +829,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--red);font-weight:600">CL</td>
-      <td style="font-variant-numeric:tabular-nums">89.94</td>
+      <td style="font-variant-numeric:tabular-nums">88.66</td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-n">✗ Below</span></td>
       <td><span class="bf bf-y" style="font-size:9px">Dbl Discount</span></td>
@@ -550,13 +839,13 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </tr>
 <tr>
       <td style="color:var(--green);font-weight:600">6E</td>
-      <td style="font-variant-numeric:tabular-nums">1.1656</td>
+      <td style="font-variant-numeric:tabular-nums">1.1658</td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-y">✓ Above</span></td>
       <td><span class="bf bf-n" style="font-size:9px">Dbl Premium</span></td>
       <td><span class="bf bf-na" style="font-size:9px">Inside PD range</span></td>
-      <td style="font-size:10px;color:var(--muted)">↑ PDH 1.1672 · ON_High 1.1667</td>
-      <td style="font-size:10px;color:var(--amber)">T1: ON_High 1.1667 → T2: PDH 1.1672</td>
+      <td style="font-size:10px;color:var(--muted)">↑ PDH 1.1672 · ON_High 1.16705</td>
+      <td style="font-size:10px;color:var(--amber)">T1: ON_High 1.16705 → T2: PDH 1.1672</td>
     </tr></tbody>
   </table>
 </div>
@@ -572,6 +861,9 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   </div>
   <div id="es4h" class="fh-tab active" style="background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL</div><div style="font-size:10px;color:var(--muted);padding-top:4px">None above last price</div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)"><span data-ts="1779976800" data-type="label">TV 10:00</span> <span data-ts="1779976800" data-type="dt" style="font-size:9px">May 28, 10:00</span></span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7533.25 ↓</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)"><span data-ts="1779962400" data-type="label">TV 06:00</span> <span data-ts="1779962400" data-type="dt" style="font-size:9px">May 28, 06:00</span></span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7515 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
@@ -629,38 +921,44 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:10px;color:var(--muted)"><span style="color:var(--green)">RTH open post-PDL sweep recovery.</span> Key tell: does price hold PDL (7515) at open? Yes = confirmed long → PD_EQ 7542.88 → NWOG1 7194.75 → PDH 7570.75. No = re-test ON_Low 7505.75.</td>
     </tr>
-<tr class="active">
+<tr>
       <td>#5</td>
       <td>10:00–14:00</td>
       <td style="color:var(--muted)">16:00–20:00</td>
-      <td><span style="color:var(--blue)">NY AM / PM ▶</span></td>
+      <td>NY AM / PM</td>
       <td class="c-blue">7535.75</td>
-      <td class="c-amber">7577 ●</td>
-      <td class="c-amber">7555.13</td>
-      <td class="c-amber">7533.25 ●</td>
+      <td class="c-muted">7583.75</td>
+      <td class="c-amber">7558.5</td>
+      <td class="c-red">7533.25 ●</td>
+      <td style="font-size:9px;color:var(--muted);text-align:center"><span data-ts="1779991200" data-type="label">TV 14:00</span></td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--text)"><span style="color:var(--green)">PDL sweep recovery in play.</span> NY AM: long bias. Watch PD_EQ (7542.88) for reaction — hold = target NWOG1 7194.75 → PDH 7570.75. Reduce size after 14:00 NY.</td>
+      <td style="font-size:10px;color:var(--muted)"><span style="color:var(--green)">PDL sweep recovery in play.</span> NY AM: long bias. Watch PD_EQ (7542.88) for reaction — hold = target NWOG1 7194.75 → PDH 7570.75. Reduce size after 14:00 NY.</td>
     </tr>
-<tr>
+<tr class="active">
       <td>#6</td>
       <td>14:00–18:00</td>
       <td style="color:var(--muted)">20:00–00:00</td>
-      <td>Close / Globex</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
+      <td><span style="color:var(--blue)">Close / Globex ▶</span></td>
+      <td class="c-blue">7581</td>
+      <td class="c-amber">7590.75 ●</td>
+      <td class="c-amber">7583</td>
+      <td class="c-amber">7575.25 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--muted)">PDL sweep recovery session. Watch daily close vs PDL (7515) — close above = bullish carry into overnight. NWOG1 7194.75 = overnight target. Globex resumes 18:00 NY.</td>
+      <td style="font-size:10px;color:var(--text)">PDL sweep recovery session. Watch daily close vs PDL (7515) — close above = bullish carry into overnight. NWOG1 7194.75 = overnight target. Globex resumes 18:00 NY.</td>
     </tr></tbody></table>
   </div>
   <div id="nq4h" class="fh-tab" style="display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)"><span data-ts="1779876000" data-type="label">TV 06:00</span> <span data-ts="1779876000" data-type="dt" style="font-size:9px">May 27, 06:00</span></span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30379 ↑</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)"><span data-ts="1779976800" data-type="label">TV 10:00</span> <span data-ts="1779976800" data-type="dt" style="font-size:9px">May 28, 10:00</span></span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30344.5 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)"><span data-ts="1779976800" data-type="label">TV 10:00</span> <span data-ts="1779976800" data-type="dt" style="font-size:9px">May 28, 10:00</span></span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29963.25 ↓</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)"><span data-ts="1779962400" data-type="label">TV 06:00</span> <span data-ts="1779962400" data-type="dt" style="font-size:9px">May 28, 06:00</span></span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29863.5 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
@@ -718,31 +1016,31 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:10px;color:var(--muted)"><span style="color:var(--green)">RTH open post-PDL sweep recovery.</span> Key tell: does price hold PDL (29877.5) at open? Yes = confirmed long → PD_EQ 30128.25 → NWOG1 27435 → PDH 30379. No = re-test ON_Low 29763.</td>
     </tr>
-<tr class="active">
+<tr>
       <td>#5</td>
       <td>10:00–14:00</td>
       <td style="color:var(--muted)">16:00–20:00</td>
-      <td><span style="color:var(--blue)">NY AM / PM ▶</span></td>
+      <td>NY AM / PM</td>
       <td class="c-blue">29992.25</td>
-      <td class="c-amber">30293 ●</td>
-      <td class="c-amber">30128.13</td>
-      <td class="c-amber">29963.25 ●</td>
+      <td class="c-green">30344.5 ●</td>
+      <td class="c-amber">30153.88</td>
+      <td class="c-red">29963.25 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--text)"><span style="color:var(--green)">PDL sweep recovery in play.</span> NY AM: long bias. Watch PD_EQ (30128.25) for reaction — hold = target NWOG1 27435 → PDH 30379. Reduce size after 14:00 NY.</td>
+      <td style="font-size:10px;color:var(--muted)"><span style="color:var(--green)">PDL sweep recovery in play.</span> NY AM: long bias. Watch PD_EQ (30128.25) for reaction — hold = target NWOG1 27435 → PDH 30379. Reduce size after 14:00 NY.</td>
     </tr>
-<tr>
+<tr class="active">
       <td>#6</td>
       <td>14:00–18:00</td>
       <td style="color:var(--muted)">20:00–00:00</td>
-      <td>Close / Globex</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
+      <td><span style="color:var(--blue)">Close / Globex ▶</span></td>
+      <td class="c-blue">30319.5</td>
+      <td class="c-amber">30344 ●</td>
+      <td class="c-amber">30309.13</td>
+      <td class="c-amber">30274.25 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--muted)">PDL sweep recovery session. Watch daily close vs PDL (29877.5) — close above = bullish carry into overnight. NWOG1 27435 = overnight target. Globex resumes 18:00 NY.</td>
+      <td style="font-size:10px;color:var(--text)">PDL sweep recovery session. Watch daily close vs PDL (29877.5) — close above = bullish carry into overnight. NWOG1 27435 = overnight target. Globex resumes 18:00 NY.</td>
     </tr></tbody></table>
   </div>
   <div id="gc4h" class="fh-tab" style="display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
@@ -804,38 +1102,44 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:10px;color:var(--muted)">RTH open (08:20 NY): below PDL (4500.4) — key tell: reclaim PDL? Yes = re-acceptance long → PD_EQ 4536.6. No = continuation short → NWOG1 4724.4.</td>
     </tr>
-<tr class="active">
+<tr>
       <td>#5</td>
       <td>10:00–14:00</td>
       <td style="color:var(--muted)">16:00–20:00</td>
-      <td><span style="color:var(--blue)">NY AM / PM ▶</span></td>
+      <td>NY AM / PM</td>
       <td class="c-blue">4439.7</td>
       <td class="c-green">4447 ●</td>
       <td class="c-amber">4443.4</td>
       <td class="c-red">4439.7 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--text)">Extended range — reduce size. Watch for reversal toward PD range. FX4 NY KZ 09:00–15:00 NY.</td>
+      <td style="font-size:10px;color:var(--muted)">Extended range — reduce size. Watch for reversal toward PD range. FX4 NY KZ 09:00–15:00 NY.</td>
     </tr>
-<tr>
+<tr class="active">
       <td>#6</td>
       <td>14:00–18:00</td>
       <td style="color:var(--muted)">20:00–00:00</td>
-      <td>Close / Globex</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
+      <td><span style="color:var(--blue)">Close / Globex ▶</span></td>
+      <td class="c-blue">4447</td>
+      <td class="c-green">4447 ●</td>
+      <td class="c-amber">4447</td>
+      <td class="c-red">4447 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--muted)">RTH closes 16:00 NY. Globex resumes 18:00 NY — new Asian session begins. Watch daily close vs PD_EQ (4536.6) and MN_Open (—) for overnight bias.</td>
+      <td style="font-size:10px;color:var(--text)">RTH closes 16:00 NY. Globex resumes 18:00 NY — new Asian session begins. Watch daily close vs PD_EQ (4536.6) and MN_Open (—) for overnight bias.</td>
     </tr></tbody></table>
   </div>
   <div id="ym4h" class="fh-tab" style="display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)"><span data-ts="1779890400" data-type="label">TV 10:00</span> <span data-ts="1779890400" data-type="dt" style="font-size:9px">May 27, 10:00</span></span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50896 ↑</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)"><span data-ts="1779976800" data-type="label">TV 10:00</span> <span data-ts="1779976800" data-type="dt" style="font-size:9px">May 28, 10:00</span></span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50855 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)"><span data-ts="1779976800" data-type="label">TV 10:00</span> <span data-ts="1779976800" data-type="dt" style="font-size:9px">May 28, 10:00</span></span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50502 ↓</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)"><span data-ts="1779962400" data-type="label">TV 06:00</span> <span data-ts="1779962400" data-type="dt" style="font-size:9px">May 28, 06:00</span></span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50386 ↓</span>
         </div></div></div><table class="fh-table"><thead><tr><th>#</th><th>NY time</th><th>AMS</th><th>Session</th><th>Open</th><th>High</th><th>EQ/Mid</th><th>Low</th><th>H swept</th><th>L swept</th><th>Setup — dynamic from live data</th></tr></thead><tbody><tr>
@@ -890,38 +1194,44 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:10px;color:var(--muted)"><span style="color:var(--green)">RTH open post-PDL sweep recovery.</span> Key tell: does price hold PDL (50500) at open? Yes = confirmed long → PD_EQ 50698 → NWOG1 49392 → PDH 50896. No = re-test ON_Low 50386.</td>
     </tr>
-<tr class="active">
+<tr>
       <td>#5</td>
       <td>10:00–14:00</td>
       <td style="color:var(--muted)">16:00–20:00</td>
-      <td><span style="color:var(--blue)">NY AM / PM ▶</span></td>
+      <td>NY AM / PM</td>
       <td class="c-blue">50574</td>
-      <td class="c-amber">50855 ●</td>
+      <td class="c-green">50855 ●</td>
       <td class="c-amber">50679</td>
-      <td class="c-amber">50502 ●</td>
+      <td class="c-red">50502 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--text)"><span style="color:var(--green)">PDL sweep recovery in play.</span> NY AM: long bias. Watch PD_EQ (50698) for reaction — hold = target NWOG1 49392 → PDH 50896. Reduce size after 14:00 NY.</td>
+      <td style="font-size:10px;color:var(--muted)"><span style="color:var(--green)">PDL sweep recovery in play.</span> NY AM: long bias. Watch PD_EQ (50698) for reaction — hold = target NWOG1 49392 → PDH 50896. Reduce size after 14:00 NY.</td>
     </tr>
-<tr>
+<tr class="active">
       <td>#6</td>
       <td>14:00–18:00</td>
       <td style="color:var(--muted)">20:00–00:00</td>
-      <td>Close / Globex</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
+      <td><span style="color:var(--blue)">Close / Globex ▶</span></td>
+      <td class="c-blue">50696</td>
+      <td class="c-amber">50801 ●</td>
+      <td class="c-amber">50719</td>
+      <td class="c-amber">50637 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--muted)">PDL sweep recovery session. Watch daily close vs PDL (50500) — close above = bullish carry into overnight. NWOG1 49392 = overnight target. Globex resumes 18:00 NY.</td>
+      <td style="font-size:10px;color:var(--text)">PDL sweep recovery session. Watch daily close vs PDL (50500) — close above = bullish carry into overnight. NWOG1 49392 = overnight target. Globex resumes 18:00 NY.</td>
     </tr></tbody></table>
   </div>
   <div id="6e4h" class="fh-tab" style="display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border)"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)"><span data-ts="1779876000" data-type="label">TV 06:00</span> <span data-ts="1779876000" data-type="dt" style="font-size:9px">May 27, 06:00</span></span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.1672 ↑</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)"><span data-ts="1779976800" data-type="label">TV 10:00</span> <span data-ts="1779976800" data-type="dt" style="font-size:9px">May 28, 10:00</span></span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.16705 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)"><span data-ts="1779976800" data-type="label">TV 10:00</span> <span data-ts="1779976800" data-type="dt" style="font-size:9px">May 28, 10:00</span></span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16355 ↓</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)"><span data-ts="1779962400" data-type="label">TV 06:00</span> <span data-ts="1779962400" data-type="dt" style="font-size:9px">May 28, 06:00</span></span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16125 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
@@ -982,31 +1292,31 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:10px;color:var(--muted)"><span style="color:var(--green)">RTH open post-PDL sweep recovery.</span> Key tell: does price hold PDL (1.16325) at open? Yes = confirmed long → PD_EQ 1.16522 → NWOG1 1.1745 → PDH 1.1672. No = re-test ON_Low 1.15945.</td>
     </tr>
-<tr class="active">
+<tr>
       <td>#5</td>
       <td>10:00–14:00</td>
       <td style="color:var(--muted)">16:00–20:00</td>
-      <td><span style="color:var(--blue)">NY AM / PM ▶</span></td>
+      <td>NY AM / PM</td>
       <td class="c-blue">1.1639</td>
-      <td class="c-amber">1.1667 ●</td>
-      <td class="c-amber">1.16513</td>
-      <td class="c-amber">1.16355 ●</td>
+      <td class="c-green">1.16705 ●</td>
+      <td class="c-amber">1.1653</td>
+      <td class="c-red">1.16355 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--text)"><span style="color:var(--green)">PDL sweep recovery in play.</span> NY AM: long bias. Watch PD_EQ (1.16522) for reaction — hold = target NWOG1 1.1745 → PDH 1.1672. Reduce size after 14:00 NY.</td>
+      <td style="font-size:10px;color:var(--muted)"><span style="color:var(--green)">PDL sweep recovery in play.</span> NY AM: long bias. Watch PD_EQ (1.16522) for reaction — hold = target NWOG1 1.1745 → PDH 1.1672. Reduce size after 14:00 NY.</td>
     </tr>
-<tr>
+<tr class="active">
       <td>#6</td>
       <td>14:00–18:00</td>
       <td style="color:var(--muted)">20:00–00:00</td>
-      <td>Close / Globex</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
-      <td class="c-muted">—</td>
+      <td><span style="color:var(--blue)">Close / Globex ▶</span></td>
+      <td class="c-blue">1.1662</td>
+      <td class="c-amber">1.1664 ●</td>
+      <td class="c-amber">1.16588</td>
+      <td class="c-amber">1.16535 ●</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
       <td style="font-size:9px;color:var(--muted);text-align:center">—</td>
-      <td style="font-size:10px;color:var(--muted)">PDL sweep recovery session. Watch daily close vs PDL (1.16325) — close above = bullish carry into overnight. NWOG1 1.1745 = overnight target. Globex resumes 18:00 NY.</td>
+      <td style="font-size:10px;color:var(--text)">PDL sweep recovery session. Watch daily close vs PDL (1.16325) — close above = bullish carry into overnight. NWOG1 1.1745 = overnight target. Globex resumes 18:00 NY.</td>
     </tr></tbody></table>
 </div>
 
@@ -1155,7 +1465,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="fx4-lbl">ACC Range (FX4) 18:00–02:00</div>
         <div class="fx4-val">89.61 – 92.52</div>
         <div class="fx4-sub">EQ: 91.06 · Range: 2.91 pts</div>
-        <div class="fx4-sub"><span style="color:var(--amber)">In ACC discount (below EQ 91.06)</span></div>
+        <div class="fx4-sub"><span style="color:var(--red)">Below ACC_Low 89.61 — SSL sweep in progress</span></div>
       </div>
       <div class="fx4-box">
         <div class="fx4-lbl">Asian Range (ICT) 20:00–00:00</div>
@@ -1166,7 +1476,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="fx4-box">
         <div class="fx4-lbl">Order Flow</div>
         <div class="fx4-val" style="color:var(--red)">Bearish (PD close < open)</div>
-        <div class="fx4-sub" style="color:var(--green)">ACC building bullish</div>
+        <div class="fx4-sub" style="color:var(--red)">ACC building bearish</div>
       </div>
       <div class="fx4-box">
         <div class="fx4-lbl">Double Zone Status</div>
@@ -1175,7 +1485,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="fx4-sub">ACC_EQ: ✗ below (91.06)</div>
       </div>
     </div>
-    <div class="fx4-note"><b>FX4 London KZ:</b> Double discount — below PD_EQ and below ACC_EQ. OTE long after stop hunt of ACC_Low (89.61). Target: ACC_EQ 91.06 → PD_EQ 90.73.</div>
+    <div class="fx4-note"><b>FX4 London KZ (02:00–05:00 NY):</b> Price below ACC_Low (89.61). Watch for sweep of ACC_Low / ON_Low → reclaim of PDL (87.77) on 1-min close = OTE long. Entry zone: 89.61–87.77. Stop: below ACC_Low. Targets: ACC_EQ 91.06 → PD_EQ 90.73. Exit before 05:00 NY. <b>Re-acceptance risk:</b> if PDL reclaimed, strong magnet back into full PD range.</div>
   </div>
 
   <div class="fx4-inst">
@@ -1286,14 +1596,14 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:10px;font-variant-numeric:tabular-nums">7546.0000</td>
       <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
     </tr>
-<tr>
+<tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
+      <td style="font-variant-numeric:tabular-nums">7588.5</td>
       <td style="font-variant-numeric:tabular-nums">7533</td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
-      <td><span class="bf bf-y">▲ Bull gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">7533.0000</td>
-      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+      <td style="font-variant-numeric:tabular-nums">7560.75</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">55.5000</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
       <td><b>NDOG3</b></td>
@@ -1371,14 +1681,14 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:10px;font-variant-numeric:tabular-nums">30061.5000</td>
       <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
     </tr>
-<tr>
+<tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
+      <td style="font-variant-numeric:tabular-nums">30324</td>
       <td style="font-variant-numeric:tabular-nums">30050</td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
-      <td><span class="bf bf-y">▲ Bull gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">30050.0000</td>
-      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+      <td style="font-variant-numeric:tabular-nums">30187</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">274.0000</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
       <td><b>NDOG3</b></td>
@@ -1456,14 +1766,14 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:10px;font-variant-numeric:tabular-nums">50768.0000</td>
       <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
-<tr>
+<tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
+      <td style="font-variant-numeric:tabular-nums">50765</td>
       <td style="font-variant-numeric:tabular-nums">50508</td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
-      <td><span class="bf bf-y">▲ Bull gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">50508.0000</td>
-      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+      <td style="font-variant-numeric:tabular-nums">50637</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">257.0000</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
       <td><b>NDOG3</b></td>
@@ -1571,14 +1881,14 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <tr style="background:var(--bg3)"><th style="padding:4px 8px;font-size:9px;color:var(--muted)">#</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Fri Close</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Sun Open</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">EQ</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Direction</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Size</th><th style="padding:4px 8px;font-size:9px;color:var(--muted)">Price context</th></tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class="gap-inside">
       <td><b>NWOG1</b></td>
       <td style="font-variant-numeric:tabular-nums">89.58</td>
       <td style="font-variant-numeric:tabular-nums">84.86</td>
       <td style="font-variant-numeric:tabular-nums">87.22</td>
       <td><span class="bf bf-n">▼ Bear gap</span></td>
       <td style="font-size:10px;font-variant-numeric:tabular-nums">4.7200</td>
-      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
       <td><b>NWOG2</b></td>
@@ -1617,32 +1927,32 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
     </tr>
       <tr><td colspan="7" style="background:var(--bg3);padding:5px 10px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)">NDOG — New Day Opening Gaps (last 3)</td></tr>
-      <tr>
+      <tr class="gap-inside">
       <td><b>NDOG1</b></td>
       <td style="font-variant-numeric:tabular-nums">—</td>
       <td style="font-variant-numeric:tabular-nums">89.75</td>
       <td style="font-variant-numeric:tabular-nums">—</td>
       <td><span class="bf bf-y">▲ Bull gap</span></td>
       <td style="font-size:10px;font-variant-numeric:tabular-nums">89.7500</td>
-      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
-    </tr>
-<tr class="gap-inside">
-      <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
-      <td style="font-variant-numeric:tabular-nums">93.39</td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
-      <td><span class="bf bf-y">▲ Bull gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">93.3900</td>
       <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr class="gap-inside">
+      <td><b>NDOG2</b></td>
+      <td style="font-variant-numeric:tabular-nums">88.66</td>
+      <td style="font-variant-numeric:tabular-nums">93.39</td>
+      <td style="font-variant-numeric:tabular-nums">91.03</td>
+      <td><span class="bf bf-y">▲ Bull gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">4.7300</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+    </tr>
+<tr>
       <td><b>NDOG3</b></td>
       <td style="font-variant-numeric:tabular-nums">89.41</td>
       <td style="font-variant-numeric:tabular-nums">93.88</td>
       <td style="font-variant-numeric:tabular-nums">91.64</td>
       <td><span class="bf bf-y">▲ Bull gap</span></td>
       <td style="font-size:10px;font-variant-numeric:tabular-nums">4.4700</td>
-      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
+      <td><span style="color:var(--muted);font-size:10px">Below gap</span></td>
     </tr>
     </tbody>
   </table>
@@ -1711,14 +2021,14 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <td style="font-size:10px;font-variant-numeric:tabular-nums">1.1635</td>
       <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
     </tr>
-<tr>
+<tr class="gap-inside">
       <td><b>NDOG2</b></td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
+      <td style="font-variant-numeric:tabular-nums">1.1658</td>
       <td style="font-variant-numeric:tabular-nums">1.1641</td>
-      <td style="font-variant-numeric:tabular-nums">—</td>
-      <td><span class="bf bf-y">▲ Bull gap</span></td>
-      <td style="font-size:10px;font-variant-numeric:tabular-nums">1.1641</td>
-      <td><span style="color:var(--muted);font-size:10px">Above gap</span></td>
+      <td style="font-variant-numeric:tabular-nums">1.16495</td>
+      <td><span class="bf bf-n">▼ Bear gap</span></td>
+      <td style="font-size:10px;font-variant-numeric:tabular-nums">0.0017</td>
+      <td><span style="color:var(--amber)">⚠ Price inside gap</span></td>
     </tr>
 <tr>
       <td><b>NDOG3</b></td>
@@ -1746,25 +2056,13 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   </div>
   
   <div id="ib4h-es" class="asia-wrap" style=";border-radius:0 0 8px 8px;border-top:none">
-    <div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">2 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">8 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+    <div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">1 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">9 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
-            <span data-ts="1779984000" data-type="label">Box 12</span>
-            <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
           </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">7575.25 ↑</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">
-            <span data-ts="1779969600" data-type="label">Box 8</span>
-            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
-          </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">7577 ↑</span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">7590.75 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">
-            <span data-ts="1779480000" data-type="label">Box 16</span>
-            <span data-ts="1779480000" data-type="dt" style="font-size:9px"> May 22, 16:00</span>
-          </span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7482.25 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779940800" data-type="label">Box 0</span>
             <span data-ts="1779940800" data-type="dt" style="font-size:9px"> May 28, 00:00</span>
@@ -1787,10 +2085,16 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
             <span data-ts="1779984000" data-type="label">Box 12</span>
             <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
           </span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7572.25 ↓</span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7570.75 ↓</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)">
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
+          </span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">7580 ↓</span>
         </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
-      <span data-ts="1779984000" data-type="label">Box 12</span> ·
-      <span data-ts="1779984000" data-type="dt">May 28, 12:00</span>
+      <span data-ts="1779998400" data-type="label">Box 16</span> ·
+      <span data-ts="1779998400" data-type="dt">May 28, 16:00</span>
       </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
@@ -1804,19 +2108,34 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Setup</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779998400" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779998400" data-type="dt">May 28, 16:00</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">Close</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7582</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">7590.75 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7585.38</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">7580 ●</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">Close: watch daily close above PDL — bullish carry overnight.</td>
+      </tr><tr style="border-bottom:0.5px solid var(--border);">
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779984000" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">
           <span data-ts="1779984000" data-type="dt">May 28, 12:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">NY AM/PM</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7574.75</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">7575.25 ●</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7573.75</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">7572.25 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7586.5</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7578.63</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">7570.75 ●</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779998400" data-type="label">Box 16</span></td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          —</td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779969600" data-type="label">Box 8</span></td>
@@ -1824,11 +2143,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
           <span data-ts="1779969600" data-type="dt">May 28, 08:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">RTH open</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7522</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">7577 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7577</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7548.88</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">7520.75 ●</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          —</td>
+          <span data-ts="1779984000" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
         <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">RTH: hold PDL at open = confirmed long. Target PD_EQ → PDH.</td>
@@ -1937,37 +2256,22 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           <span data-ts="1779897600" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">RTH: hold PDL at open = confirmed long. Target PD_EQ → PDH.</td>
-      </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
-          <span data-ts="1779868800" data-type="label">Box 4</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
-          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">London</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">7547.75</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7566.5</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">7556.75</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">7547</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">London: OTE long on PDL re-test. Target PD_EQ → NWOG1 → PDH.</td>
       </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
   <div id="ib4h-nq" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
-    <div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">3 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">10 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+    <div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">3 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">11 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)">
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
+          </span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30344 ↑</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779984000" data-type="label">Box 12</span>
             <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
           </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30267.75 ↑</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">
-            <span data-ts="1779969600" data-type="label">Box 8</span>
-            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
-          </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30293 ↑</span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30344.5 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779883200" data-type="label">Box 8</span>
@@ -1975,12 +2279,6 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
           </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">30379 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">
-            <span data-ts="1779782400" data-type="label">Box 4</span>
-            <span data-ts="1779782400" data-type="dt" style="font-size:9px"> May 26, 04:00</span>
-          </span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">29758 ↓</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779940800" data-type="label">Box 0</span>
             <span data-ts="1779940800" data-type="dt" style="font-size:9px"> May 28, 00:00</span>
@@ -2003,10 +2301,16 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
             <span data-ts="1779984000" data-type="label">Box 12</span>
             <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
           </span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">30249.25 ↓</span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">30238.5 ↓</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)">
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
+          </span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">30292 ↓</span>
         </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
-      <span data-ts="1779984000" data-type="label">Box 12</span> ·
-      <span data-ts="1779984000" data-type="dt">May 28, 12:00</span>
+      <span data-ts="1779998400" data-type="label">Box 16</span> ·
+      <span data-ts="1779998400" data-type="dt">May 28, 16:00</span>
       </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
@@ -2020,19 +2324,34 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Setup</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779998400" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779998400" data-type="dt">May 28, 16:00</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">Close</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">30306.25</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">30344 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30318</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">30292 ●</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">Close: watch daily close above PDL — bullish carry overnight.</td>
+      </tr><tr style="border-bottom:0.5px solid var(--border);">
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779984000" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">
           <span data-ts="1779984000" data-type="dt">May 28, 12:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">NY AM/PM</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">30264.75</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">30267.75 ●</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30258.5</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">30249.25 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">30344.5 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30291.5</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">30238.5 ●</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779969600" data-type="label">Box 8</span></td>
@@ -2040,11 +2359,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
           <span data-ts="1779969600" data-type="dt">May 28, 08:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">RTH open</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">29923.25</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">30293 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30293</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30106.63</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">29920.25 ●</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          —</td>
+          <span data-ts="1779984000" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
         <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">RTH: hold PDL at open = confirmed long. Target PD_EQ → PDH.</td>
@@ -2153,31 +2472,16 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           <span data-ts="1779926400" data-type="label">Box 20</span></td>
         <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">RTH: hold PDL at open = confirmed long. Target PD_EQ → PDH.</td>
-      </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
-          <span data-ts="1779868800" data-type="label">Box 4</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
-          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">London</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">30141</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30297</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">30213.63</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">30130.25</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">London: OTE long on PDL re-test. Target PD_EQ → NWOG1 → PDH.</td>
       </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
   <div id="ib4h-ym" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
-    <div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">8 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">2 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+    <div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">8 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">3 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
-            <span data-ts="1779984000" data-type="label">Box 12</span>
-            <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
           </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50770 ↑</span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">50801 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779969600" data-type="label">Box 8</span>
@@ -2213,10 +2517,16 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
             <span data-ts="1779984000" data-type="label">Box 12</span>
             <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
           </span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50744 ↓</span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50637 ↓</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)">
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
+          </span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">50739 ↓</span>
         </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
-      <span data-ts="1779984000" data-type="label">Box 12</span> ·
-      <span data-ts="1779984000" data-type="dt">May 28, 12:00</span>
+      <span data-ts="1779998400" data-type="label">Box 16</span> ·
+      <span data-ts="1779998400" data-type="dt">May 28, 16:00</span>
       </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
@@ -2230,19 +2540,34 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Setup</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779998400" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779998400" data-type="dt">May 28, 16:00</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">Close</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50743</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">50801 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50770</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">50739 ●</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">Close: watch daily close above PDL — bullish carry overnight.</td>
+      </tr><tr style="border-bottom:0.5px solid var(--border);">
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779984000" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">
           <span data-ts="1779984000" data-type="dt">May 28, 12:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">NY AM/PM</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50767</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">50770 ●</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50757</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">50744 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50791</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50714</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">50637 ●</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          <span data-ts="1779998400" data-type="label">Box 16</span></td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          —</td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779969600" data-type="label">Box 8</span></td>
@@ -2363,21 +2688,6 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           <span data-ts="1779969600" data-type="label">Box 8</span></td>
         <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">RTH: hold PDL at open = confirmed long. Target PD_EQ → PDH.</td>
-      </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
-          <span data-ts="1779868800" data-type="label">Box 4</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
-          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">London</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">50662</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50797</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">50683</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">50568</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">London: OTE long on PDL re-test. Target PD_EQ → NWOG1 → PDH.</td>
       </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
@@ -2437,8 +2747,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
           </span>
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">4447 ↓</span>
         </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
-      <span data-ts="1779984000" data-type="label">Box 12</span> ·
-      <span data-ts="1779984000" data-type="dt">May 28, 12:00</span>
+      <span data-ts="1779998400" data-type="label">Box 16</span> ·
+      <span data-ts="1779998400" data-type="dt">May 28, 16:00</span>
       </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
@@ -2604,12 +2914,18 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   </div>
 
   <div id="ib4h-cl" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
-    <div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">13 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">2 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+    <div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">14 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">3 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)">
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
+          </span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">89.64 ↑</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779984000" data-type="label">Box 12</span>
             <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
           </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">89.96 ↑</span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">90.25 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779969600" data-type="label">Box 8</span>
@@ -2628,12 +2944,6 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
             <span data-ts="1779940800" data-type="dt" style="font-size:9px"> May 28, 00:00</span>
           </span>
           <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">92.52 ↑</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">
-            <span data-ts="1779840000" data-type="label">Box 20</span>
-            <span data-ts="1779840000" data-type="dt" style="font-size:9px"> May 26, 20:00</span>
-          </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">93.43 ↑</span>
         </div></div><div class="asia-box"><div class="asia-lbl">Naked SSL (unswept lows) — targets below</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779969600" data-type="label">Box 8</span>
@@ -2645,10 +2955,16 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
             <span data-ts="1779984000" data-type="label">Box 12</span>
             <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
           </span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">89.66 ↓</span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">88.02 ↓</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)">
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
+          </span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">88.63 ↓</span>
         </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
-      <span data-ts="1779984000" data-type="label">Box 12</span> ·
-      <span data-ts="1779984000" data-type="dt">May 28, 12:00</span>
+      <span data-ts="1779998400" data-type="label">Box 16</span> ·
+      <span data-ts="1779998400" data-type="dt">May 28, 16:00</span>
       </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
@@ -2662,19 +2978,34 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Setup</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779998400" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779998400" data-type="dt">May 28, 16:00</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">Close</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">89.47</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">89.64 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.13</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">88.63 ●</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">Close: watch daily close above PDL — bullish carry overnight.</td>
+      </tr><tr style="border-bottom:0.5px solid var(--border);">
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779984000" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">
           <span data-ts="1779984000" data-type="dt">May 28, 12:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">NY AM/PM</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">89.77</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">89.96 ●</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.81</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">89.66 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">90.25 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">89.13</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">88.02 ●</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779969600" data-type="label">Box 8</span></td>
@@ -2795,37 +3126,22 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           <span data-ts="1779969600" data-type="label">Box 8</span></td>
         <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">RTH: hold PDL at open = confirmed long. Target PD_EQ → PDH.</td>
-      </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
-          <span data-ts="1779868800" data-type="label">Box 4</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
-          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">London</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">91.1</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">91.26</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">90.45</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">89.64</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779926400" data-type="label">Box 20</span></td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">London: OTE long on PDL re-test. Target PD_EQ → NWOG1 → PDH.</td>
       </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 
   <div id="ib4h-6e" class="asia-wrap" style="display:none;border-radius:0 0 8px 8px;border-top:none">
     <div class="asia-card"><div class="asia-head"><span class="asia-sym">6E · Euro FX Futures</span><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="inst-badge badge-bull" style="font-size:9px">3 naked BSL above</span><span class="inst-badge badge-bear" style="font-size:9px">4 naked SSL below</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px"><div class="asia-box"><div class="asia-lbl">Naked BSL (unswept highs) — targets above</div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
+          </span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.1658 ↑</span>
+        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
+          <span style="color:var(--muted)">
             <span data-ts="1779984000" data-type="label">Box 12</span>
             <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
           </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.16585 ↑</span>
-        </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
-          <span style="color:var(--muted)">
-            <span data-ts="1779969600" data-type="label">Box 8</span>
-            <span data-ts="1779969600" data-type="dt" style="font-size:9px"> May 28, 08:00</span>
-          </span>
-          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.1667 ↑</span>
+          <span style="color:var(--green);font-weight:600;font-variant-numeric:tabular-nums">1.16705 ↑</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
             <span data-ts="1779883200" data-type="label">Box 8</span>
@@ -2852,13 +3168,13 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
           <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16245 ↓</span>
         </div><div style="display:flex;justify-content:space-between;font-size:10.5px;padding:2px 0;border-bottom:0.5px solid var(--border)">
           <span style="color:var(--muted)">
-            <span data-ts="1779984000" data-type="label">Box 12</span>
-            <span data-ts="1779984000" data-type="dt" style="font-size:9px"> May 28, 12:00</span>
+            <span data-ts="1779998400" data-type="label">Box 16</span>
+            <span data-ts="1779998400" data-type="dt" style="font-size:9px"> May 28, 16:00</span>
           </span>
-          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16555 ↓</span>
+          <span style="color:var(--red);font-weight:600;font-variant-numeric:tabular-nums">1.16535 ↓</span>
         </div></div></div><div class="asia-box" style="margin-bottom:8px;background:rgba(56,189,248,0.04);border:0.5px solid rgba(56,189,248,0.2)"><div class="asia-lbl" style="color:var(--blue)">Current forming bar —
-      <span data-ts="1779984000" data-type="label">Box 12</span> ·
-      <span data-ts="1779984000" data-type="dt">May 28, 12:00</span>
+      <span data-ts="1779998400" data-type="label">Box 16</span> ·
+      <span data-ts="1779998400" data-type="dt">May 28, 16:00</span>
       </div><div style="font-size:10px;color:var(--muted);margin-top:4px">Bar in progress — H/L/EQ available after close</div></div><table style="width:100%;border-collapse:collapse;font-size:10px"><thead><tr style="background:var(--bg3)">
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Box</th>
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Open time</th>
@@ -2872,19 +3188,34 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <th style="padding:4px 8px;text-align:left;color:var(--muted);font-size:9px">Setup</th>
     </tr></thead><tbody><tr style="border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
+          <span data-ts="1779998400" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
+          <span data-ts="1779998400" data-type="dt">May 28, 16:00</span></td>
+        <td style="padding:4px 8px;color:var(--muted);font-size:9px">Close</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16565</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">1.1658 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16558</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">1.16535 ●</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
+          —</td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">Close: watch daily close above PDL — bullish carry overnight.</td>
+      </tr><tr style="border-bottom:0.5px solid var(--border);">
+        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779984000" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">
           <span data-ts="1779984000" data-type="dt">May 28, 12:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">NY AM/PM</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.1657</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">1.16585 ●</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.1657</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">1.16555 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">1.16705 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16622</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1654</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          —</td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--text);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
+          <span data-ts="1779998400" data-type="label">Box 16</span></td>
+        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">NY AM: long bias. PD_EQ = key reaction level. Target NWOG1 → PDH.</td>
       </tr><tr style="border-bottom:0.5px solid var(--border);">
         <td style="padding:4px 8px;font-weight:600;color:var(--text)">
           <span data-ts="1779969600" data-type="label">Box 8</span></td>
@@ -2892,11 +3223,11 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
           <span data-ts="1779969600" data-type="dt">May 28, 08:00</span></td>
         <td style="padding:4px 8px;color:var(--muted);font-size:9px">RTH open</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16255</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--green);font-weight:600">1.1667 ●</td>
+        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1667</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16458</td>
         <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600">1.16245 ●</td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          —</td>
+          <span data-ts="1779984000" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           —</td>
         <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">RTH: hold PDL at open = confirmed long. Target PD_EQ → PDH.</td>
@@ -3005,33 +3336,18 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
           <span data-ts="1779897600" data-type="label">Box 12</span></td>
         <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">RTH: hold PDL at open = confirmed long. Target PD_EQ → PDH.</td>
-      </tr><tr style="border-bottom:0.5px solid var(--border);">
-        <td style="padding:4px 8px;font-weight:600;color:var(--text)">
-          <span data-ts="1779868800" data-type="label">Box 4</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">
-          <span data-ts="1779868800" data-type="dt">May 27, 04:00</span></td>
-        <td style="padding:4px 8px;color:var(--muted);font-size:9px">London</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--blue)">1.16515</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.1659</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)">1.16512</td>
-        <td style="padding:4px 8px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400">1.16435</td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;text-align:center;font-size:9px;color:var(--muted)">
-          <span data-ts="1779883200" data-type="label">Box 8</span></td>
-        <td style="padding:4px 8px;font-size:9px;color:var(--muted);max-width:280px">London: OTE long on PDL re-test. Target PD_EQ → NWOG1 → PDH.</td>
       </tr></tbody></table><div style="font-size:9px;color:var(--muted);padding:5px 8px">● = naked (unswept) level · Green high = BSL target above · Red low = SSL target below · Blue = box open price</div></div>
   </div>
 </div>
 
 <div class="sec-hdr"><span class="sec-title">Asian session setup — 20:00–02:00 NY · fractal reversal model · all instruments</span></div>
 <div class="asia-wrap">
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-warn" style="font-size:9px">⚠ Watch — ASIA_High not yet swept</span></div><div class="asia-note">Price 7573 above PDH (7570.75) and at/above ASIA_High (7551.75). ASIA_High sweep not yet confirmed — wait for price to trade above 7551.75 then reject back below it before considering short entry. Stop would be ON_High 7577.  <b>Check chart for FVG/imbalance above ASIA_High. Watch for 15/30-min sweeps and Dave Wick formations.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 30254 inside PD range (29877.5–30379). No Asian session reversal setup active — monitor ASIA_High (30090) and ASIA_Low (29795.75) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 50752 inside PD range (50500–50896). No Asian session reversal setup active — monitor ASIA_High (50791) and ASIA_Low (50618) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-warn" style="font-size:9px">⚠ Watch — ASIA_High not yet swept</span></div><div class="asia-note">Price 7588.5 above PDH (7570.75) and at/above ASIA_High (7551.75). ASIA_High sweep not yet confirmed — wait for price to trade above 7551.75 then reject back below it before considering short entry. Stop would be ON_High 7590.75.  <b>Check chart for FVG/imbalance above ASIA_High. Watch for 15/30-min sweeps and Dave Wick formations.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 30324 inside PD range (29877.5–30379). No Asian session reversal setup active — monitor ASIA_High (30090) and ASIA_Low (29795.75) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">YM · E-mini Dow Jones<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 50765 inside PD range (50500–50896). No Asian session reversal setup active — monitor ASIA_High (50791) and ASIA_Low (50618) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
 <div class="asia-card"><div class="asia-head"><span class="asia-sym">GC · COMEX Gold<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 4447 inside PD range (4500.4–4572.8). No Asian session reversal setup active — monitor ASIA_High (—) and ASIA_Low (—) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 89.94 inside PD range (87.77–93.69). No Asian session reversal setup active — monitor ASIA_High (92.23) and ASIA_Low (89.93) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
-<div class="asia-card"><div class="asia-head"><span class="asia-sym">6E · Euro FX Futures<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 1.1656 inside PD range (1.16325–1.1672). No Asian session reversal setup active — monitor ASIA_High (1.1632) and ASIA_Low (1.15955) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">CL · NYMEX Crude Oil<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 88.66 inside PD range (87.77–93.69). No Asian session reversal setup active — monitor ASIA_High (92.23) and ASIA_Low (89.93) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
+<div class="asia-card"><div class="asia-head"><span class="asia-sym">6E · Euro FX Futures<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · Asian range complete — levels remain valid</span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 1.1658 inside PD range (1.16325–1.1672). No Asian session reversal setup active — monitor ASIA_High (1.1632) and ASIA_Low (1.15955) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
 </div>
 
 <div class="sec-hdr"><span class="sec-title">Session breakdown — ES · NQ · GC · focus: London + NY AM</span></div>
@@ -3046,24 +3362,24 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="sess-card">
       <div class="sess-head"><span class="sess-name">Asia (4H #1+#2)</span><span class="inst-badge badge-bull">Done</span></div>
       <div class="sess-time">18:00–02:00 NY · 00:00–08:00 AMS</div>
-      <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">Asia delivered. Range: ON_High 7577 → ON_Low 7505.75 (71.25 pts). Extended ABOVE PDH (7570.75). MN_Open (7512.75) = key reference for London.</div></div>
+      <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">Asia delivered. Range: ON_High 7590.75 → ON_Low 7505.75 (85 pts). Extended ABOVE PDH (7570.75). MN_Open (7512.75) = key reference for London.</div></div>
     </div>
     <div class="sess-card">
       <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-bull">Done</span></div>
       <div class="sess-time">02:00–06:00 NY · 08:00–12:00 AMS</div>
-      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Price extended above PDH (7570.75). Watch for sweep of ON_High (7577) → rejection = OTE short. Target: PDH → P4H_EQ 7529.5 → MN_Open 7512.75. Hold above PDH on London open = continuation long.</div></div>
+      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Price extended above PDH (7570.75). Watch for sweep of ON_High (7590.75) → rejection = OTE short. Target: PDH → P4H_EQ 7558.5 → MN_Open 7512.75. Hold above PDH on London open = continuation long.</div></div>
     </div>
     <div class="sess-card">
       <div class="sess-head"><span class="sess-name">NY AM (4H #4)</span><span class="inst-badge badge-bull">Done</span></div>
       <div class="sess-time">06:00–10:00 NY · 12:00–16:00 AMS</div>
-      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Extended above PDH. RTH open: hold above P4H_EQ (7529.5) = bull continuation. Break below = OTE long retest at PDH (7570.75).</div></div>
+      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Extended above PDH. RTH open: hold above P4H_EQ (7558.5) = bull continuation. Break below = OTE long retest at PDH (7570.75).</div></div>
     </div>
     <div class="sess-card">
       <div class="sess-head"><span class="sess-name">Key levels to watch</span><span class="inst-badge badge-warn">Reference</span></div>
       <div class="sess-time">All sessions</div>
-      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">BSL: PDH 7570.75 · ON_High 7577 · P4H_High 7544</div></div>
-      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pivots: PD_EQ 7542.88 · MN_Open 7512.75 · P4H_EQ 7529.5</div></div>
-      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">SSL: PDL 7515 · ON_Low 7505.75 · P4H_Low 7515</div></div>
+      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">BSL: PDH 7570.75 · ON_High 7590.75 · P4H_High 7583.75</div></div>
+      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pivots: PD_EQ 7542.88 · MN_Open 7512.75 · P4H_EQ 7558.5</div></div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">SSL: PDL 7515 · ON_Low 7505.75 · P4H_Low 7533.25</div></div>
     </div></div>
   </div>
   <div id="tab-nq" class="tab-content">
@@ -3071,12 +3387,12 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="sess-card">
       <div class="sess-head"><span class="sess-name">Asia (4H #1+#2)</span><span class="inst-badge badge-bull">Done</span></div>
       <div class="sess-time">18:00–02:00 NY · 00:00–08:00 AMS</div>
-      <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">Asia delivered. Range: ON_High 30293 → ON_Low 29763 (530 pts). Bullish — above PD_EQ + MN_Open. MN_Open (29811) = key reference for London.</div></div>
+      <div class="dot-row"><div class="dot d-info"></div><div class="dot-txt">Asia delivered. Range: ON_High 30344.5 → ON_Low 29763 (581.5 pts). Bullish — above PD_EQ + MN_Open. MN_Open (29811) = key reference for London.</div></div>
     </div>
     <div class="sess-card">
       <div class="sess-head"><span class="sess-name">London (4H #3)</span><span class="inst-badge badge-bull">Done</span></div>
       <div class="sess-time">02:00–06:00 NY · 08:00–12:00 AMS</div>
-      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">Bullish. London sweep of ON_High (30293) → OTE short back to P4H_EQ 29987.75 / PD_EQ 30128.25. OR: pullback to MN_Open (29811) / P4H_Low (29863.5) = OTE long → target PDH 30379.</div></div>
+      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">Bullish. London sweep of ON_High (30344.5) → OTE short back to P4H_EQ 30153.88 / PD_EQ 30128.25. OR: pullback to MN_Open (29811) / P4H_Low (29963.25) = OTE long → target PDH 30379.</div></div>
     </div>
     <div class="sess-card">
       <div class="sess-head"><span class="sess-name">NY AM (4H #4)</span><span class="inst-badge badge-bull">Done</span></div>
@@ -3086,9 +3402,9 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     <div class="sess-card">
       <div class="sess-head"><span class="sess-name">Key levels to watch</span><span class="inst-badge badge-warn">Reference</span></div>
       <div class="sess-time">All sessions</div>
-      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">BSL: PDH 30379 · ON_High 30293 · P4H_High 30112</div></div>
-      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pivots: PD_EQ 30128.25 · MN_Open 29811 · P4H_EQ 29987.75</div></div>
-      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">SSL: PDL 29877.5 · ON_Low 29763 · P4H_Low 29863.5</div></div>
+      <div class="dot-row"><div class="dot d-bull"></div><div class="dot-txt">BSL: PDH 30379 · ON_High 30344.5 · P4H_High 30344.5</div></div>
+      <div class="dot-row"><div class="dot d-warn"></div><div class="dot-txt">Pivots: PD_EQ 30128.25 · MN_Open 29811 · P4H_EQ 30153.88</div></div>
+      <div class="dot-row"><div class="dot d-bear"></div><div class="dot-txt">SSL: PDL 29877.5 · ON_Low 29763 · P4H_Low 29963.25</div></div>
     </div></div>
   </div>
   <div id="tab-gc" class="tab-content">
@@ -3118,13 +3434,13 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   </div>
 </div>
 
-<div class="sec-hdr"><span class="sec-title">Priority sweep setups — generated from live data · NY AM / PM</span></div>
+<div class="sec-hdr"><span class="sec-title">Priority sweep setups — generated from live data · Next day prep</span></div>
 
 <div class="setup-row">
   <div class="setup-icon si-bear">▼</div>
   <div class="setup-body">
     <div class="setup-title c-red">ES — ON_High sweep → OTE short (extended above PDH) <span class="inst-badge badge-warn" style="margin-left:6px">NY AM Setup</span></div>
-    <div class="setup-detail">Price 7573 extended above PDH (7570.75). Watch sweep of ON_High (7577) → rejection = OTE short 62–79%. Targets: P4H_EQ 7529.5 → MN_Open 7512.75 → PDH 7570.75 reclaim. Stop: above ON_High 7577 + 2 ticks.</div>
+    <div class="setup-detail">Price 7588.5 extended above PDH (7570.75). Watch sweep of ON_High (7590.75) → rejection = OTE short 62–79%. Targets: P4H_EQ 7558.5 → MN_Open 7512.75 → PDH 7570.75 reclaim. Stop: above ON_High 7590.75 + 2 ticks.</div>
   </div>
 </div>
 
@@ -3132,7 +3448,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-bull">▲</div>
   <div class="setup-body">
     <div class="setup-title c-green">ES — hold above PDH → continuation long <span class="inst-badge badge-bull" style="margin-left:6px">Conditional</span></div>
-    <div class="setup-detail">If ES holds above PDH (7570.75) on 5-min close after any pullback = continuation long. Target: extension above ON_High 7577. OTE long on pullback to P4H_EQ 7529.5 / MN_Open 7512.75.</div>
+    <div class="setup-detail">If ES holds above PDH (7570.75) on 5-min close after any pullback = continuation long. Target: extension above ON_High 7590.75. OTE long on pullback to P4H_EQ 7558.5 / MN_Open 7512.75.</div>
   </div>
 </div>
 
@@ -3140,7 +3456,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-bull">▲</div>
   <div class="setup-body">
     <div class="setup-title c-green">NQ — 4H low sweep → OTE long <span class="inst-badge badge-bull" style="margin-left:6px">NY AM Setup</span></div>
-    <div class="setup-detail">Bullish bias. Pullback to P4H_Low (29863.5) or MN_Open (29811) = OTE long. Entry zone: 29863.5–29811. Targets: P4H_EQ 29987.75 → PD_EQ 30128.25 → ON_High 30293 → PDH 30379. Stop: below P4H_Low 29863.5.</div>
+    <div class="setup-detail">Bullish bias. Pullback to P4H_Low (29963.25) or MN_Open (29811) = OTE long. Entry zone: 29963.25–29811. Targets: P4H_EQ 30153.88 → PD_EQ 30128.25 → ON_High 30344.5 → PDH 30379. Stop: below P4H_Low 29963.25.</div>
   </div>
 </div>
 
@@ -3148,7 +3464,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-bear">▼</div>
   <div class="setup-body">
     <div class="setup-title c-red">NQ — ON_High sweep → OTE short <span class="inst-badge badge-warn" style="margin-left:6px">Conditional</span></div>
-    <div class="setup-detail">If ON_High (30293) swept and rejected → OTE short 62–79% retrace. Targets: MN_Open 29811 → P4H_EQ 29987.75. Stop: above ON_High + 2 ticks. Confirm with SMT: check YM position relative to its PD_EQ.</div>
+    <div class="setup-detail">If ON_High (30344.5) swept and rejected → OTE short 62–79% retrace. Targets: MN_Open 29811 → P4H_EQ 30153.88. Stop: above ON_High + 2 ticks. Confirm with SMT: check YM position relative to its PD_EQ.</div>
   </div>
 </div>
 
@@ -3172,7 +3488,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">YM — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">YM at 50752 — above PD_EQ = aligned with bull. Watch YM PD_EQ (50698) for intermarket alignment.</div>
+    <div class="setup-detail">YM at 50765 — above PD_EQ = aligned with bull. Watch YM PD_EQ (50698) for intermarket alignment.</div>
   </div>
 </div>
 
@@ -3180,7 +3496,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">CL — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">CL at 89.94 — Between PDL and PD_EQ = ranging. Watch CL at RTH open (09:00 NY) as macro tell.</div>
+    <div class="setup-detail">CL at 88.66 — Between PDL and PD_EQ = ranging. Watch CL at RTH open (09:00 NY) as macro tell.</div>
   </div>
 </div>
 
@@ -3188,7 +3504,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="setup-icon si-info">i</div>
   <div class="setup-body">
     <div class="setup-title c-blue">6E — intermarket context <span class="inst-badge badge-info" style="margin-left:6px">Context</span></div>
-    <div class="setup-detail">6E at 1.1656 — above PD_EQ + MN_Open = USD weak = tailwind for ES and GC. 6E leads USD repricing before ES and GC respond.</div>
+    <div class="setup-detail">6E at 1.1658 — above PD_EQ + MN_Open = USD weak = tailwind for ES and GC. 6E leads USD repricing before ES and GC respond.</div>
   </div>
 </div>
 
@@ -3277,12 +3593,12 @@ function showTab(id,btn){
 
 // Build pills from data
 const pills = [];
-pills.push('<span class="pill pill-bull">ES 7573 ⚠ above PDH</span>');
-pills.push('<span class="pill pill-bull">NQ 30254</span>');
-pills.push('<span class="pill pill-bull">YM 50752</span>');
+pills.push('<span class="pill pill-bull">ES 7588.5 ⚠ above PDH</span>');
+pills.push('<span class="pill pill-bull">NQ 30324</span>');
+pills.push('<span class="pill pill-bull">YM 50765</span>');
 pills.push('<span class="pill pill-bear">GC 4447 ⚠ below PDL</span>');
-pills.push('<span class="pill pill-bear">CL 89.94</span>');
-pills.push('<span class="pill pill-bull">6E 1.1656</span>');
+pills.push('<span class="pill pill-bear">CL 88.66</span>');
+pills.push('<span class="pill pill-bull">6E 1.1658</span>');
 document.getElementById('pills-container').innerHTML = pills.join('');
 
 // ── Timezone display system ────────────────────────────────────────────────────
