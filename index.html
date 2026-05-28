@@ -8,6 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#080b0f;--bg2:#0d1117;--bg3:#111820;--card:#131b25;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--amber:#f0a500;--green:#22c55e;--red:#ef4444;--blue:#38bdf8;--text:#e2e8f0;--muted:#64748b;--dim:#334155;--mono:'Geist Mono',monospace;--sans:'Syne',sans-serif}
+body.light{--bg:#f4f6f9;--bg2:#edf0f4;--bg3:#e4e8ee;--card:#ffffff;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.16);--amber:#c47d00;--green:#16a34a;--red:#dc2626;--blue:#0284c7;--text:#0f172a;--muted:#64748b;--dim:#94a3b8}
+body.light::before{background-image:linear-gradient(rgba(196,125,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(196,125,0,0.04) 1px,transparent 1px)}
+body.light::after{background:radial-gradient(ellipse,rgba(196,125,0,0.05) 0%,transparent 70%)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(240,165,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,165,0,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
