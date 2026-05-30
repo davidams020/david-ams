@@ -245,6 +245,18 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 .pc-legend-item{display:flex;flex-wrap:wrap;align-items:center;gap:5px;color:var(--muted);line-height:1.55;margin-bottom:5px}
 .pc-legend-item b{color:var(--text)}
 .pc-legend .sw{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:middle;flex-shrink:0}
+.rpt-legend{margin:0 16px 12px;background:var(--card);border:1px solid var(--border);border-radius:8px;font-size:11px;overflow:hidden}
+.rpt-legend>summary{cursor:pointer;padding:9px 12px;font-weight:600;color:var(--amber);list-style:none;user-select:none}
+.rpt-legend>summary::-webkit-details-marker{display:none}
+.rpt-legend>summary::before{content:'▸  ';color:var(--muted)}
+.rpt-legend[open]>summary::before{content:'▾  '}
+.rl-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px 20px;padding:6px 14px 14px;border-top:1px solid var(--border)}
+.rl-h{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text);margin:6px 0 6px}
+.rl-sub{font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);font-size:9px}
+.rl-item{display:flex;flex-wrap:wrap;align-items:center;gap:5px;color:var(--muted);line-height:1.55;margin-bottom:5px}
+.rl-item b{color:var(--text)}
+.rl-item code{font-family:var(--mono,monospace);background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:1px 4px;color:var(--text);font-size:10px}
+.rl-item .sw{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:middle;flex-shrink:0}
 .pc-pct{font-size:8px;color:var(--dim)}
 .po3-fractal{font-size:9px;color:var(--muted);background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.25);border-radius:4px;padding:3px 6px;margin:3px 0;line-height:1.4}
 .po3-fractal b{color:var(--text)}
@@ -296,6 +308,23 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 
 
 <div class="sec-hdr"><span class="sec-title">⚡ Power of Three &amp; HTF Order Flow — AMD phases · candle bias · PO3 profile per instrument</span></div>
+<details class="rpt-legend"><summary>📖 Power of Three — how to read this</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">AMD phases</div>
+      <div class="rl-item">Every cycle runs <b>Accumulation → Manipulation (Judas) → Distribution → Completion</b>.</div><div class="rl-item">Shown at month / week / intraday scale so you can line up the top-down bias.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Candle bias</div>
+      <div class="rl-item"><code>PM</code> / <code>PW</code> / <code>PD</code> = previous Month / Week / Day candle direction.</div><div class="rl-item">These blend into the <b>HTF bias</b> score (how strongly the higher timeframes lean one way).</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Fractal weekly profile</div>
+      <div class="rl-item">The <b>monthly draw</b> sets each week: <b>W1</b> = counter-trend Judas, <b>W2–3</b> = expansion with the draw, <b>W4</b> = completion.</div><div class="rl-item"><b>Expected</b> (fractal) vs <b>Observed</b> (this week’s price) with an alignment flag: <span style="color:var(--green)">✓ aligned</span> · <span style="color:var(--red)">✗ divergent</span> · pending.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Other terms</div>
+      <div class="rl-item"><b>Judas side</b> = which extreme the early move swept (the fake-out).</div><div class="rl-item"><b>TGIF</b> = Friday 20–30% retrace of the weekly range back toward the opposite end.</div><div class="rl-item"><span class="sw" style="background:var(--green)"></span> bullish &nbsp; <span class="sw" style="background:var(--red)"></span> bearish &nbsp; <span class="sw" style="background:var(--amber)"></span> neutral/completion</div>
+    </div></div></details>
 <div class="po3-section">
   
   <div class="po3-banners">
@@ -847,6 +876,27 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </div></div>
 
 <div class="sec-hdr"><span class="sec-title">Key levels — all 6 instruments</span></div>
+<details class="rpt-legend"><summary>📖 Key levels — what every abbreviation means</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">Previous day (PD)</div>
+      <div class="rl-item"><code>PDH</code> / <code>PDL</code> previous day high / low</div><div class="rl-item"><code>PD_EQ</code> 50% of the PD range — splits premium vs discount</div><div class="rl-item"><code>PD_Close</code> / <code>PD_Settle</code> previous day close / settlement</div><div class="rl-item"><code>PD_UW</code> / <code>PD_LW</code> previous day upper / lower wick</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Key opens</div>
+      <div class="rl-item"><code>MN_Open</code> midnight 00:00 NY — the <b>True Day Open</b> (algo reference)</div><div class="rl-item"><code>D_Open</code> Globex 18:00 NY open · <code>RTH_Open</code> cash 09:30 open</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Overnight & FX4 ranges</div>
+      <div class="rl-item"><code>ON_High</code> / <code>ON_Low</code> overnight high / low</div><div class="rl-item"><code>ACC</code> FX4 accumulation range (18:00–02:00 NY) · <code>ASIA</code> Asian range (20:00–00:00)</div><div class="rl-item">each range has its own <code>_EQ</code> = 50% midpoint</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Higher periods & gaps</div>
+      <div class="rl-item"><code>PW</code> previous week · <code>PM</code> previous month · <code>CM</code> current month</div><div class="rl-item"><code>P4H</code> / <code>TV4H</code> previous 4-hour candle (high / low / EQ)</div><div class="rl-item"><code>NWOG</code> / <code>NDOG</code> opening gaps — see the gap panel below</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Premium / Discount</div>
+      <div class="rl-item">Above the 50% EQ = <b>premium</b> (look for sells) · below = <b>discount</b> (look for buys)</div><div class="rl-item"><span class="sw" style="background:var(--green)"></span> upside-leaning &nbsp; <span class="sw" style="background:var(--red)"></span> downside-leaning &nbsp; <span class="sw" style="background:var(--amber)"></span> caution/pivot</div>
+    </div></div></details>
 <div class="inst-grid">
   <div class="inst-card bull">
     <div class="inst-head">
@@ -1462,6 +1512,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 
 <div class="sec-hdr"><span class="sec-title">TV 4H candle breakdown — anchor 18:00 NY · all instruments</span></div>
+<details class="rpt-legend"><summary>📖 TV 4H breakdown — how to read this</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">The anchor</div>
+      <div class="rl-item">TradingView 4H candles are anchored to <b>18:00 NY</b>, so the slots are 18:00 / 22:00 / 02:00 / 06:00 / 10:00 / 14:00.</div><div class="rl-item">Each slot shows that 4H candle’s high / low / EQ and whether it closed bull or bear.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Why it matters</div>
+      <div class="rl-item">A 4H <b>displacement</b> (strong directional close) marks intent; its high/low becomes the next draw.</div><div class="rl-item">Lines up the intraday move with the higher-timeframe order flow above.</div>
+    </div></div></details>
 <div style="margin-bottom:0">
   <div class="tab-nav" style="background:var(--card);border:1px solid var(--border);border-bottom:none;border-radius:8px 8px 0 0">
     <button class="tab-btn active" onclick="show4H('es4h',this)">ES</button>
@@ -2019,6 +2078,23 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 
 <div class="sec-hdr"><span class="sec-title">FX4 model bias — ACC range · Asian range · double zone · London KZ · all instruments</span></div>
+<details class="rpt-legend"><summary>📖 FX4 model — how to read this</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">The two ranges</div>
+      <div class="rl-item"><b>ACC range</b> (FX4): previous close → 02:00 NY. Its high/low is a liquidity pool; the 50% EQ splits premium/discount.</div><div class="rl-item"><b>Asian range</b> (ICT): 20:00 → midnight NY — the early accumulation reference.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Premium / Discount</div>
+      <div class="rl-item">Price <b>below</b> EQ = discount → look for <b>longs</b>; <b>above</b> EQ = premium → look for <b>shorts</b>.</div><div class="rl-item"><b>Double Discount</b> = discount of BOTH the PD range and the ACC range → strongest long. <b>Double Premium</b> → strongest short.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">London killzone (02:00–05:00 NY)</div>
+      <div class="rl-item">Enter <b>after</b> a stop-hunt of the ACC high/low; be out before 05:00 (new H4 open).</div><div class="rl-item">That stop-hunt often becomes the day’s high or low. Targets: ACC_EQ → PD_EQ.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Order flow</div>
+      <div class="rl-item">Shows how the range <b>closed</b>. FX4 reads a one-sided close as the <b>opposite</b> side building (e.g. a bullish close can mean sellside is being engineered).</div><div class="rl-item"><code>MN_Open</code> (True Day Open) is the key intraday pivot.</div>
+    </div></div></details>
 <div class="fx4-wrap">
 
   <div class="fx4-inst">
@@ -2221,6 +2297,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 
 <div class="sec-hdr"><span class="sec-title">NWOG · NDOG — opening gap panel · all instruments</span></div>
+<details class="rpt-legend"><summary>📖 Opening gaps — what NWOG / NDOG mean</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">The gaps</div>
+      <div class="rl-item"><b>NWOG</b> — New Week Opening Gap: between Friday close and Sunday open.</div><div class="rl-item"><b>NDOG</b> — New Day Opening Gap: between the prior session close and the new day open.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">How to use them</div>
+      <div class="rl-item">Each gap has an <b>Open</b>, <b>Close</b> and <b>EQ</b> (50% = consequent encroachment) — all act as support/resistance and draws on liquidity.</div><div class="rl-item">Numbered most-recent-first (1 = newest). An <b>unfilled</b> gap is a magnet price tends to revisit.</div>
+    </div></div></details>
 <div style="margin-bottom:0">
   <div class="tab-nav" style="background:var(--card);border:1px solid var(--border);border-bottom:none;border-radius:8px 8px 0 0">
     <button class="tab-btn active" onclick="showGap('gap-es',this)">ES</button>
@@ -2743,6 +2828,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 
 <div class="sec-hdr"><span class="sec-title">IBKR 4H sweep levels — naked BSL/SSL · sequential sweeps · NY-anchored boxes · all instruments</span></div>
+<details class="rpt-legend"><summary>📖 4H sweeps — what BSL / SSL / naked mean</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">Liquidity</div>
+      <div class="rl-item"><b>BSL</b> buyside liquidity = resting buy-stops <b>above</b> highs · <b>SSL</b> sellside liquidity = resting sell-stops <b>below</b> lows.</div><div class="rl-item"><b>Naked</b> BSL/SSL = a high/low that hasn’t been traded back through yet → still untapped, so it acts as a draw.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Structure</div>
+      <div class="rl-item"><b>Sequential sweeps</b> = the order in which levels were taken (the run from one pool to the next).</div><div class="rl-item"><b>NY-anchored 4H boxes</b> = the 4H candles measured from the 18:00 NY anchor.</div>
+    </div></div></details>
 <div style="margin-bottom:0">
   <div class="tab-nav" style="background:var(--card);border:1px solid var(--border);border-bottom:none;border-radius:8px 8px 0 0">
     <button class="tab-btn active" onclick="showIB4H('ib4h-es',this)">ES</button>
@@ -4063,6 +4157,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 
 <div class="sec-hdr"><span class="sec-title">Asian session setup — 20:00–02:00 NY · fractal reversal model · all instruments</span></div>
+<details class="rpt-legend"><summary>📖 Asian session setup — how to read this</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">The model</div>
+      <div class="rl-item">The Asian session (20:00–02:00 NY) builds an <b>accumulation</b> range — orders pool at its high and low.</div><div class="rl-item">Look for a <b>sweep</b> of the Asian high or low, then a reversal back inside — a fractal of the daily PO3 (Judas → expansion).</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Levels shown</div>
+      <div class="rl-item"><b>Naked BSL</b> (unswept highs) = upside targets · <b>Naked SSL</b> (unswept lows) = downside targets.</div><div class="rl-item">The <b>current forming bar</b> is highlighted; FX4 London entries begin once 02:00 NY hits.</div>
+    </div></div></details>
 <div class="asia-wrap">
 <div class="asia-card"><div class="asia-head"><span class="asia-sym">ES · E-mini S&P 500<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · <b>Asian session window active (20:00–02:00 NY)</b></span></span><span class="inst-badge badge-info" style="font-size:9px">Inside PD range — standard bias</span></div><div class="asia-note">Price 7590.75 inside PD range (7505.75–7590.75). No Asian session reversal setup active — monitor ASIA_High (7586) and ASIA_Low (7572.75) for potential sweeps.  <b>Remain vigilant for 15/30-min sweeps and Dave Wick formations intrabar — discretionary entries only.</b></div></div>
 <div class="asia-card"><div class="asia-head"><span class="asia-sym">NQ · E-mini NASDAQ 100<span style="font-size:9px;color:var(--muted);font-weight:400;margin-left:6px"> · <b>Asian session window active (20:00–02:00 NY)</b></span></span><span class="inst-badge badge-warn" style="font-size:9px">⚠ Watch — ASIA_High not yet swept</span></div><div class="asia-note">Price 30389.5 above PDH (30344.5) and at/above ASIA_High (30301.75). ASIA_High sweep not yet confirmed — wait for price to trade above 30301.75 then reject back below it before considering short entry. Stop would be ON_High 30536.  <b>Check chart for FVG/imbalance above ASIA_High. Watch for 15/30-min sweeps and Dave Wick formations.</b></div></div>
@@ -4073,6 +4176,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 
 <div class="sec-hdr"><span class="sec-title">Session breakdown — ES · NQ · GC · focus: London + NY AM</span></div>
+<details class="rpt-legend"><summary>📖 Sessions — killzones, ranges & macros</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">Killzones (NY time)</div>
+      <div class="rl-item"><b>London</b> 02:00–05:00 — the FX4 stop-hunt window.</div><div class="rl-item"><b>NY AM</b> 09:30–11:00 — the cash-open expansion and the AM macros.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Intraday references</div>
+      <div class="rl-item"><b>OR</b> Opening Range · <b>Buyside / Sellside</b> lines = liquidity above highs / below lows.</div><div class="rl-item"><b>Macros</b> = ICT macro windows (short recurring algo windows, e.g. 09:50–10:10) where moves often run.</div>
+    </div></div></details>
 <div>
   <div class="tab-nav">
     <button class="tab-btn active" onclick="showTab('es',this)">ES — S&amp;P 500</button>
@@ -4231,6 +4343,15 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 </div>
 
 <div class="sec-hdr"><span class="sec-title">News calendar — all times NY · USD high/medium impact · live from Forex Factory</span></div>
+<details class="rpt-legend"><summary>📖 News calendar — how to read this</summary><div class="rl-body">
+    <div class="rl-grp">
+      <div class="rl-h">Impact & timing</div>
+      <div class="rl-item"><b>High</b> / <b>Medium</b> = expected USD volatility. All times are NY.</div><div class="rl-item">Rule of thumb: wait 5–10 min after a print; avoid entering within 30 min of a HIGH-impact release.</div>
+    </div>
+    <div class="rl-grp">
+      <div class="rl-h">Week tags</div>
+      <div class="rl-item">Each week shows its <b>PO3 phase</b> — <code>W1 ACCUMULATION</code> · <code>W2 MANIPULATION</code> · <code>W3 DISTRIBUTION</code> · <code>W4 COMPLETION</code> (time-of-month context).</div><div class="rl-item"><b>⚠ Judas window</b> = a High-impact event on Tue/Wed — elevated manipulation / Judas-swing risk.</div>
+    </div></div></details>
 
 <div class="news-wrap">
   <div class="news-row" style="display:block;padding:12px 16px;color:var(--muted);font-size:11px">
