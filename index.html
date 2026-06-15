@@ -68,6 +68,26 @@ header{padding:48px 0 32px;border-bottom:1px solid var(--border2);margin-bottom:
 .bf{font-size:9px;padding:2px 7px;border-radius:3px;font-weight:500}
 .bf-y{background:rgba(34,197,94,0.12);color:var(--green)}
 .bf-n{background:rgba(239,68,68,0.12);color:var(--red)}
+.hero-strip{margin:18px 0 26px}
+.hero-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px}
+.h-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-left:3px solid var(--muted);border-radius:6px;padding:8px 10px}
+.h-card.h-bull{border-left-color:var(--green)}
+.h-card.h-bear{border-left-color:var(--red)}
+.h-card.h-flat{border-left-color:var(--muted)}
+.h-top{display:flex;align-items:center;justify-content:space-between}
+.h-sym{font-weight:700;font-size:13px;color:var(--text)}
+.h-dot{width:8px;height:8px;border-radius:50%;flex:none}
+.h-dot.h-ok{background:var(--green)}
+.h-dot.h-bad{background:var(--red)}
+.h-dot.h-warn{background:var(--amber)}
+.h-dot.h-na{background:var(--muted)}
+.h-bias{font-size:11px;font-weight:700;margin-top:5px}
+.h-card.h-bull .h-bias{color:var(--green)}
+.h-card.h-bear .h-bias{color:var(--red)}
+.h-card.h-flat .h-bias{color:var(--muted)}
+.h-state{font-size:10px;color:var(--muted);margin-top:2px;text-transform:capitalize}
+.h-draw{font-size:10px;color:var(--text);margin-top:5px;opacity:.85}
 .bf-w{background:rgba(240,165,0,0.12);color:var(--amber)}
 .bf-na{background:rgba(100,116,139,0.12);color:var(--muted)}
 .bias-table-wrap{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;animation:fadeUp .8s ease both}
@@ -370,6 +390,37 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="pills" id="pills-container"></div>
 </header>
 
+<div class="hero-strip"><div class="hero-label">Board at a glance</div><div class="hero-grid"><div class="h-card h-bull">
+      <div class="h-top"><span class="h-sym">ES</span><span class="h-dot h-ok" title="HTF aligned"></span></div>
+      <div class="h-bias">▲ BULL</div>
+      <div class="h-state">bullish cont</div>
+      <div class="h-draw">↓ D-1 7366.5</div>
+    </div><div class="h-card h-bull">
+      <div class="h-top"><span class="h-sym">NQ</span><span class="h-dot h-ok" title="HTF aligned"></span></div>
+      <div class="h-bias">▲ BULL</div>
+      <div class="h-state">bullish cont</div>
+      <div class="h-draw">↓ D-1 29230</div>
+    </div><div class="h-card h-bull">
+      <div class="h-top"><span class="h-sym">YM</span><span class="h-dot h-ok" title="HTF aligned"></span></div>
+      <div class="h-bias">▲ BULL</div>
+      <div class="h-state">bullish cont</div>
+      <div class="h-draw">↓ D-1 50836</div>
+    </div><div class="h-card h-flat">
+      <div class="h-top"><span class="h-sym">GC</span><span class="h-dot h-warn" title="HTF mixed"></span></div>
+      <div class="h-bias">◆ FLAT</div>
+      <div class="h-state">bullish cont</div>
+      <div class="h-draw">↓ D-1 4191.1</div>
+    </div><div class="h-card h-bear">
+      <div class="h-top"><span class="h-sym">CL</span><span class="h-dot h-ok" title="HTF aligned"></span></div>
+      <div class="h-bias">▼ BEAR</div>
+      <div class="h-state">bearish cont</div>
+      <div class="h-draw">↑ D-1 87.23</div>
+    </div><div class="h-card h-flat">
+      <div class="h-top"><span class="h-sym">6E</span><span class="h-dot h-warn" title="HTF mixed"></span></div>
+      <div class="h-bias">◆ FLAT</div>
+      <div class="h-state">rev premium</div>
+      <div class="h-draw">↓ D-1 1.15995</div>
+    </div></div></div>
 <div class="roll-banner">⚠ <b>ROLL WEEK</b> — ESM26 exp 20260618 09:30:00 America/New_York (2d) · NQM26 exp 20260618 09:30:00 America/New_York (2d) · YMM26 exp 20260618 09:30:00 America/New_York (2d) · CLM26 exp 20260622 14:30:00 America/New_York (6d). The liquid contract is rotating to the next quarter; once 5-day volume flips, the front-month resolver moves to the new contract and levels <b>re-baseline by the contract spread</b> (e.g. ~64 pts ES/NQ Jun→Sep). Per-contract history stays clean — this is a label + level shift on roll day, not a real gap.</div>
 
 <div class="sec-hdr"><span class="sec-title">⚡ D/W/M Power-of-3 — Bias · Displacement · Position · Draw</span></div>
