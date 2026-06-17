@@ -320,6 +320,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 .amdx-cashnote{font-size:9px;color:var(--muted);font-style:italic;margin-top:4px}
 .board-note{font-size:9px;color:var(--muted);font-style:italic;margin:2px 0 14px;padding:0 2px}
 .board-chart-slot{margin-top:10px;height:120px;display:flex;align-items:center;justify-content:center;border:1px dashed var(--border2);border-radius:6px;color:var(--muted);font-size:10px;background:var(--bg3)}
+.board-chart-slot.tv-live{height:400px;display:block;padding:0;border-style:solid;background:transparent}
+.board-chart-cap{margin-top:4px;font-size:9px;color:var(--muted);font-style:italic;text-align:center}
 .c-muted{color:var(--muted)}
 .full-report{margin:6px 0 0}
 .full-report>summary{cursor:pointer;list-style:none;user-select:none;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;font-weight:600;color:var(--amber);font-size:12px}
@@ -448,7 +450,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 
 
 <div class="sec-hdr"><span class="sec-title">📋 Board — oversight layer · bias · AMD phase · draw / invalidation · tap a row for the AMDX read</span></div>
-<div class="board-banner">⚡ <b>FOMC Rate Decision 20:00 NY</b> — expect two-sided / seek-and-destroy — divergence likely, wait for the sweep</div>
+<div class="board-banner">⚡ <b>FOMC decision released 20:00 NY</b> — watch the reaction / Asian session setup</div>
 <div class="board">
   <div class="board-head"><span>Instrument</span><span>Bias · HTF / OF</span><span>AMD</span><span>Nearest draw ↑ / ↓ → target</span><span class="bh-r">Invalidation</span></div>
   <details class="board-row conv-diverge">
@@ -472,7 +474,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="ast"><span class="al">Invalidation</span><span>ON_High 7612.5</span></div>
         <div class="ast"><span class="al">Trigger</span><span style="font-size:9px">sweep of D-1H 7636.75 (high raid → continuation down)</span></div>
       </div>
-    <div class="board-chart-slot" data-sym="ES">📈 Live chart mounts here (coming next)</div>
+    <div class="board-chart-slot" data-sym="ES" data-tv="US500">📈 Live chart — open the live report to view</div>
+    <div class="board-chart-cap">live proxy — US500 tracks E-mini S&P 500, not the exact contract</div>
   </div>
     </details>
 <details class="board-row conv-diverge">
@@ -496,7 +499,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="ast"><span class="al">Invalidation</span><span>ON_Low 30070.25</span></div>
         <div class="ast"><span class="al">Trigger</span><span style="font-size:9px">sweep of D-3L 29515.75 (low raid → continuation up)</span></div>
       </div>
-    <div class="board-chart-slot" data-sym="NQ">📈 Live chart mounts here (coming next)</div>
+    <div class="board-chart-slot" data-sym="NQ" data-tv="US100">📈 Live chart — open the live report to view</div>
+    <div class="board-chart-cap">live proxy — US100 tracks E-mini NASDAQ 100, not the exact contract</div>
   </div>
     </details>
 <details class="board-row conv-aligned">
@@ -520,7 +524,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="ast"><span class="al">Invalidation</span><span>ON_Low 52236</span></div>
         <div class="ast"><span class="al">Trigger</span><span style="font-size:9px">sweep of D-1L 52080 (low raid → continuation up)</span></div>
       </div>
-    <div class="board-chart-slot" data-sym="YM">📈 Live chart mounts here (coming next)</div>
+    <div class="board-chart-slot" data-sym="YM" data-tv="US30">📈 Live chart — open the live report to view</div>
+    <div class="board-chart-cap">live proxy — US30 tracks E-mini Dow Jones, not the exact contract</div>
   </div>
     </details>
 <details class="board-row conv-diverge">
@@ -544,7 +549,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="ast"><span class="al">Invalidation</span><span>ON_Low 4296.1</span></div>
         <div class="ast"><span class="al">Trigger</span><span style="font-size:9px">sweep of D-2L 4283.4 (low raid → continuation up)</span></div>
       </div>
-    <div class="board-chart-slot" data-sym="GC">📈 Live chart mounts here (coming next)</div>
+    <div class="board-chart-slot" data-sym="GC" data-tv="GOLD">📈 Live chart — open the live report to view</div>
+    <div class="board-chart-cap">live proxy — GOLD tracks COMEX Gold, not the exact contract</div>
   </div>
     </details>
 <details class="board-row conv-aligned">
@@ -568,7 +574,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="ast"><span class="al">Invalidation</span><span>ON_High 79.18</span></div>
         <div class="ast"><span class="al">Trigger</span><span style="font-size:9px">sweep of D-1H 80.15 (high raid → continuation down)</span></div>
       </div>
-    <div class="board-chart-slot" data-sym="CL">📈 Live chart mounts here (coming next)</div>
+    <div class="board-chart-slot" data-sym="CL" data-tv="USOIL">📈 Live chart — open the live report to view</div>
+    <div class="board-chart-cap">live proxy — USOIL tracks NYMEX Crude Oil, not the exact contract</div>
   </div>
     </details>
 <details class="board-row conv-diverge">
@@ -592,7 +599,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="ast"><span class="al">Invalidation</span><span>ON_High 1.1657</span></div>
         <div class="ast"><span class="al">Trigger</span><span style="font-size:9px">sweep of D-1H 1.16615 (high raid → continuation down)</span></div>
       </div>
-    <div class="board-chart-slot" data-sym="6E">📈 Live chart mounts here (coming next)</div>
+    <div class="board-chart-slot" data-sym="6E" data-tv="EURUSD">📈 Live chart — open the live report to view</div>
+    <div class="board-chart-cap">live proxy — EURUSD tracks Euro FX Futures, not the exact contract</div>
   </div>
     </details>
 <details class="board-row conv-aligned">
@@ -616,7 +624,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="ast"><span class="al">Invalidation</span><span>PDH 7564.96</span></div>
       </div>
       <div class="amdx-cashnote">Cash watches gap-fill (no Globex sweeps): the unfilled RTH close→open gap is the draw, mirroring how futures watch naked sweeps.</div>
-    <div class="board-chart-slot" data-sym="SPX">📈 Live chart mounts here (coming next)</div>
+    <div class="board-chart-slot" data-sym="SPX" data-tv="US500">📈 Live chart — open the live report to view</div>
+    <div class="board-chart-cap">live proxy — US500 tracks S&P 500 Index, not the exact contract</div>
   </div>
     </details>
 <details class="board-row conv-diverge">
@@ -640,7 +649,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="ast"><span class="al">Invalidation</span><span>PDH 30560.08</span></div>
       </div>
       <div class="amdx-cashnote">Cash watches gap-fill (no Globex sweeps): the unfilled RTH close→open gap is the draw, mirroring how futures watch naked sweeps.</div>
-    <div class="board-chart-slot" data-sym="NDX">📈 Live chart mounts here (coming next)</div>
+    <div class="board-chart-slot" data-sym="NDX" data-tv="US100">📈 Live chart — open the live report to view</div>
+    <div class="board-chart-cap">live proxy — US100 tracks NASDAQ 100 Index, not the exact contract</div>
   </div>
     </details>
 </div>
@@ -6011,6 +6021,28 @@ try {
       rec.series.applyOptions({upColor:p.up,downColor:p.dn,borderUpColor:p.up,borderDownColor:p.dn,wickUpColor:p.up,wickDownColor:p.dn});
     });
   };
+})();
+</script>
+<script>
+(function(){
+  function injectTV(slot){
+    if(slot.__tv) return;
+    var sym=slot.getAttribute('data-tv'); if(!sym) return;
+    slot.__tv=true; slot.classList.add('tv-live'); slot.innerHTML='';
+    var c=document.createElement('div'); c.className='tradingview-widget-container'; c.style.height='100%'; c.style.width='100%';
+    var w=document.createElement('div'); w.className='tradingview-widget-container__widget'; w.style.height='100%'; w.style.width='100%';
+    c.appendChild(w);
+    var s=document.createElement('script'); s.type='text/javascript'; s.async=true;
+    s.src='https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+    s.text=JSON.stringify({autosize:true,symbol:sym,interval:'240',timezone:'America/New_York',theme:'dark',style:'1',locale:'en',hide_side_toolbar:true,allow_symbol_change:false,save_image:false,support_host:'https://www.tradingview.com'});
+    c.appendChild(s); slot.appendChild(c);
+  }
+  document.querySelectorAll('details.board-row').forEach(function(det){
+    det.addEventListener('toggle',function(){
+      if(!det.open) return;
+      var slot=det.querySelector('.board-chart-slot'); if(slot) injectTV(slot);
+    });
+  });
 })();
 </script>
 </body>
