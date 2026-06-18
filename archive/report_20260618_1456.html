@@ -6013,7 +6013,7 @@ try {
 </script>
 
 <!-- Phase 3 — Lightweight Charts (vendored locally; see lib/). Lazy-built per chart on first open. -->
-<script src="lib/lightweight-charts.js"></script>
+<script src="../lib/lightweight-charts.js"></script>
 <script>
 (function(){
   if(!window.LightweightCharts) return;
@@ -6095,27 +6095,6 @@ try {
   };
 })();
 </script>
-<script>
-(function(){
-  function injectTV(slot){
-    if(slot.__tv) return;
-    var sym=slot.getAttribute('data-tv'); if(!sym) return;
-    slot.__tv=true; slot.classList.add('tv-live'); slot.innerHTML='';
-    var c=document.createElement('div'); c.className='tradingview-widget-container'; c.style.height='100%'; c.style.width='100%';
-    var w=document.createElement('div'); w.className='tradingview-widget-container__widget'; w.style.height='100%'; w.style.width='100%';
-    c.appendChild(w);
-    var s=document.createElement('script'); s.type='text/javascript'; s.async=true;
-    s.src='https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
-    s.text=JSON.stringify({autosize:true,symbol:sym,interval:'240',timezone:'America/New_York',theme:'dark',style:'1',locale:'en',hide_side_toolbar:true,allow_symbol_change:false,save_image:false,support_host:'https://www.tradingview.com'});
-    c.appendChild(s); slot.appendChild(c);
-  }
-  document.querySelectorAll('details.board-row').forEach(function(det){
-    det.addEventListener('toggle',function(){
-      if(!det.open) return;
-      var slot=det.querySelector('.board-chart-slot'); if(slot) injectTV(slot);
-    });
-  });
-})();
-</script>
+
 </body>
 </html>
