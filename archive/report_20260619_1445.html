@@ -282,6 +282,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 .r2-week .scen.bear .lab{color:var(--red)}
 .r2-week .scen.neutral .lab{color:var(--muted)}
 .r2-week .scnwrap{margin-top:8px;border-top:1px solid var(--border);padding-top:8px}
+.r2-week .wa-profile{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0 2px;font-size:10px}
+.r2-week .wa-profile-lbl{font-size:9px;font-weight:700;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
 .r2-week .wa-detail{margin-top:10px;border-top:1px solid var(--border);padding-top:8px}
 .r2-week .wa-detail>summary{cursor:pointer;list-style:none;font-size:11px;font-weight:600;color:var(--amber);padding:2px 0}
 .r2-week .wa-detail>summary::-webkit-details-marker{display:none}
@@ -338,6 +340,20 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 .brow{cursor:pointer;list-style:none;user-select:none}
 .brow::-webkit-details-marker{display:none}
 .bsym{font-weight:700;font-size:13px}
+.bprofile{display:block;font-size:8px;font-weight:600;margin-top:2px;opacity:.92;white-space:nowrap}
+.mc-wrap{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px}
+.mc-block{display:flex;flex-wrap:wrap;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:7px 11px;flex:1;min-width:280px}
+.mc-lbl{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.mc-chip{font-size:10px;font-weight:600;padding:2px 7px;border-radius:999px;background:var(--bg3);border:1px solid var(--border)}
+.mc-chip.mc-ok{color:var(--muted)}
+.mc-chip.mc-div{color:var(--amber);border-color:rgba(240,165,0,.5);background:rgba(240,165,0,.12)}
+.mc-sd{font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px}
+.mc-sd.mc-sd-hi{color:var(--red);background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.5)}
+.mc-sd.mc-sd-mid{color:var(--amber);background:rgba(240,165,0,.12);border:1px solid rgba(240,165,0,.4)}
+.mc-sd.mc-sd-lo{color:var(--muted);background:var(--bg3);border:1px solid var(--border)}
+.mc-conds{display:inline-flex;gap:3px;margin-left:2px}
+.mc-cond{font-size:9px;font-weight:600;color:var(--muted);opacity:.6}
+.mc-cond.on{color:var(--amber);opacity:1}
 .bcash{font-size:8px;color:var(--muted);margin-left:5px;border:1px solid var(--border2);border-radius:3px;padding:0 3px;vertical-align:middle}
 .bdots{display:flex;align-items:center;gap:6px}
 .bdot{width:11px;height:11px;border-radius:50%;display:inline-block;flex-shrink:0}
@@ -497,6 +513,20 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
 
 
 
+<div class="mc-wrap">
+  <div class="mc-block">
+    <span class="mc-lbl">SMT divergence</span>
+    <span class="mc-chip mc-ok" title="ES/NQ/YM aligned at the highs">highs aligned</span>
+    <span class="mc-chip mc-div" title="SMT divergence at the lows — YM made it, ES/NQ did not (reversal tell)">lows ⚡ divergent</span>
+    <span class="mc-chip mc-div" title="Inverse correlation — DXY not fetched, EUR.USD used as the dollar proxy. 'Same direction' (dollar &amp; indices both one way) is a seek-and-destroy tell.">$/indices ⚡ same dir</span>
+  </div>
+  <div class="mc-block">
+    <span class="mc-lbl">Seek &amp; Destroy</span>
+    <span class="mc-sd mc-sd-mid" title="2 of 7 conditions met — >=3 = elevated two-sided / avoid-AM risk">watch · 2/7</span>
+    <span class="mc-conds" title="1. Day after a large-range day  ·  2. Before high-impact news (FOMC/NFP/CPI)  ·  3. London took Asia high AND low ✓  ·  4. Dollar + indices same direction (EUR.USD = DXY proxy) ✓  ·  5. Thu/Fri of NFP week  ·  6. Buyside/sellside objective met pre-open  ·  7. Large overnight move"><span class="mc-cond " title="Day after a large-range day">○ 1</span><span class="mc-cond " title="Before high-impact news (FOMC/NFP/CPI)">○ 2</span><span class="mc-cond on" title="London took Asia high AND low">● 3</span><span class="mc-cond on" title="Dollar + indices same direction (EUR.USD = DXY proxy)">● 4</span><span class="mc-cond " title="Thu/Fri of NFP week">○ 5</span><span class="mc-cond " title="Buyside/sellside objective met pre-open">○ 6</span><span class="mc-cond " title="Large overnight move">○ 7</span></span>
+  </div>
+</div>
+
 <div class="r2-tabs">
   <button id="r2tb" class="active" onclick="showR2('board')">Board</button>
   <button id="r2tw" onclick="showR2('week')">Week Ahead</button>
@@ -506,7 +536,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
   <div class="board-head"><span>Instrument</span><span>Bias · HTF / OF</span><span>AMD</span><span>Nearest draw ↑ / ↓ → target</span><span class="bh-r">Invalidation</span></div>
   <details class="board-row conv-diverge">
       <summary class="brow">
-        <span class="bsym">ES</span>
+        <span class="bsym">ES<span class="bprofile" style="color:var(--green)" title="Weekly profile: Wed Weekly Reversal 85% bull · forming">Wed Rev 85%·f</span></span>
         <span class="bdots"><span class="bdot" style="background:#ef4444" title="PO3 HTF lean: BEARISH"></span><span class="bdot" style="background:#22c55e" title="Order-flow: BULLISH"></span><span class="bconv">⚡ divergent</span></span>
         <span class="bamd amd-d" title="DISTRIBUTION">D</span>
         <span class="bdraw"><span class="dr-up">↑ D-1H 7583</span><span class="dr-dn">↓ D-1L 7504.25</span><span class="dr-tg">→ 7504.25</span></span>
@@ -531,7 +561,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </details>
 <details class="board-row conv-diverge">
       <summary class="brow">
-        <span class="bsym">NQ</span>
+        <span class="bsym">NQ<span class="bprofile" style="color:var(--green)" title="Weekly profile: Wed Low of Week 86% bull · forming">Wed Low 86%·f</span></span>
         <span class="bdots"><span class="bdot" style="background:#ef4444" title="PO3 HTF lean: BEARISH"></span><span class="bdot" style="background:#22c55e" title="Order-flow: BULLISH"></span><span class="bconv">⚡ divergent</span></span>
         <span class="bamd amd-d" title="DISTRIBUTION">D</span>
         <span class="bdraw"><span class="dr-up">↑ D-1H 30783.25</span><span class="dr-dn">↓ D-1L 30096</span><span class="dr-tg">→ 30096</span></span>
@@ -556,7 +586,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </details>
 <details class="board-row conv-diverge">
       <summary class="brow">
-        <span class="bsym">YM</span>
+        <span class="bsym">YM<span class="bprofile" style="color:var(--amber)" title="Weekly profile: Seek & Destroy 85% both · forming">S&D 85%·f</span></span>
         <span class="bdots"><span class="bdot" style="background:#ef4444" title="PO3 HTF lean: BEARISH"></span><span class="bdot" style="background:#f59e0b" title="Order-flow: NEUTRAL"></span><span class="bconv">⚡ divergent</span></span>
         <span class="bamd amd-d" title="DISTRIBUTION">D</span>
         <span class="bdraw"><span class="dr-up">↑ D-1H 52378</span><span class="dr-dn">↓ D-4L 51743</span><span class="dr-tg">→ 51743</span></span>
@@ -581,7 +611,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </details>
 <details class="board-row conv-aligned">
       <summary class="brow">
-        <span class="bsym">GC</span>
+        <span class="bsym">GC<span class="bprofile" style="color:var(--red)" title="Weekly profile: Wed Low of Week 81% bear · forming">Wed Low 81%·f</span></span>
         <span class="bdots"><span class="bdot" style="background:#ef4444" title="PO3 HTF lean: BEARISH"></span><span class="bdot" style="background:#ef4444" title="Order-flow: BEARISH"></span><span class="bconv">✓ aligned</span></span>
         <span class="bamd amd-d" title="DISTRIBUTION">D</span>
         <span class="bdraw"><span class="dr-up">↑ D-1H 4350.2</span><span class="dr-tg dr-2s">→ two-sided</span></span>
@@ -606,7 +636,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </details>
 <details class="board-row conv-diverge">
       <summary class="brow">
-        <span class="bsym">CL</span>
+        <span class="bsym">CL<span class="bprofile" style="color:var(--amber)" title="Weekly profile: Seek & Destroy 82% both · forming">S&D 82%·f</span></span>
         <span class="bdots"><span class="bdot" style="background:#22c55e" title="PO3 HTF lean: BULLISH"></span><span class="bdot" style="background:#f59e0b" title="Order-flow: NEUTRAL"></span><span class="bconv">⚡ divergent</span></span>
         <span class="bamd amd-d" title="DISTRIBUTION">D</span>
         <span class="bdraw"><span class="dr-up">↑ D-2H 79.18</span><span class="dr-dn">↓ D-1L 72.83</span><span class="dr-tg">→ 79.18</span></span>
@@ -631,7 +661,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </details>
 <details class="board-row conv-diverge">
       <summary class="brow">
-        <span class="bsym">6E</span>
+        <span class="bsym">6E<span class="bprofile" style="color:var(--red)" title="Weekly profile: Midweek Rally 85% bear · forming">Mid Rally 85%·f</span></span>
         <span class="bdots"><span class="bdot" style="background:#ef4444" title="PO3 HTF lean: BEARISH"></span><span class="bdot" style="background:#f59e0b" title="Order-flow: NEUTRAL"></span><span class="bconv">⚡ divergent</span></span>
         <span class="bamd amd-d" title="DISTRIBUTION">D</span>
         <span class="bdraw"><span class="dr-up">↑ D-1H 1.15282</span><span class="dr-tg dr-2s">→ two-sided</span></span>
@@ -656,7 +686,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </details>
 <details class="board-row conv-aligned">
       <summary class="brow">
-        <span class="bsym">SPX<span class="bcash">cash</span></span>
+        <span class="bsym">SPX<span class="bcash">cash</span><span class="bprofile" style="color:var(--green)" title="Weekly profile: Wed Weekly Reversal 84% bull · forming">Wed Rev 84%·f</span></span>
         <span class="bdots"><span class="bdot" style="background:#ef4444" title="PO3 HTF lean: BEARISH"></span><span class="bdot" style="background:#ef4444" title="Order-flow: BEARISH"></span><span class="bconv">✓ aligned</span></span>
         <span class="bamd amd-d" title="DISTRIBUTION">D</span>
         <span class="bdraw"><span class="dr-up">↑ D-1H 7532.17</span><span class="dr-dn">↓ D-1L 7402.61</span><span class="dr-tg">→ 7402.61</span></span>
@@ -681,7 +711,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
     </details>
 <details class="board-row conv-diverge">
       <summary class="brow">
-        <span class="bsym">NDX<span class="bcash">cash</span></span>
+        <span class="bsym">NDX<span class="bcash">cash</span><span class="bprofile" style="color:var(--green)" title="Weekly profile: Wed Weekly Reversal 88% bull · forming">Wed Rev 88%·f</span></span>
         <span class="bdots"><span class="bdot" style="background:#22c55e" title="PO3 HTF lean: BULLISH"></span><span class="bdot" style="background:#f59e0b" title="Order-flow: NEUTRAL"></span><span class="bconv">⚡ divergent</span></span>
         <span class="bamd amd-d" title="DISTRIBUTION">D</span>
         <span class="bdraw"><span class="dr-up">↑ D-2H 30560.08</span><span class="dr-dn">↓ D-1L 29604.93</span><span class="dr-tg">→ 30560.08</span></span>
@@ -711,6 +741,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="h"><div class="n">ES<span class="c">ESU26</span></div><span class="tag neutral">neutral close</span></div>
       <div class="clbar"><div class="disc"></div><div class="prem"></div><div class="eq"></div><div class="mk" style="left:calc(56% - 1.5px);background:var(--muted)"></div></div>
       <div class="lvls">prior-wk close 7570.75 · 56% of range · mid</div>
+      <div class="wa-profile"><span class="wa-profile-lbl">weekly profile</span><span class="pc-chip up" title="This calendar week matched against the ICT weekly profiles — still forming, 4d">Wed Weekly Reversal · 85% bull · forming</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,6.9 23.0,11.7 42.0,23.4 61.0,13.7" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="6.9" r="1.6" fill="#3fb950"/><circle cx="23.0" cy="11.7" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="23.4" r="1.6" fill="#3fb950"/><circle cx="61.0" cy="13.7" r="1.6" fill="#3fb950"/></svg><span class="pc-chip" style="opacity:.7" title="prior completed calendar week">prior: Tue Low of Week · 71%</span></div>
+      <div class="wa-profile"><span class="wa-profile-lbl">daily template</span><span class="pc-chip up" title="Both Asian extremes taken then reversed/reclaimed — reversal profile">Reversal Market Profile · 70% bull</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,12.1 42.0,26.0 80.0,9.7" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="12.1" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="26.0" r="1.6" fill="#3fb950"/><circle cx="80.0" cy="9.7" r="1.6" fill="#3fb950"/></svg></div>
       <div class="scen bull"><span class="lab">bull</span> — Sweep low 7520.5 / PWL 7472.25 + reclaim above EQ 7560.5 → PWH 7648.75</div>
       <div class="scen neutral"><span class="lab">neutral</span> — Closed 56% of the prior-week range — wait for the Tue/Wed extreme before committing</div>
       <div class="scen bear"><span class="lab">bear</span> — Fail under EQ 7560.5 / sweep high 7580 → PWL 7472.25</div>
@@ -969,6 +1001,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="h"><div class="n">NQ<span class="c">NQU26</span></div><span class="tag bull">bullish close</span></div>
       <div class="clbar"><div class="disc"></div><div class="prem"></div><div class="eq"></div><div class="mk" style="left:calc(76% - 1.5px);background:var(--green)"></div></div>
       <div class="lvls">prior-wk close 30719.75 · 76% of range · premium</div>
+      <div class="wa-profile"><span class="wa-profile-lbl">weekly profile</span><span class="pc-chip up" title="This calendar week matched against the ICT weekly profiles — still forming, 4d">Wed Low of Week · 86% bull · forming</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,6.4 23.0,17.9 42.0,24.5 61.0,9.3" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="6.4" r="1.6" fill="#3fb950"/><circle cx="23.0" cy="17.9" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="24.5" r="1.6" fill="#3fb950"/><circle cx="61.0" cy="9.3" r="1.6" fill="#3fb950"/></svg><span class="pc-chip" style="opacity:.7" title="prior completed calendar week">prior: Tue Low of Week · 82%</span></div>
+      <div class="wa-profile"><span class="wa-profile-lbl">daily template</span><span class="pc-chip up" title="Both Asian extremes taken then reversed/reclaimed — reversal profile">Reversal Market Profile · 70% bull</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,11.3 42.0,26.0 80.0,8.0" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="11.3" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="26.0" r="1.6" fill="#3fb950"/><circle cx="80.0" cy="8.0" r="1.6" fill="#3fb950"/></svg></div>
       <div class="scen bull"><span class="lab">bull</span> — Sweep low 30388 / PWL 29923 + reclaim above EQ 30449.25 → PWH 30975.5</div>
       <div class="scen neutral"><span class="lab">neutral</span> — Closed 76% of the prior-week range — wait for the Tue/Wed extreme before committing</div>
       <div class="scen bear"><span class="lab">bear</span> — Fail under EQ 30449.25 / sweep high 30770.75 → PWL 29923</div>
@@ -1271,6 +1305,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="h"><div class="n">YM<span class="c">YMU26</span></div><span class="tag bear">bearish close</span></div>
       <div class="clbar"><div class="disc"></div><div class="prem"></div><div class="eq"></div><div class="mk" style="left:calc(27% - 1.5px);background:var(--red)"></div></div>
       <div class="lvls">prior-wk close 52008 · 27% of range · discount</div>
+      <div class="wa-profile"><span class="wa-profile-lbl">weekly profile</span><span class="pc-chip " title="This calendar week matched against the ICT weekly profiles — still forming, 4d">Seek & Destroy · 85% two-sided · forming</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,17.4 23.0,9.9 42.0,21.6 61.0,20.1" fill="none" stroke="#d29922" stroke-width="1.5"/><circle cx="4.0" cy="17.4" r="1.6" fill="#d29922"/><circle cx="23.0" cy="9.9" r="1.6" fill="#d29922"/><circle cx="42.0" cy="21.6" r="1.6" fill="#d29922"/><circle cx="61.0" cy="20.1" r="1.6" fill="#d29922"/></svg><span class="pc-chip" style="opacity:.7" title="prior completed calendar week">prior: Tue Low of Week · 65%</span></div>
+      <div class="wa-profile"><span class="wa-profile-lbl">daily template</span><span class="pc-chip up" title="London raided the Asian low then reclaimed — buy-side day">Classic Buy Day · 78% bull</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,13.0 42.0,26.0 80.0,16.5" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="13.0" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="26.0" r="1.6" fill="#3fb950"/><circle cx="80.0" cy="16.5" r="1.6" fill="#3fb950"/></svg></div>
       <div class="scen bull"><span class="lab">bull</span> — Sweep low 51792 / PWL 51743 + reclaim above EQ 52239 → PWH 52734</div>
       <div class="scen neutral"><span class="lab">neutral</span> — Closed 27% of the prior-week range — wait for the Tue/Wed extreme before committing</div>
       <div class="scen bear"><span class="lab">bear</span> — Fail under EQ 52239 / sweep high 52085 → PWL 51743</div>
@@ -1529,6 +1565,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="h"><div class="n">GC<span class="c">GCQ26</span></div><span class="tag bear">bearish · below PWL</span></div>
       <div class="clbar"><div class="disc"></div><div class="prem"></div><div class="eq"></div><div class="mk" style="left:calc(14% - 1.5px);background:var(--red)"></div></div>
       <div class="lvls">prior-wk close 4245.9 · 14% of range · discount · price below PWL 4220.3 — prior-week bearish close stale, downside continuation</div>
+      <div class="wa-profile"><span class="wa-profile-lbl">weekly profile</span><span class="pc-chip dn" title="This calendar week matched against the ICT weekly profiles — still forming, 4d">Wed Low of Week · 81% bear · forming</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,10.2 23.0,9.9 42.0,6.6 61.0,22.9" fill="none" stroke="#f85149" stroke-width="1.5"/><circle cx="4.0" cy="10.2" r="1.6" fill="#f85149"/><circle cx="23.0" cy="9.9" r="1.6" fill="#f85149"/><circle cx="42.0" cy="6.6" r="1.6" fill="#f85149"/><circle cx="61.0" cy="22.9" r="1.6" fill="#f85149"/></svg><span class="pc-chip" style="opacity:.7" title="prior completed calendar week">prior: Tue Low of Week · 62%</span></div>
+      <div class="wa-profile"><span class="wa-profile-lbl">daily template</span><span class="pc-chip up" title="London raided the Asian low then reclaimed — buy-side day">Classic Buy Day · 78% bull</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,13.2 42.0,26.0 80.0,17.4" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="13.2" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="26.0" r="1.6" fill="#3fb950"/><circle cx="80.0" cy="17.4" r="1.6" fill="#3fb950"/></svg></div>
       <div class="scen bull"><span class="lab">bull</span> — Sweep low 4138.7 / PWL 4220.3 + reclaim above EQ 4312 → PWH 4403.6</div>
       <div class="scen neutral"><span class="lab">neutral</span> — Closed 14% of the prior-week range — wait for the Tue/Wed extreme before committing</div>
       <div class="scen bear"><span class="lab">bear</span> — Fail under EQ 4312 / sweep high 4231.4 → PWL 4220.3</div>
@@ -1758,6 +1796,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="h"><div class="n">CL<span class="c">CLN26</span></div><span class="tag bear">bearish close</span></div>
       <div class="clbar"><div class="disc"></div><div class="prem"></div><div class="eq"></div><div class="mk" style="left:calc(37% - 1.5px);background:var(--red)"></div></div>
       <div class="lvls">prior-wk close 75.85 · 37% of range · discount</div>
+      <div class="wa-profile"><span class="wa-profile-lbl">weekly profile</span><span class="pc-chip " title="This calendar week matched against the ICT weekly profiles — still forming, 4d">Seek & Destroy · 82% two-sided · forming</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,8.2 23.0,19.4 42.0,17.4 61.0,17.9" fill="none" stroke="#d29922" stroke-width="1.5"/><circle cx="4.0" cy="8.2" r="1.6" fill="#d29922"/><circle cx="23.0" cy="19.4" r="1.6" fill="#d29922"/><circle cx="42.0" cy="17.4" r="1.6" fill="#d29922"/><circle cx="61.0" cy="17.9" r="1.6" fill="#d29922"/></svg><span class="pc-chip" style="opacity:.7" title="prior completed calendar week">prior: Tue Low of Week · 58%</span></div>
+      <div class="wa-profile"><span class="wa-profile-lbl">daily template</span><span class="pc-chip dn" title="London raided the Asian high then rejected — sell-side day">Classic Sell Day · 78% bear</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,20.7 42.0,4.0 80.0,6.9" fill="none" stroke="#f85149" stroke-width="1.5"/><circle cx="4.0" cy="20.7" r="1.6" fill="#f85149"/><circle cx="42.0" cy="4.0" r="1.6" fill="#f85149"/><circle cx="80.0" cy="6.9" r="1.6" fill="#f85149"/></svg></div>
       <div class="scen bull"><span class="lab">bull</span> — Sweep low 74.98 / PWL 72.83 + reclaim above EQ 76.91 → PWH 81</div>
       <div class="scen neutral"><span class="lab">neutral</span> — Closed 37% of the prior-week range — wait for the Tue/Wed extreme before committing</div>
       <div class="scen bear"><span class="lab">bear</span> — Fail under EQ 76.91 / sweep high 76.78 → PWL 72.83</div>
@@ -2003,6 +2043,8 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
       <div class="h"><div class="n">6E<span class="c">spot</span></div><span class="tag bear">bearish · below PWL</span></div>
       <div class="clbar"><div class="disc"></div><div class="prem"></div><div class="eq"></div><div class="mk" style="left:calc(76% - 1.5px);background:var(--green)"></div></div>
       <div class="lvls">prior-wk close 1.15685 · 76% of range · premium · price below PWL 1.14997 — prior-week bullish close stale, downside continuation</div>
+      <div class="wa-profile"><span class="wa-profile-lbl">weekly profile</span><span class="pc-chip dn" title="This calendar week matched against the ICT weekly profiles — still forming, 4d">Midweek Rally · 85% bear · forming</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,8.2 23.0,5.8 42.0,19.6 61.0,25.1" fill="none" stroke="#f85149" stroke-width="1.5"/><circle cx="4.0" cy="8.2" r="1.6" fill="#f85149"/><circle cx="23.0" cy="5.8" r="1.6" fill="#f85149"/><circle cx="42.0" cy="19.6" r="1.6" fill="#f85149"/><circle cx="61.0" cy="25.1" r="1.6" fill="#f85149"/></svg><span class="pc-chip" style="opacity:.7" title="prior completed calendar week">prior: Tue Low of Week · 65%</span></div>
+      <div class="wa-profile"><span class="wa-profile-lbl">daily template</span><span class="pc-chip up" title="Both Asian extremes taken then reversed/reclaimed — reversal profile">Reversal Market Profile · 70% bull</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,13.5 42.0,26.0 80.0,4.0" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="13.5" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="26.0" r="1.6" fill="#3fb950"/><circle cx="80.0" cy="4.0" r="1.6" fill="#3fb950"/></svg></div>
       <div class="scen bull"><span class="lab">bull</span> — Sweep low 1.14183 / PWL 1.14997 + reclaim above EQ 1.15447 → PWH 1.15898</div>
       <div class="scen neutral"><span class="lab">neutral</span> — Closed 76% of the prior-week range — wait for the Tue/Wed extreme before committing</div>
       <div class="scen bear"><span class="lab">bear</span> — Fail under EQ 1.15447 / sweep high 1.16223 → PWL 1.14997</div>
@@ -2261,6 +2303,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="h"><div class="n">SPX<span class="c">cash</span></div><span class="tag bull">bullish · above PWH · cash</span></div>
         <div class="clbar"><div class="disc"></div><div class="prem"></div><div class="eq"></div><div class="mk" style="left:calc(79% - 1.5px);background:var(--green)"></div></div>
         <div class="lvls">prior-wk close 7431.46 · 79% of range · premium · price above PWH 7483.15 — upside continuation · cash watches gap-fill</div>
+        <div class="wa-profile"><span class="wa-profile-lbl">weekly profile</span><span class="pc-chip up" title="This calendar week matched against the ICT weekly profiles — still forming, 3d">Wed Weekly Reversal · 84% bull · forming</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,6.9 23.0,12.4 42.0,23.8" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="6.9" r="1.6" fill="#3fb950"/><circle cx="23.0" cy="12.4" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="23.8" r="1.6" fill="#3fb950"/></svg><span class="pc-chip" style="opacity:.7" title="prior completed calendar week">prior: Tue Low of Week · 92%</span></div>
         <details class="wa-detail"><summary>structure detail — DW zones · period-close map</summary>
       <div class="wa-panel"><div class="wa-panel-h">🪝 Dave Wick</div><div class="pc-card">
       <div class="pc-card-hdr">
@@ -2444,6 +2487,7 @@ footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);displ
         <div class="h"><div class="n">NDX<span class="c">cash</span></div><span class="tag bull">bullish · above PWH · cash</span></div>
         <div class="clbar"><div class="disc"></div><div class="prem"></div><div class="eq"></div><div class="mk" style="left:calc(89% - 1.5px);background:var(--green)"></div></div>
         <div class="lvls">prior-wk close 29635.95 · 89% of range · premium · price above PWH 29805.3 — upside continuation · cash watches gap-fill</div>
+        <div class="wa-profile"><span class="wa-profile-lbl">weekly profile</span><span class="pc-chip up" title="This calendar week matched against the ICT weekly profiles — still forming, 3d">Wed Weekly Reversal · 88% bull · forming</span> <svg viewBox="0 0 84 30" width="84" height="30" style="vertical-align:middle" role="img" aria-label="weekly profile shape"><polyline points="4.0,4.9 23.0,17.9 42.0,24.5" fill="none" stroke="#3fb950" stroke-width="1.5"/><circle cx="4.0" cy="4.9" r="1.6" fill="#3fb950"/><circle cx="23.0" cy="17.9" r="1.6" fill="#3fb950"/><circle cx="42.0" cy="24.5" r="1.6" fill="#3fb950"/></svg><span class="pc-chip" style="opacity:.7" title="prior completed calendar week">prior: Tue Low of Week · 94%</span></div>
         <details class="wa-detail"><summary>structure detail — DW zones · period-close map</summary>
       <div class="wa-panel"><div class="wa-panel-h">🪝 Dave Wick</div><div class="pc-card">
       <div class="pc-card-hdr">
